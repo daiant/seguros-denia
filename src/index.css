@@ -33,7 +33,7 @@ body {
   --text-title: 'Merriweather', serif;
   --text: 'Source Sans 3', sans-serif;
 
-  --text-xxl: 42px;
+  --text-xxl: clamp(2rem, 1.6rem + 2vw, 4rem);
   --text-xl: 36px;
   --text-lg: 24px;
   --text-md: 18px;
@@ -60,4 +60,11 @@ ul {
 a {
   color: unset;
   text-decoration: none;
+}
+
+img {
+  border: 6px solid var(--background-5);
+  border-radius: var(--md);
+  box-shadow: 0 2px 4px 0 #060f1c2a;
+
 }

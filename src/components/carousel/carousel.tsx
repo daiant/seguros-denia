@@ -30,7 +30,7 @@ function Carousel({ style, children, className }) {
     if (newCurrent >= length) {
       const list = carouselListRef.current as HTMLElement;
       const nodeChildren = Array.from(list.childNodes);
-      nodeChildren.forEach((child) => { const c = child.cloneNode(true); c.textContent = 'Clone' + c.textContent; list.appendChild(c) });
+      nodeChildren.forEach((child) => { const c = child.cloneNode(true); list.appendChild(c) });
       list.children[newCurrent].scrollIntoView({ block: "center", behavior: 'smooth' });
       setTimeout(() => {
         nodeChildren.forEach((child) => list.removeChild(child));
@@ -48,7 +48,7 @@ function Carousel({ style, children, className }) {
     if (newCurrent < 0) {
       const list = carouselListRef.current as HTMLElement;
       const nodeChildren = Array.from(list.childNodes).reverse();
-      nodeChildren.forEach((child) => { const c = child.cloneNode(true); c.textContent = 'Clone' + c.textContent; list.prepend(c) });
+      nodeChildren.forEach((child) => { const c = child.cloneNode(true); list.prepend(c) });
       list.children[length].scrollIntoView({ block: "center", behavior: 'instant' });
       list.children[length - 1].scrollIntoView({ block: "center", behavior: 'smooth' });
       setTimeout(() => {
@@ -66,12 +66,12 @@ function Carousel({ style, children, className }) {
     <div className='carousel_list' ref={carouselListRef}>
       {children}
     </div>
-    <CarouselPagination
+    {length > 1 && <CarouselPagination
       length={length}
       current={current}
       onPrevious={handlePrevious}
       onNext={handleNext}
-    />
+    />}
   </div>
 }
 
@@ -85,7 +85,7 @@ function CarouselItem({ style, className, children }) {
 
 function CarouselPagination({ length, current = 0, onPrevious, onNext }) {
   return <Group className='carousel_pagination' gap='sm'>
-    <Button onClick={onPrevious}>
+    <Button variant='transparent' onClick={onPrevious}>
       <CaretLeft color='var(--background-overlay)' />
     </Button>
     <p>{current + 1}</p>
@@ -93,7 +93,7 @@ function CarouselPagination({ length, current = 0, onPrevious, onNext }) {
       <Progress.Indicator style={{ transform: `translateX(${((current + 1) / length) * 100}%)` }} className='progress_indicator' />
     </Progress.Root>
     <p>{length}</p>
-    <Button onClick={onNext}>
+    <Button onClick={onNext} variant='transparent'>
       <CaretRight color='var(--background-overlay)' />
     </Button>
   </Group>

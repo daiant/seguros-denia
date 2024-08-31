@@ -5,4 +5,35 @@
   display: grid;
   place-content: center;
   cursor: pointer;
+  border-radius: 6px;
+  font-size: var(--text-md);
+  padding: var(--sm) var(--md);
+}
+
+.button:hover {
+  opacity: 0.95;
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.primary {
+  background-color: var(--primary);
+  color: var(--background);
+}
+
+.secondary {
+  background-color: var(--background-5);
+  color: var(--primary);
+}
+
+.accent {
+  background-color: var(--accent);
+  color: var(--background);
+}
+
+.transparent {
+  background-color: transparent;
+  color: var(--foreground);
 }

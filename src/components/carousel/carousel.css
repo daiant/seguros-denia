@@ -8,11 +8,14 @@
   display: flex;
   overflow-x: hidden;
   width: 100%;
+  gap: var(--md);
 }
 
 .carousel_item {
   width: 100%;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
 }
 
 .carousel_pagination .progress {

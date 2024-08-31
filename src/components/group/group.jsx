@@ -5,7 +5,9 @@ export default function Group({
   justify = "initial",
   gap = "md",
   wrap = "wrap",
+  flexDirection = "row",
   className,
+  style = {},
 }) {
   function getGap() {
     return `var(--${gap}, ${gap})`;
@@ -18,7 +20,9 @@ export default function Group({
         flexWrap: wrap,
         alignItems: align,
         justifyContent: justify,
+        flexDirection: flexDirection,
         gap: getGap(),
+        ...style,
       }}
       className={className ?? ""}
     >
