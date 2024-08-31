@@ -170,7 +170,9 @@ function App() {
               directamente a través de nuestro formulario web para recibir la
               atención personalizada que mereces. ¡Estamos aquí para ayudarte!
             </p>
-            <Group>
+            <Group
+              style={{ marginBlockStart: "auto", paddingBlockEnd: "var(--md)" }}
+            >
               <Button>
                 <Group>
                   <span>Contacta con nosotros</span>

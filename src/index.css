@@ -77,6 +77,11 @@ img.with-border {
 .section {
   padding: var(--spacing);
   font-size: var(--text-md);
+
+  &>* {
+    max-width: 1200px;
+    margin-inline: auto;
+  }
 }
 
 .section_secondary {
