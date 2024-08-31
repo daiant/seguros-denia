@@ -1,8 +1,18 @@
+/* eslint-disable react/prop-types */
 import "./button.css";
-// eslint-disable-next-line react/prop-types
-export default function Button({ variant = "primary", onClick, children }) {
+
+export default function Button({
+  variant = "primary",
+  onClick,
+  children,
+  style = {},
+}) {
   return (
-    <button onClick={onClick} className={["button", variant].join(" ")}>
+    <button
+      onClick={onClick}
+      className={["button", variant].join(" ")}
+      style={style}
+    >
       {children}
     </button>
   );

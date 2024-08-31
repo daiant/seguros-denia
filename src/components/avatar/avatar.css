@@ -1,0 +1,17 @@
+.avatar {}
+
+.avatar_image {
+  border-radius: 96px 0 96px 0;
+  height: 350px;
+  width: 315px;
+  object-fit: cover;
+}
+
+p {
+  font-size: var(--md);
+  margin-block: 0;
+}
+
+p.position {
+  font-weight: 700;
+}

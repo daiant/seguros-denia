@@ -75,7 +75,7 @@ function Carousel({ style, children, className }) {
   </div>
 }
 
-function CarouselItem({ style, className, children }) {
+function CarouselItem({ style: style, className, children }) {
   return <div
     className={className ? 'carousel_item ' + className : 'carousel_item'}
     style={style}>
@@ -85,7 +85,7 @@ function CarouselItem({ style, className, children }) {
 
 function CarouselPagination({ length, current = 0, onPrevious, onNext }) {
   return <Group className='carousel_pagination' gap='sm'>
-    <Button variant='transparent' onClick={onPrevious}>
+    <Button variant='transparent' onClick={onPrevious} style={{ paddingInline: 0 }}>
       <CaretLeft color='var(--background-overlay)' />
     </Button>
     <p>{current + 1}</p>
@@ -93,7 +93,7 @@ function CarouselPagination({ length, current = 0, onPrevious, onNext }) {
       <Progress.Indicator style={{ transform: `translateX(${((current + 1) / length) * 100}%)` }} className='progress_indicator' />
     </Progress.Root>
     <p>{length}</p>
-    <Button onClick={onNext} variant='transparent'>
+    <Button onClick={onNext} variant='transparent' style={{ paddingInline: 0 }}>
       <CaretRight color='var(--background-overlay)' />
     </Button>
   </Group>

@@ -3,6 +3,8 @@
 html,
 body {
   margin: 0;
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
 *,
@@ -66,5 +68,58 @@ img.with-border {
   border: 6px solid var(--background-5);
   border-radius: var(--md);
   box-shadow: 0 2px 4px 0 #060f1c2a;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspcect-ratio: 5 / 3;
+}
 
+.section {
+  padding: var(--spacing);
+  font-size: var(--text-md);
+}
+
+.section_secondary {
+  background-color: var(--background-5);
+}
+
+.section_title {
+  text-align: center;
+  margin-block: 0 2em;
+  font-size: var(--text-xl);
+  font-family: var(--text-title);
+  font-weight: 700;
+}
+
+.section_title:has(+.section_subtitle) {
+  margin-block-end: 0;
+}
+
+.section_subtitle {
+  text-align: center;
+  font-size: 20px;
+  margin-block: 0.5em 1.5em;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--md);
+}
+
+.input-field {
+  align-items: flex-start !important;
+  gap: 2px !important;
+
+  input,
+  textarea {
+    all: unset;
+    width: 100%;
+    border: 1px solid var(--background-5);
+    background-color: var(--background);
+    padding: var(--sm);
+    font-size: 16px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px 0 #060f1c2a;
+  }
 }

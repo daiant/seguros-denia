@@ -8,7 +8,6 @@ import {
   InstagramLogo,
   LinkedinLogo,
 } from "@phosphor-icons/react";
-import { NavLink } from "react-router-dom";
 import Button from "../button/button";
 
 export default function Header({ hideContact }) {
