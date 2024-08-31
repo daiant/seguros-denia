@@ -1,0 +1,8 @@
+.button {
+  height: unset;
+  border: none;
+  background-color: transparent;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}

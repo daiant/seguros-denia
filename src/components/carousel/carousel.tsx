@@ -1,5 +1,9 @@
 import React from 'react';
 import './carousel.css';
+import Button from '../button/button';
+import { CaretLeft, CaretRight } from '@phosphor-icons/react';
+import Group from '../group/group';
+import * as Progress from '@radix-ui/react-progress';
 
 function Carousel({ style, children, className }) {
   const [length, setLength] = React.useState(0);
@@ -80,11 +84,19 @@ function CarouselItem({ style, className, children }) {
 }
 
 function CarouselPagination({ length, current = 0, onPrevious, onNext }) {
-  return <div className='carousel_pagination'>
-    <button onClick={onPrevious}>Previous</button>
-    <p>{current + 1} de {length}</p>
-    <button onClick={onNext}>Next</button>
-  </div>
+  return <Group className='carousel_pagination' gap='sm'>
+    <Button onClick={onPrevious}>
+      <CaretLeft color='var(--background-overlay)' />
+    </Button>
+    <p>{current + 1}</p>
+    <Progress.Root value={length} className='progress'>
+      <Progress.Indicator style={{ transform: `translateX(${((current + 1) / length) * 100}%)` }} className='progress_indicator' />
+    </Progress.Root>
+    <p>{length}</p>
+    <Button onClick={onNext}>
+      <CaretRight color='var(--background-overlay)' />
+    </Button>
+  </Group>
 }
 Carousel.Item = CarouselItem;
 

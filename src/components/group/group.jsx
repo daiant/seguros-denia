@@ -5,6 +5,7 @@ export default function Group({
   justify = "initial",
   gap = "md",
   wrap = "wrap",
+  className,
 }) {
   function getGap() {
     return `var(--${gap}, ${gap})`;
@@ -19,6 +20,7 @@ export default function Group({
         justifyContent: justify,
         gap: getGap(),
       }}
+      className={className ?? ""}
     >
       {children}
     </div>
