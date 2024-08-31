@@ -62,7 +62,7 @@ a {
   text-decoration: none;
 }
 
-img {
+img.with-border {
   border: 6px solid var(--background-5);
   border-radius: var(--md);
   box-shadow: 0 2px 4px 0 #060f1c2a;

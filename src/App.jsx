@@ -68,6 +68,7 @@ function App() {
                     objectFit: "cover",
                     aspectRatio: "5 / 3",
                   }}
+                  className="with-border"
                 />
               </div>
               {/* </Group> */}
