@@ -61,7 +61,7 @@ function App() {
               </Group>
               <div>
                 <img
-                  src="https://picsum.photos/900/60g0"
+                  src="https://picsum.photos/900/600"
                   style={{
                     width: "100%",
                     height: "100%",
