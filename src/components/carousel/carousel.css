@@ -1,0 +1,27 @@
+.carousel {
+  border: 1px solid red;
+  background: cadetblue;
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel_list {
+  flex-grow: 1;
+  display: flex;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.carousel_item {
+  width: 100%;
+  flex-shrink: 0;
+  border: 1px solid blue;
+  background-color: burlywood;
+  padding: 16px;
+}
+
+.carousel_pagination {
+  display: flex;
+  gap: var(--sm);
+  padding-block: var(--md);
+}

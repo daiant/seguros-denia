@@ -9,6 +9,7 @@ body {
 *::after,
 *::before {
   box-sizing: border-box;
+  font-family: var(--text);
 }
 
 :root {
