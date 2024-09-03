@@ -18,6 +18,7 @@ import Grid from "./components/grid/grid";
 import Card from "./components/card/card";
 import * as Accordion from "@radix-ui/react-accordion";
 import Avatar from "./components/avatar/avatar";
+import EmblaCarousel from "./components/carousel/embla/embla-carousel";
 
 function App() {
   function range(length) {
@@ -246,10 +247,11 @@ function App() {
             style={{ transform: "rotate(180deg)" }}
           />
           <Grid>
-            <Carousel>
+            <EmblaCarousel>
               {opinions.map((opinion) => (
-                <Carousel.Item
+                <div
                   style={{
+                    display: "flex",
                     flexDirection: "column",
                     alignItems: "flex-start",
                     gap: "var(--md)",
@@ -288,9 +290,9 @@ function App() {
                       ))}
                     </Group>
                   </Group>
-                </Carousel.Item>
+                </div>
               ))}
-            </Carousel>
+            </EmblaCarousel>
             <img
               src="https://picsum.photos/900/600"
               className="with-border"

@@ -1,0 +1,17 @@
+.embla {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+}
+
+/* slide */
+.embla__container>* {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.carousel_pagination {
+  margin-block-start: 1em;
+}

@@ -66,7 +66,7 @@ function Carousel({ style, children, className }) {
     <div className='carousel_list' ref={carouselListRef}>
       {children}
     </div>
-    {length > 1 && <CarouselPagination
+    {length > 1 && <Oops
       length={length}
       current={current}
       onPrevious={handlePrevious}
@@ -83,7 +83,7 @@ function CarouselItem({ style: style, className, children }) {
   </div>
 }
 
-function CarouselPagination({ length, current = 0, onPrevious, onNext }) {
+function Oops({ length, current = 0, onPrevious, onNext }) {
   return <Group className='carousel_pagination' gap='sm'>
     <Button variant='transparent' onClick={onPrevious} style={{ paddingInline: 0 }}>
       <CaretLeft color='var(--background-overlay)' />
