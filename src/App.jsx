@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import "./components/accordion/accordion.css";
 import Header from "./components/header/header";
@@ -20,6 +21,7 @@ import Avatar from "./components/avatar/avatar";
 import EmblaCarousel from "./components/carousel/embla/embla-carousel";
 
 function App() {
+  const [headerHeight, setHeaderHeight] = React.useState(121);
   function range(length) {
     return new Array(length).fill(0);
   }
@@ -102,6 +104,13 @@ function App() {
   ];
   return (
     <>
+      <Header
+        style={{
+          paddingInline: "var(--spacing)",
+          // top: "-32px",
+        }}
+        setHeight={setHeaderHeight}
+      />
       <section
         style={{
           paddingInline: "var(--spacing)",
@@ -111,9 +120,10 @@ function App() {
           minHeight: "90svh",
           display: "flex",
           flexDirection: "column",
+          paddingBlockStart: headerHeight + "px",
+          marginBlockStart: "-" + headerHeight + "px",
         }}
       >
-        <Header />
         <EmblaCarousel
           style={{ display: "flex", alignItems: "center", flexGrow: 1 }}
         >

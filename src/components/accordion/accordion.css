@@ -1,5 +1,5 @@
 .AccordionItem+.AccordionItem {
-  margin-block-start: 1em;
+  margin-block-start: 2em;
 }
 
 .AccordionHeader {
@@ -20,6 +20,7 @@
   border-bottom: 2px solid var(--primary);
   padding-block: var(--xs);
   cursor: pointer;
+  line-height: 28px;
 }
 
 .AccordionTrigger span {

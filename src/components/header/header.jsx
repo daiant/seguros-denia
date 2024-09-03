@@ -9,17 +9,47 @@ import {
   LinkedinLogo,
 } from "@phosphor-icons/react";
 import Button from "../button/button";
+import React from "react";
 
-export default function Header({ hideContact }) {
+// eslint-disable-next-line react/prop-types
+export default function Header({ hideContact, style = {}, setHeight }) {
+  const [threshold, setThreshold] = React.useState(false);
+
+  React.useEffect(() => {
+    const onScroll = () => setThreshold(window.scrollY > 0);
+    window.addEventListener("load", () => {
+      const height = document
+        .querySelector("#navbar")
+        .getBoundingClientRect().height;
+      setHeight(height);
+    });
+    // clean up code
+    window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [setHeight]);
   return (
-    <NavigationMenu.Root>
+    <NavigationMenu.Root
+      style={{
+        ...style,
+        transition: threshold
+          ? "300ms cubic-bezier(0.87, 0, 0.13, 1)"
+          : "0ms linear",
+        backgroundColor: threshold ? "var(--background)" : "transparent",
+        color: threshold ? "var(--foreground)" : "var(--background)",
+        position: threshold ? "sticky" : "relative",
+        top: threshold ? "-32px" : "0px",
+        zIndex: 999,
+      }}
+      id="navbar"
+    >
       {!hideContact && (
         <NavigationMenu.List
           style={{
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            marginBlockStart: "var(--sm)",
+            paddingBlockStart: "var(--sm)",
           }}
         >
           <Group justify="flex-start">
