@@ -38,6 +38,7 @@ body {
   --text-xxl: clamp(2rem, 1.6rem + 2vw, 4rem);
   --text-xl: 36px;
   --text-lg: 24px;
+  --text-l: 20px;
   --text-md: 18px;
   --text-sm: 16px;
   --text-xs: 14px;

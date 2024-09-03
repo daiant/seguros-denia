@@ -28,20 +28,22 @@ function EmblaCarousel({ style, children, className, delay = 7000 }) {
 
   return (
     <>
-      <div className="embla" ref={emblaRef}>
-        <div className={"embla__container " + (className ?? "")} style={style}>
+      <div className="embla" ref={emblaRef} style={style}>
+        <div className={"embla__container " + (className ?? "")}>
           {children}
         </div>
-        <CarouselPagination
-          current={current}
-          total={total}
-          onPrevious={() => {
-            emblaApi.scrollPrev();
-          }}
-          onNext={() => {
-            emblaApi.scrollNext();
-          }}
-        />
+        {total > 1 && (
+          <CarouselPagination
+            current={current}
+            total={total}
+            onPrevious={() => {
+              emblaApi.scrollPrev();
+            }}
+            onNext={() => {
+              emblaApi.scrollNext();
+            }}
+          />
+        )}
       </div>
     </>
   );

@@ -1,6 +1,5 @@
 import "./App.css";
 import "./components/accordion/accordion.css";
-import Carousel from "./components/carousel/carousel";
 import Header from "./components/header/header";
 import Group from "./components/group/group";
 import Button from "./components/button/button";
@@ -115,44 +114,41 @@ function App() {
         }}
       >
         <Header />
-        <Carousel style={{ flexGrow: 1 }}>
-          <Carousel.Item>
-            <Grid>
-              <Group flexDirection="column" align="flex-start">
-                <p style={{ fontSize: "var(--text-lg)", marginBlock: 0 }}>
-                  Asegurando a las familias de Dénia desde hace más de 20 años
-                </p>
-                <p
-                  style={{
-                    fontSize: "var(--text-xxl)",
-                    fontFamily: "var(--text-title)",
-                  }}
-                >
-                  Tu aseguradora de confianza en Dénia desde hace más de 20
-                  años.
-                </p>
-                <Group>
-                  <Button variant="secondary">
-                    <Group gap="sm">
-                      <span>Elige tu seguro</span>
-                      <PaperPlaneTilt />
-                    </Group>
-                  </Button>
-                  <Button variant="accent">
-                    <Group gap="sm">
-                      <span>Contacta con nosotros</span>
-                      <WhatsappLogo />
-                    </Group>
-                  </Button>
-                </Group>
+        <EmblaCarousel
+          style={{ display: "flex", alignItems: "center", flexGrow: 1 }}
+        >
+          <Grid>
+            <Group flexDirection="column" align="flex-start" justify="center">
+              <p style={{ fontSize: "var(--text-lg)", marginBlock: 0 }}>
+                Asegurando a las familias de Dénia desde hace más de 20 años
+              </p>
+              <p
+                style={{
+                  fontSize: "var(--text-xxl)",
+                  fontFamily: "var(--text-title)",
+                  marginBlock: "1em",
+                }}
+              >
+                Tu aseguradora de confianza en Dénia desde hace más de 20 años.
+              </p>
+              <Group>
+                <Button variant="secondary">
+                  <Group gap="sm">
+                    <span>Elige tu seguro</span>
+                    <PaperPlaneTilt />
+                  </Group>
+                </Button>
+                <Button variant="accent">
+                  <Group gap="sm">
+                    <span>Contacta con nosotros</span>
+                    <WhatsappLogo />
+                  </Group>
+                </Button>
               </Group>
-              <img
-                src="https://picsum.photos/900/600"
-                className="with-border"
-              />
-            </Grid>
-          </Carousel.Item>
-        </Carousel>
+            </Group>
+            <img src="https://picsum.photos/900/600" className="with-border" />
+          </Grid>
+        </EmblaCarousel>
       </section>
       <section className="section">
         <p className="section_title">Siempre a tu lado, estés donde estés</p>
@@ -237,7 +233,9 @@ function App() {
             background: "var(--primary-gradient)",
             color: "var(--background)",
             marginBlockStart: "var(--md)",
-            borderRadius: 4,
+            borderRadius: 8,
+            border: "2px solid var(--background-5)",
+            boxShadow: "0 2px 4px 0 #060f1c2a",
           }}
         >
           <Quotes

@@ -3,14 +3,14 @@
 }
 
 .AccordionHeader {
-  margin: 0;
+  margin: 1em 0 0 0;
 }
 
 .AccordionTrigger {
   background: transparent;
   border: none;
   text-align: left;
-  font-size: var(--text-md);
+  font-size: var(--text-lg);
   padding: 0;
   display: flex;
   width: 100%;
@@ -19,6 +19,7 @@
   gap: var(--sm);
   border-bottom: 2px solid var(--primary);
   padding-block: var(--xs);
+  cursor: pointer;
 }
 
 .AccordionTrigger span {
@@ -34,13 +35,14 @@
 }
 
 .AccordionContent {
-  font-size: var(--text-md);
   color: var(--foreground);
+  padding-inline: var(--xl);
   overflow: hidden;
 }
 
-.AccordionContent p {
-  margin-block-start: var(--sm);
+.AccordionContent>* {
+  margin-block-start: var(--md);
+  font-size: var(--text-l);
 }
 
 .AccordionContent[data-state='open'] {
