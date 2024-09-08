@@ -18,12 +18,11 @@ export default function Insurance() {
       target: "myself",
     }
   );
-  const mock = new Array(5).fill(9).map((e) => insuranceList[0]);
   return (
     <div className="insurance-wrapper">
       <InsuranceForm form={form} onChange={setForm} />
       <ul>
-        {mock.map((insurance) => (
+        {insuranceList.map((insurance) => (
           <InsuranceItem item={insurance} key={insurance.title} />
         ))}
       </ul>
