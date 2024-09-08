@@ -3,10 +3,6 @@
 }
 
 @media (max-width: 768px) {
-  #navbar {
-    margin-block-end: var(--md);
-  }
-
   .item-desktop {
     display: none !important;
   }
