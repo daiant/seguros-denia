@@ -64,7 +64,7 @@ export default function Header({ hideContact, style = {}, setHeight }) {
               </NavigationMenu.Link>
             </NavigationMenu.Item>
           </Group>
-          <Group gap="sm">
+          <Group gap="sm" style={{ flexWrap: "no-wrap" }}>
             <img
               src="/esp.png"
               alt="Ver página en español"
