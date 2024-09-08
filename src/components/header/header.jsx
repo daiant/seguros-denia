@@ -58,7 +58,7 @@ export default function Header({ hideContact, style = {}, setHeight }) {
                 Calle Sandunga 51, Dénia
               </NavigationMenu.Link>
             </NavigationMenu.Item>
-            <NavigationMenu.Item>
+            <NavigationMenu.Item className="item-desktop">
               <NavigationMenu.Link href="#" className="underline">
                 +34637049244
               </NavigationMenu.Link>
