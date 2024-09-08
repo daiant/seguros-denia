@@ -5,11 +5,13 @@
     margin: 0;
     gap: var(--xxl);
     flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
 .insurance-form {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--lg);
   align-items: center;
   padding: var(--md) var(--lg);
@@ -23,6 +25,7 @@
 }
 
 .insurance-form select {
+  flex: 1;
   height: 38px;
   padding-inline: var(--md);
   font-size: var(--text-md);

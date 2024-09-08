@@ -98,13 +98,13 @@ export default function Header({ hideContact, style = {}, setHeight }) {
           <p style={{ marginBlock: 0 }}>Agente exclusivo ASISA</p>
         </div>
         <Group>
-          <Group gap="2px">
+          <Group gap="xxs" className="item-desktop">
             <HouseSimple size={18} color="var(--accent)" />
             <a href="#" style={{ fontSize: "var(--text-md)" }}>
               Inicio
             </a>
           </Group>
-          <Group gap="2px">
+          <Group gap="xxs" className="item-desktop">
             <Heart size={18} color="var(--accent)" />
             <a href="#" style={{ fontSize: "var(--text-md)" }}>
               Seguros

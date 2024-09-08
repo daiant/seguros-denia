@@ -36,21 +36,21 @@ body {
   --text: 'Source Sans 3', sans-serif;
 
   --text-xxl: clamp(2rem, 1.6rem + 2vw, 4rem);
-  --text-xl: 36px;
-  --text-lg: 24px;
-  --text-l: 20px;
+  --text-xl: calc(var(--text-md) * 2);
+  --text-lg: calc(var(--text-md) * 1.33);
+  --text-l: calc(var(--text-md) * 1.11);
   --text-md: 18px;
-  --text-sm: 16px;
-  --text-xs: 14px;
+  --text-sm: calc(var(--text-md) * 0.88);
+  --text-xs: calc(var(--text-md) * 0.77);
 
   --spacing: 64px;
 
-  --xxl: 48px;
-  --xl: 32px;
-  --lg: 24px;
+  --xxl: calc(var(--md) * 3);
+  --xl: calc(var(--md) * 2);
+  --lg: calc(var(--md) * 1.5);
   --md: 16px;
-  --sm: 8px;
-  --xs: 4px;
+  --sm: calc(var(--md) * 0.5);
+  --xs: calc(var(--md) * 0.25);
   --xxs: 2px;
 
   --shadow: 0 2px 4px 0 #060f1c2a;
@@ -79,6 +79,7 @@ img.with-border {
 
 .section {
   padding: var(--spacing);
+  padding-block-start: calc(var(--spacing) * 0.5);
   font-size: var(--text-md);
 
   &>* {
@@ -93,7 +94,7 @@ img.with-border {
 
 .section_title {
   text-align: center;
-  margin-block: 0 2em;
+  margin-block: 1em 2em;
   font-size: var(--text-xl);
   font-family: var(--text-title);
   font-weight: 700;
@@ -116,13 +117,13 @@ img.with-border {
 }
 
 .input-field {
-  align-items: flex-start !important;
-  gap: 2px !important;
+  display: grid;
+  gap: var(--xxs);
 
   input,
   textarea {
     all: unset;
-    width: 100%;
+    flex-grow: 1;
     border: 1px solid var(--background-5);
     background-color: var(--background);
     padding: var(--sm);
@@ -130,4 +131,13 @@ img.with-border {
     border-radius: 6px;
     box-shadow: var(--shadow);
   }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --spacing: 16px;
+    --text-md: 16px;
+    --md: 12px;
+  }
+
 }

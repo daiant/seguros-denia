@@ -102,6 +102,30 @@ function App() {
       value:
         "Líderes en el sector, ya que reinvertimos los beneficios en mejorar la asistencia y la innovación tecnológica.",
     },
+    {
+      icon: <Heart size={96} stroke="0.8" color="var(--primary)" />,
+      title: "La confianza de más de 50 años de experiencia",
+      value:
+        "Líderes en el sector, ya que reinvertimos los beneficios en mejorar la asistencia y la innovación tecnológica.",
+    },
+    {
+      icon: <Heart size={96} stroke="0.8" color="var(--primary)" />,
+      title: "La confianza de más de 50 años de experiencia",
+      value:
+        "Líderes en el sector, ya que reinvertimos los beneficios en mejorar la asistencia y la innovación tecnológica.",
+    },
+    {
+      icon: <Heart size={96} stroke="0.8" color="var(--primary)" />,
+      title: "La confianza de más de 50 años de experiencia",
+      value:
+        "Líderes en el sector, ya que reinvertimos los beneficios en mejorar la asistencia y la innovación tecnológica.",
+    },
+    {
+      icon: <Heart size={96} stroke="0.8" color="var(--primary)" />,
+      title: "La confianza de más de 50 años de experiencia",
+      value:
+        "Líderes en el sector, ya que reinvertimos los beneficios en mejorar la asistencia y la innovación tecnológica.",
+    },
   ];
   return (
     <>
@@ -198,7 +222,7 @@ function App() {
       </section>
       <section className="section section_secondary">
         <p className="section_title">Por qué confiar en nosotros</p>
-        <Group justify="center" gap="48px">
+        <Group justify="center" gap="xxl">
           {benefits.map((b, i) => (
             <Card key={i}>
               {b.icon}
@@ -268,7 +292,7 @@ function App() {
                 >
                   <p
                     style={{
-                      fontSize: "20px",
+                      fontSize: "var(--text-l)",
                       lineHeight: "28px",
                       letterSpacing: "0.1px",
                     }}
@@ -385,15 +409,15 @@ function App() {
             </Button>
           </div>
           <form className="form">
-            <Group flexDirection="column" className="input-field" gap="xs">
+            <div className="input-field">
               <label htmlFor="name">Nombre</label>
               <input type="text" id="name" name="name" />
-            </Group>
-            <Group flexDirection="column" className="input-field">
+            </div>
+            <div className="input-field">
               <label htmlFor="phone">Teléfono</label>
               <input type="tel" id="phone" name="phone" />
-            </Group>
-            <Group flexDirection="column" className="input-field">
+            </div>
+            <div className="input-field">
               <label htmlFor="subject">¿Cuál es tu pregunta?</label>
               <textarea
                 name="subject"
@@ -401,7 +425,7 @@ function App() {
                 defaultValue="Me gustaría recibir información acerca de los seguros que puede ofrecerme ASISA."
                 rows="5"
               ></textarea>
-            </Group>
+            </div>
             <Button>Contacta con nosotros</Button>
           </form>
         </Grid>
