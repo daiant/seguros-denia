@@ -19,6 +19,7 @@ import Card from "./components/card/card";
 import * as Accordion from "@radix-ui/react-accordion";
 import Avatar from "./components/avatar/avatar";
 import EmblaCarousel from "./components/carousel/embla/embla-carousel";
+import Insurance from "./components/insurance/insurance";
 
 function App() {
   const [headerHeight, setHeaderHeight] = React.useState(121);
@@ -107,7 +108,6 @@ function App() {
       <Header
         style={{
           paddingInline: "var(--spacing)",
-          // top: "-32px",
         }}
         setHeight={setHeaderHeight}
       />
@@ -314,7 +314,11 @@ function App() {
       </section>
       <section className="section">
         <p className="section_title">Elige tu seguro</p>
-        <i>throw new Error(&quot;Section not defined&quot;)</i>
+        <p className="section_subtitle">
+          En Agencia ASISA Dénia te ofrecemos una gran variedad de seguros con
+          todas las coberturas que necesitas para ti y para tu familia
+        </p>
+        <Insurance />
       </section>
       <section className="section section_secondary">
         <p className="section_title">

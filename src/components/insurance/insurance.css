@@ -1,0 +1,161 @@
+.insurance-wrapper {
+  ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: var(--xxl);
+    flex-wrap: wrap;
+  }
+}
+
+.insurance-form {
+  display: flex;
+  gap: var(--lg);
+  align-items: center;
+  padding: var(--md) var(--lg);
+  border: 1px solid var(--background-overlay);
+  border-radius: var(--md);
+  box-shadow: var(--shadow);
+  justify-content: center;
+  width: fit-content;
+  margin-inline: auto;
+  margin-block-end: var(--xxl);
+}
+
+.insurance-form select {
+  height: 38px;
+  padding-inline: var(--md);
+  font-size: var(--text-md);
+  border: none;
+  border-bottom: 1px solid;
+  background-color: transparent;
+}
+
+.insurance-form select:focus {
+  outline-color: var(--background-overlay);
+}
+
+.insurance {
+  flex: 1;
+  max-width: 350px;
+  min-width: min(100%, 300px);
+  border-radius: 4px;
+
+  .accent_cta {
+    background-color: var(--accent);
+    text-align: center;
+    color: var(--background);
+    text-transform: uppercase;
+    padding-block: 4px;
+    font-size: var(--text-sm);
+  }
+
+  .container {
+    border: 4px solid var(--background-5);
+    padding-block: var(--lg) var(--md);
+    padding-inline: var(--md);
+
+    .header {
+      padding-block-start: var(--md);
+      text-align: center;
+
+      .title {
+        font-size: var(--text-lg);
+        position: relative;
+        margin-inline: auto;
+        width: fit-content;
+        margin-block-end: 1.5em;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 25%;
+          width: 50%;
+          height: 1px;
+          background-color: var(--primary);
+        }
+      }
+
+      .description {
+        font-size: var(--text-md);
+        margin-block-end: 1.5em;
+        padding-inline: var(--md);
+      }
+
+      .price_container_title {
+        font-size: var(--text-xs);
+      }
+
+      .price_container {
+        padding-block: var(--md);
+        display: flex;
+        align-items: flex-start;
+        width: fit-content;
+        margin-inline: auto;
+        color: var(--primary);
+
+        p {
+          font-size: var(--text-md);
+        }
+
+        .price_euros {
+          font-size: 64px;
+          line-height: 0.5;
+        }
+      }
+
+      .variant {
+        background-color: var(--background-5);
+        padding-block: 4px;
+        text-transform: uppercase;
+        margin-block: 1em;
+      }
+    }
+
+    .coverages {
+      text-align: center;
+      margin-block-end: var(--md);
+
+      .coverage_title {
+        font-weight: bold;
+      }
+
+      .coverage_list {
+        display: grid;
+        gap: var(--md);
+        padding: var(--md);
+
+
+        .coverage_item {
+          display: flex;
+          text-align: left;
+          align-items: flex-start;
+          gap: var(--md);
+
+          .icon {
+            color: yellow;
+          }
+
+          .covered {
+            color: green;
+          }
+
+          .not-covered {
+            color: red;
+          }
+
+          p {
+            flex-grow: 1;
+            text-wrap: pretty;
+          }
+        }
+      }
+    }
+
+    .footer {
+      display: grid;
+      place-content: center;
+    }
+  }
+}
