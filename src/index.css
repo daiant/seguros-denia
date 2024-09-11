@@ -5,6 +5,7 @@ body {
   margin: 0;
   background-color: var(--background);
   color: var(--foreground);
+  scroll-behavior: smooth;
 }
 
 *,
@@ -78,6 +79,7 @@ img.with-border {
 }
 
 .section {
+  scroll-margin-top: 96px;
   padding: var(--spacing);
   padding-block-start: calc(var(--spacing) * 0.5);
   font-size: var(--text-md);

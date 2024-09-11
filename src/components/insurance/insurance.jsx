@@ -6,6 +6,7 @@ import { PaperPlaneTilt } from "@phosphor-icons/react";
 import "./insurance.css";
 import { insuranceList } from "./insurance.db";
 import { Check, X } from "@phosphor-icons/react";
+import { constants } from "../../constants";
 
 export default function Insurance() {
   const [form, setForm] = React.useReducer(
@@ -107,8 +108,8 @@ export function InsuranceItem({ item }) {
             ))}
           </ul>
         </div>
-        <div className="footer">
-          <Button>
+        <div className="insurance-footer">
+          <Button href={constants.sections.contacta.target}>
             <Group gap="sm">
               <span>Contrata tu seguro</span>
               <PaperPlaneTilt />

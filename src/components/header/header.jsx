@@ -10,6 +10,7 @@ import {
 } from "@phosphor-icons/react";
 import Button from "../button/button";
 import React from "react";
+import { constants } from "../../constants";
 
 // eslint-disable-next-line react/prop-types
 export default function Header({ hideContact, style = {}, setHeight }) {
@@ -54,12 +55,19 @@ export default function Header({ hideContact, style = {}, setHeight }) {
         >
           <Group justify="flex-start">
             <NavigationMenu.Item>
-              <NavigationMenu.Link href="#" className="underline">
+              <NavigationMenu.Link
+                href={constants.maps}
+                target="_blank"
+                className="underline"
+              >
                 Calle Sandunga 51, Dénia
               </NavigationMenu.Link>
             </NavigationMenu.Item>
             <NavigationMenu.Item className="item-desktop">
-              <NavigationMenu.Link href="#" className="underline">
+              <NavigationMenu.Link
+                href={constants.whatsapp}
+                className="underline"
+              >
                 +34637049244
               </NavigationMenu.Link>
             </NavigationMenu.Item>
@@ -75,10 +83,18 @@ export default function Header({ hideContact, style = {}, setHeight }) {
               alt="See page in English"
               title="See page in English"
             />
-            <NavigationMenu.Link href="#" style={{ display: "grid" }}>
+            <NavigationMenu.Link
+              href={constants.instagram}
+              target="_blank"
+              style={{ display: "grid" }}
+            >
               <InstagramLogo size={24} />
             </NavigationMenu.Link>
-            <NavigationMenu.Link href="#" style={{ display: "grid" }}>
+            <NavigationMenu.Link
+              href={constants.linkedin}
+              target="_blank"
+              style={{ display: "grid" }}
+            >
               <LinkedinLogo size={24} />
             </NavigationMenu.Link>
           </Group>
@@ -100,17 +116,25 @@ export default function Header({ hideContact, style = {}, setHeight }) {
         <Group>
           <Group gap="xxs" className="item-desktop">
             <HouseSimple size={18} color="var(--accent)" />
-            <a href="#" style={{ fontSize: "var(--text-md)" }}>
+            <a
+              href={constants.sections.inicio.target}
+              style={{ fontSize: "var(--text-md)" }}
+            >
               Inicio
             </a>
           </Group>
           <Group gap="xxs" className="item-desktop">
             <Heart size={18} color="var(--accent)" />
-            <a href="#" style={{ fontSize: "var(--text-md)" }}>
+            <a
+              href={constants.sections.seguros.target}
+              style={{ fontSize: "var(--text-md)" }}
+            >
               Seguros
             </a>
           </Group>
-          <Button variant="accent">Contacta</Button>
+          <Button variant="accent" href={constants.sections.contacta.target}>
+            Contacta
+          </Button>
         </Group>
       </NavigationMenu.List>
     </NavigationMenu.Root>

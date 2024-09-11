@@ -21,6 +21,7 @@ import * as Accordion from "@radix-ui/react-accordion";
 import Avatar from "./components/avatar/avatar";
 import EmblaCarousel from "./components/carousel/embla/embla-carousel";
 import Insurance from "./components/insurance/insurance";
+import { constants } from "./constants";
 
 function App() {
   const [headerHeight, setHeaderHeight] = React.useState(121);
@@ -167,13 +168,19 @@ function App() {
                 Tu aseguradora de confianza en Dénia desde hace más de 20 años.
               </p>
               <Group>
-                <Button variant="secondary">
+                <Button
+                  variant="secondary"
+                  href={constants.sections.seguros.target}
+                >
                   <Group gap="sm">
                     <span>Elige tu seguro</span>
                     <PaperPlaneTilt />
                   </Group>
                 </Button>
-                <Button variant="accent">
+                <Button
+                  variant="accent"
+                  href={constants.sections.contacta.target}
+                >
                   <Group gap="sm">
                     <span>Contacta con nosotros</span>
                     <WhatsappLogo />
@@ -205,13 +212,17 @@ function App() {
             <Group
               style={{ marginBlockStart: "auto", paddingBlockEnd: "var(--md)" }}
             >
-              <Button>
+              <Button href={constants.sections.contacta.target}>
                 <Group>
                   <span>Contacta con nosotros</span>
                   <PaperPlaneTilt size={24} />
                 </Group>
               </Button>
-              <Button variant="secondary">
+              <Button
+                variant="secondary"
+                href={constants.whatsapp}
+                target="_blank"
+              >
                 <Group>
                   <span>Envíanos un mensaje</span>
                   <WhatsappLogo size={24} />
@@ -254,7 +265,7 @@ function App() {
               <Star weight="fill" color="var(--accent)" />
             </Group>
           </Group>
-          <Button variant="secondary">
+          <Button variant="secondary" href={constants.maps} target="_blank">
             <Group>
               <span>Escribir una reseña</span>
               <PaperPlaneTilt />
@@ -288,6 +299,7 @@ function App() {
                     flexDirection: "column",
                     alignItems: "flex-start",
                     gap: "var(--md)",
+                    userSelect: "none",
                   }}
                   key={opinion.value}
                 >
@@ -337,7 +349,7 @@ function App() {
           </Grid>
         </div>
       </section>
-      <section className="section">
+      <section className="section" id={constants.sections.seguros.value}>
         <p className="section_title">Elige tu seguro</p>
         <p className="section_subtitle">
           En Agencia ASISA Dénia te ofrecemos una gran variedad de seguros con
@@ -387,7 +399,10 @@ function App() {
           ))}
         </Group>
       </section>
-      <section className="section section_secondary">
+      <section
+        className="section section_secondary"
+        id={constants.sections.contacta.value}
+      >
         <p className="section_title">¿Quedamos?</p>
         <p className="section_subtitle">
           En ASISA Dénia siempre estamos disponibles para ti ofreciéndote
@@ -396,13 +411,21 @@ function App() {
         <Grid>
           <div style={{ height: "fit-content" }}>
             <img src="https://picsum.photos/900/600" className="with-border" />
-            <Button variant="transparent">
+            <Button
+              variant="transparent"
+              href={constants.whatsapp}
+              style={{ display: "block", width: "fit-content" }}
+            >
               <Group>
                 <WhatsappLogo size={24} color="var(--accent)" />
                 <span>+34637049244</span>
               </Group>
             </Button>
-            <Button variant="transparent">
+            <Button
+              variant="transparent"
+              href={constants.mail}
+              style={{ display: "block", width: "fit-content" }}
+            >
               <Group>
                 <Envelope size={24} color="var(--accent)" />
                 <span>maparreno@asisa.es</span>
