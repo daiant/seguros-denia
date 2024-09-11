@@ -4,6 +4,7 @@ import "./components/accordion/accordion.css";
 import Header from "./components/header/header";
 import Group from "./components/group/group";
 import Button from "./components/button/button";
+import Footer from "./components/footer/footer";
 import {
   CaretDown,
   Heart,
@@ -430,6 +431,7 @@ function App() {
           </form>
         </Grid>
       </section>
+      <Footer />
     </>
   );
 }

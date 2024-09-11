@@ -31,7 +31,6 @@ export default function Header({ hideContact, style = {}, setHeight }) {
   return (
     <NavigationMenu.Root
       style={{
-        ...style,
         transition: threshold
           ? "300ms cubic-bezier(0.87, 0, 0.13, 1)"
           : "0ms linear",
@@ -40,6 +39,7 @@ export default function Header({ hideContact, style = {}, setHeight }) {
         position: threshold ? "sticky" : "relative",
         top: threshold ? "-32px" : "0px",
         zIndex: 999,
+        ...style,
       }}
       id="navbar"
     >
