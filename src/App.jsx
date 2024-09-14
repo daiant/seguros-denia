@@ -45,13 +45,18 @@ function App() {
   const opinions = [
     {
       value: `Cuando surgen los problemas es cuando se necesitan profesionales de verdad, y Ma Angeles y su equipo están a la altura de cualquiera que sean las circunstancias tanto profesionalmente como personalmente llevando la empatía y la profesionalidad de la mano en todos sus servicios. El valor añadido a cualquier trabajo es sin duda la calidad de las personas.`,
-      time: "Hace dos años",
+      name: "Mercè Xicola",
       stars: 5,
     },
     {
-      value: `HOla soy otroCuando surgen los problemas es cuando se necesitan profesionales de verdad, y Ma Angeles y su equipo están a la altura de cualquiera que sean las circunstancias tanto profesionalmente como personalmente llevando la empatía y la profesionalidad de la mano en todos sus servicios. El valor añadido a cualquier trabajo es sin duda la calidad de las personas.`,
-      time: "Hace dos años",
+      value: `Profesionales , Amables, y resolutivas...estoy contento con su atención. Y sin desplazarme....todo telemáticamente, cosa que también se agradece.`,
+      name: "Pau",
       stars: 5,
+    },
+    {
+      value: "Atención personalizada, profesionalidad, seriedad… resuelven cualquier duda y te aconsejan pensando en lo mejor para el cliente. Trato excepcional.",
+      name: "Jasmina Llull Vicente",
+    stars: 5,
     },
   ];
 
@@ -298,6 +303,7 @@ function App() {
                     flexDirection: "column",
                     alignItems: "flex-start",
                     gap: "var(--md)",
+                    padding: 'var(--md)',
                     userSelect: "none",
                   }}
                   key={opinion.value}
@@ -322,7 +328,7 @@ function App() {
                     }}
                   />
                   <Group>
-                    <p>{opinion.time}</p>
+                    <p>{opinion.name}</p>
                     <Group gap="0">
                       {range(opinion.stars).map((r, i) => (
                         <Star
