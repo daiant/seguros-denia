@@ -1,12 +1,10 @@
-.insurance-wrapper {
-  ul {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    gap: var(--xxl);
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+.insurance-wrapper ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  gap: var(--xxl);
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .insurance-form {
@@ -43,122 +41,122 @@
   max-width: 350px;
   min-width: min(100%, 300px);
   border-radius: 4px;
+}
 
-  .accent_cta {
-    background-color: var(--accent);
-    text-align: center;
-    color: var(--background);
-    text-transform: uppercase;
-    padding-block: 4px;
-    font-size: var(--text-sm);
-  }
+.insurance .accent_cta {
+  background-color: var(--accent);
+  text-align: center;
+  color: var(--background);
+  text-transform: uppercase;
+  padding-block: 4px;
+  font-size: var(--text-sm);
+}
 
-  .container {
-    border: 4px solid var(--background-5);
-    padding-block: var(--lg) var(--md);
-    padding-inline: var(--md);
+.insurance .container {
+  border: 4px solid var(--background-5);
+  padding-block: var(--lg) var(--md);
+  padding-inline: var(--md);
+}
 
-    .header {
-      padding-block-start: var(--md);
-      text-align: center;
+.insurance .header {
+  padding-block-start: var(--md);
+  text-align: center;
+}
 
-      .title {
-        font-size: var(--text-lg);
-        position: relative;
-        margin-inline: auto;
-        width: fit-content;
-        margin-block-end: 1.5em;
+.insurance .title {
+  font-size: var(--text-lg);
+  position: relative;
+  margin-inline: auto;
+  width: fit-content;
+  margin-block-end: 1.5em;
 
-        &::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 25%;
-          width: 50%;
-          height: 1px;
-          background-color: var(--primary);
-        }
-      }
+}
 
-      .description {
-        font-size: var(--text-md);
-        margin-block-end: 1.5em;
-        padding-inline: var(--md);
-      }
+.insurance .title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  height: 1px;
+  background-color: var(--primary);
+}
 
-      .price_container_title {
-        font-size: var(--text-xs);
-      }
+.insurance .container .description {
+  font-size: var(--text-md);
+  margin-block-end: 1.5em;
+  padding-inline: var(--md);
+}
 
-      .price_container {
-        padding-block: var(--md);
-        display: flex;
-        align-items: flex-start;
-        width: fit-content;
-        margin-inline: auto;
-        color: var(--primary);
+.insurance .price_container_title {
+  font-size: var(--text-xs);
+}
 
-        p {
-          font-size: var(--text-md);
-        }
+.insurance .price_container {
+  padding-block: var(--md);
+  display: flex;
+  align-items: flex-start;
+  width: fit-content;
+  margin-inline: auto;
+  color: var(--primary);
+}
 
-        .price_euros {
-          font-size: 64px;
-          line-height: 0.5;
-        }
-      }
+.insurance .price_container p {
+  font-size: var(--text-md);
+}
 
-      .variant {
-        background-color: var(--background-5);
-        padding-block: 4px;
-        text-transform: uppercase;
-        margin-block: 1em;
-      }
-    }
+.insurance .price_container .price_euros {
+  font-size: 64px;
+  line-height: 0.5;
+}
 
-    .coverages {
-      text-align: center;
-      margin-block-end: var(--md);
+.insurance .variant {
+  background-color: var(--background-5);
+  padding-block: 4px;
+  text-transform: uppercase;
+  margin-block: 1em;
+}
 
-      .coverage_title {
-        font-weight: bold;
-      }
+.insurance .coverages {
+  text-align: center;
+  margin-block-end: var(--md);
+}
 
-      .coverage_list {
-        display: grid;
-        gap: var(--md);
-        padding: var(--md);
+.insurance .container .coverages .coverage_title {
+  font-weight: bold;
+}
 
+.insurance .container .coverage_list {
+  display: grid;
+  gap: var(--md);
+  padding: var(--md);
+}
 
-        .coverage_item {
-          display: flex;
-          text-align: left;
-          align-items: flex-start;
-          gap: var(--md);
+.coverage_item {
+  display: flex;
+  text-align: left;
+  align-items: flex-start;
+  gap: var(--md);
+}
 
-          .icon {
-            color: yellow;
-          }
+.insurance .coverage_item .icon {
+  color: yellow;
+}
 
-          .covered {
-            color: green;
-          }
+.insurance .coverage_item .covered {
+  color: green;
+}
 
-          .not-covered {
-            color: red;
-          }
+.insurance .coverage_item .not-covered {
+  color: red;
+}
 
-          p {
-            flex-grow: 1;
-            text-wrap: pretty;
-          }
-        }
-      }
-    }
+.insurance .coverage_item p {
+  flex-grow: 1;
+  text-wrap: pretty;
+}
 
-    .insurance-footer {
-      display: grid;
-      place-content: center;
-    }
-  }
+.insurance .container .insurance-footer {
+  display: grid;
+  place-content: center;
 }

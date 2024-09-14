@@ -154,7 +154,7 @@ function App() {
           style={{ display: "flex", alignItems: "center", flexGrow: 1 }}
         >
           <Grid>
-            <Group flexDirection="column" align="flex-start" justify="center">
+            <Group flexDirection="column" align="flex-start" justify="center" style={{paddingBlock: '32px 16px'}}>
               <p style={{ fontSize: "var(--text-lg)", marginBlock: 0 }}>
                 Asegurando a las familias de Dénia desde hace más de 20 años
               </p>
@@ -162,7 +162,6 @@ function App() {
                 style={{
                   fontSize: "var(--text-xxl)",
                   fontFamily: "var(--text-title)",
-                  marginBlock: "1em",
                 }}
               >
                 Tu aseguradora de confianza en Dénia desde hace más de 20 años.
@@ -188,7 +187,7 @@ function App() {
                 </Button>
               </Group>
             </Group>
-            <img src="https://picsum.photos/900/600" className="with-border" />
+            <img src="https://picsum.photos/900/600" className="with-border" style={{height: 'unset'}} />
           </Grid>
         </EmblaCarousel>
       </section>
