@@ -94,7 +94,7 @@ export function InsuranceItem({ item }) {
             </p>
             <p>€/mes</p>
           </div>
-          <p className="variant">{item.variant}</p>
+          {item.variant && <p className="variant">{item.variant}</p>}
         </div>
         <div className="coverages">
           <p className="coverage_title">Coberturas del seguro médico</p>

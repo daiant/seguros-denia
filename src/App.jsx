@@ -14,6 +14,10 @@ import {
   WhatsappLogo,
   Question,
   Envelope,
+  SunHorizon,
+  FingerprintSimple,
+  PersonSimpleCircle,
+  UserCircleGear,
 } from "@phosphor-icons/react";
 import Grid from "./components/grid/grid";
 import Card from "./components/card/card";
@@ -54,9 +58,10 @@ function App() {
       stars: 5,
     },
     {
-      value: "Atención personalizada, profesionalidad, seriedad… resuelven cualquier duda y te aconsejan pensando en lo mejor para el cliente. Trato excepcional.",
+      value:
+        "Atención personalizada, profesionalidad, seriedad… resuelven cualquier duda y te aconsejan pensando en lo mejor para el cliente. Trato excepcional.",
       name: "Jasmina Llull Vicente",
-    stars: 5,
+      stars: 5,
     },
   ];
 
@@ -104,34 +109,36 @@ function App() {
   ];
   const benefits = [
     {
-      icon: <Heart size={96} stroke="0.8" color="var(--primary)" />,
-      title: "La confianza de más de 50 años de experiencia",
+      icon: <SunHorizon size={72} stroke="0.7" color="var(--primary)" />,
+      title: "Con nosotros, no hay problemas",
       value:
-        "Líderes en el sector, ya que reinvertimos los beneficios en mejorar la asistencia y la innovación tecnológica.",
+        "Te ofrecemos la tranquilidad de un servicio que siempre responde y cumple.",
     },
     {
-      icon: <Heart size={96} stroke="0.8" color="var(--primary)" />,
-      title: "La confianza de más de 50 años de experiencia",
+      icon: <FingerprintSimple size={72} stroke="0.7" color="var(--primary)" />,
+      title: "Total privacidad",
       value:
-        "Líderes en el sector, ya que reinvertimos los beneficios en mejorar la asistencia y la innovación tecnológica.",
+        "Protegemos tu información con total confidencialidad y seguridad.",
     },
     {
-      icon: <Heart size={96} stroke="0.8" color="var(--primary)" />,
-      title: "La confianza de más de 50 años de experiencia",
+      icon: (
+        <PersonSimpleCircle size={72} stroke="0.7" color="var(--primary)" />
+      ),
+      title: "Siempre accesibles",
       value:
-        "Líderes en el sector, ya que reinvertimos los beneficios en mejorar la asistencia y la innovación tecnológica.",
+        "Siempre estamos disponibles para brindarte apoyo cuando lo necesites, tanto en persona como on-line.",
     },
     {
-      icon: <Heart size={96} stroke="0.8" color="var(--primary)" />,
-      title: "La confianza de más de 50 años de experiencia",
+      icon: <Heart size={72} stroke="0.7" color="var(--primary)" />,
+      title: "La confianza de más de 30 años de experiencia",
       value:
-        "Líderes en el sector, ya que reinvertimos los beneficios en mejorar la asistencia y la innovación tecnológica.",
+        "Nuestra trayectoria nos permite entender y resolver cualquier desafío.",
     },
     {
-      icon: <Heart size={96} stroke="0.8" color="var(--primary)" />,
-      title: "La confianza de más de 50 años de experiencia",
+      icon: <UserCircleGear size={72} stroke="0.7" color="var(--primary)" />,
+      title: "Soluciones a tu medida",
       value:
-        "Líderes en el sector, ya que reinvertimos los beneficios en mejorar la asistencia y la innovación tecnológica.",
+        "Ofrecemos soluciones personalizadas, adaptadas a tus necesidades.",
     },
   ];
   return (
@@ -159,7 +166,12 @@ function App() {
           style={{ display: "flex", alignItems: "center", flexGrow: 1 }}
         >
           <Grid>
-            <Group flexDirection="column" align="flex-start" justify="center" style={{paddingBlock: '32px 16px'}}>
+            <Group
+              flexDirection="column"
+              align="flex-start"
+              justify="center"
+              style={{ paddingBlock: "32px 16px" }}
+            >
               <p style={{ fontSize: "var(--text-lg)", marginBlock: 0 }}>
                 Asegurando a las familias de Dénia desde hace más de 20 años
               </p>
@@ -192,7 +204,11 @@ function App() {
                 </Button>
               </Group>
             </Group>
-            <img src="https://picsum.photos/900/600" className="with-border" style={{height: 'unset'}} />
+            <img
+              src="https://picsum.photos/900/600"
+              className="with-border"
+              style={{ height: "unset" }}
+            />
           </Grid>
         </EmblaCarousel>
       </section>
@@ -303,7 +319,7 @@ function App() {
                     flexDirection: "column",
                     alignItems: "flex-start",
                     gap: "var(--md)",
-                    padding: 'var(--md)',
+                    padding: "var(--md)",
                     userSelect: "none",
                   }}
                   key={opinion.value}
