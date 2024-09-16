@@ -140,6 +140,10 @@
 }
 
 .insurance .coverage_item .icon {
+  flex-shrink: 0;
+}
+
+.insurance .coverage_item .icon {
   color: yellow;
 }
 

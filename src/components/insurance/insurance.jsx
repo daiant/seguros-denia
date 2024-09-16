@@ -4,7 +4,7 @@ import Button from "../button/button";
 import Group from "../group/group";
 import { PaperPlaneTilt } from "@phosphor-icons/react";
 import "./insurance.css";
-import { insuranceList } from "./insurance.db";
+import { insuranceList, insuranceListIndex } from "./insurance.db";
 import { Check, X } from "@phosphor-icons/react";
 import { constants } from "../../constants";
 
@@ -19,13 +19,18 @@ export default function Insurance() {
       target: "myself",
     }
   );
+
+  function getInsuranceListItems() {
+    return insuranceListIndex[form.insurance][form.target];
+  }
   return (
     <div className="insurance-wrapper">
       <InsuranceForm form={form} onChange={setForm} />
       <ul>
-        {insuranceList.map((insurance) => (
-          <InsuranceItem item={insurance} key={insurance.title} />
-        ))}
+        {getInsuranceListItems().map((insuranceIndex) => {
+          const insurance = insuranceList.find((i) => i.id === insuranceIndex);
+          return <InsuranceItem item={insurance} key={insurance.title} />;
+        })}
       </ul>
     </div>
   );
@@ -41,9 +46,14 @@ export function InsuranceForm({ form, onChange }) {
         value={form.insurance}
         onChange={(e) => onChange({ insurance: e.target.value })}
       >
-        <option value="life">un seguro de vida</option>
         <option value="health">un seguro de salud</option>
-        <option value="car">un seguro de coche</option>
+        <option value="life">un seguro de vida</option>
+        <option value="dental">un seguro dental</option>
+        <option value="accidents">un seguro de accidentes</option>
+        <option value="hospitalization">un seguro de hospitalización</option>
+        <option value="passing">un seguro de decesos</option>
+        <option value="pets">un seguro de mascotas</option>
+        <option value="travel">un seguro de viaje</option>
       </select>
       <p>para</p>
       <select
@@ -92,12 +102,14 @@ export function InsuranceItem({ item }) {
             <p className="price_cents">
               , {String(item.price[1]).padStart(2, "0")}
             </p>
-            <p>€/mes</p>
+            <p>€/{item.subtitle_price ?? "mes"}</p>
           </div>
           {item.variant && <p className="variant">{item.variant}</p>}
         </div>
         <div className="coverages">
-          <p className="coverage_title">Coberturas del seguro médico</p>
+          {item.coverages.length > 0 && (
+            <p className="coverage_title">Coberturas del seguro médico</p>
+          )}
           <ul className="coverage_list">
             {item.coverages?.map((coverage) => (
               <li className="coverage_item" key={coverage.name}>

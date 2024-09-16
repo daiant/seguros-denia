@@ -1,3 +1,54 @@
+export const insuranceListIndex = {
+  'health': {
+    "myself": [1, 2, 3, 4, 5, 6],
+    "family": [1, 2, 3, 4, 5, 6],
+    "children": [1, 2, 3, 4, 5, 6],
+    "other": [1, 2, 3, 4, 5, 6],
+  },
+  'dental': {
+    "myself": [7],
+    "family": [8],
+    "children": [7, 8],
+    "other": [7, 8],
+  },
+  'life': {
+    "myself": [9, 10],
+    "family": [9, 10],
+    "children": [9, 10],
+    "other": [9, 10],
+  },
+  'accidents': {
+    "myself": [11, 12, 13],
+    "family": [11, 12, 13],
+    "children": [11, 12, 13],
+    "other": [11, 12, 13],
+  },
+  'hospitalization': {
+    "myself": [14],
+    "family": [14],
+    "children": [14],
+    "other": [14],
+  },
+  'passing': {
+    "myself": [15],
+    "family": [15],
+    "children": [15],
+    "other": [15],
+  },
+  'pets': {
+    "myself": [16],
+    "family": [16],
+    "children": [16],
+    "other": [16],
+  },
+
+  'travel': {
+    "myself": [17, 18, 19, 20],
+    "family": [17, 18, 19, 20],
+    "children": [20],
+    "other": [17, 18, 19, 20],
+  },
+}
 export const insuranceList = [
   {
     id: 1,
@@ -128,7 +179,7 @@ export const insuranceList = [
     ]
   },
   {
-    id: 7,
+    id: 8,
     title: 'Asisa Dental Familiar',
     description: 'Seguro dental familiar con amplias coberturas, tratamientos y un precio único hasta cuatro asegurados.',
     price: [8, 40],
@@ -148,52 +199,42 @@ export const insuranceList = [
     ]
   },
   {
-    id: 8,
+    id: 9,
     title: 'Asisa Vida Tranquilidad',
     description: 'La tranquilidad de tener el futuro garantizado. Tu seguro de vida a un precio muy competitivo',
     price: [30, 0],
     variant: undefined,
+    subtitle_price: 'año',
     coverages: [],
   },
   {
-    id: 9,
+    id: 10,
     title: 'Asisa Vida Proteccion Hipoteca',
     description: 'Un seguro de vida que garantiza la estabilidad financiera de tu familia frente a impagos de la hipoteca en caso de fallecimiento o incapacidad',
+    subtitle_price: 'año',
     price: [30, 0],
     variant: undefined,
     coverages: [],
   },
   {
-    id: 10,
+    id: 11,
     title: 'Asisa Accidentes',
     description: 'Seguro de fallecimiento por accidente con cobertura internacional. Elige la indemnización que quieras',
     price: [11, 36],
     variant: undefined,
+    subtitle_price: 'año',
     coverages: [
       { name: 'Indemnización por fallecimiento', icon: 'covered' },
-      { name: 'Cobertura internacional', icon: 'covered' },
-    ]
-  },
-  {
-    id: 11,
-    title: 'Asisa Accidentes Plus 1',
-    description: 'Seguro de fallecimiento por accidente con todas las coberturas que puedas necesitar',
-    price: [20, 88],
-    variant: undefined,
-    coverages: [
-      { name: 'Indemnización por fallecimiento', icon: 'covered' },
-      { name: 'Indemnización y renta mensual por invalidez permanente y absoluta', icon: 'covered' },
-      { name: 'Indemnización diaria por hospitalización', icon: 'covered' },
-      { name: 'Cirugía estética reparadora', icon: 'covered' },
       { name: 'Cobertura internacional', icon: 'covered' },
     ]
   },
   {
     id: 12,
-    title: 'Asisa Accidentes Plus 2',
-    description: 'Seguro de fallecimiento por accidente con todas las coberturas e indemnizaciones más altas',
-    price: [32, 59],
+    title: 'Asisa Accidentes Plus 1',
+    description: 'Seguro de fallecimiento por accidente con todas las coberturas que puedas necesitar',
+    price: [20, 88],
     variant: undefined,
+    subtitle_price: 'año',
     coverages: [
       { name: 'Indemnización por fallecimiento', icon: 'covered' },
       { name: 'Indemnización y renta mensual por invalidez permanente y absoluta', icon: 'covered' },
@@ -204,16 +245,32 @@ export const insuranceList = [
   },
   {
     id: 13,
+    title: 'Asisa Accidentes Plus 2',
+    description: 'Seguro de fallecimiento por accidente con todas las coberturas e indemnizaciones más altas',
+    price: [32, 59],
+    variant: undefined,
+    subtitle_price: 'año',
+    coverages: [
+      { name: 'Indemnización por fallecimiento', icon: 'covered' },
+      { name: 'Indemnización y renta mensual por invalidez permanente y absoluta', icon: 'covered' },
+      { name: 'Indemnización diaria por hospitalización', icon: 'covered' },
+      { name: 'Cirugía estética reparadora', icon: 'covered' },
+      { name: 'Cobertura internacional', icon: 'covered' },
+    ]
+  },
+  {
+    id: 14,
     title: 'Seguro Asisa Hospitalización',
     description: 'Asisa Hospitalización es la mejor solución para asegurados y no asegurados de ASISA, cubriendo tus necesidades y las de tu familia si tuvieras que ser hospitalizado.',
     price: [26, 90],
+    subtitle_price: 'año',
     coverages: [
       { name: 'Indemnización diaria por hospitalización', icon: 'covered' },
       { name: 'Cobertura internacional', icon: 'covered' },
     ]
   },
   {
-    id: 14,
+    id: 15,
     title: 'Seguro Ocaso Asistencia Familiar Plena',
     price: [7, 50],
     description: 'El seguro de decesos que cuida de ti y de los tuyos.',
@@ -232,7 +289,7 @@ export const insuranceList = [
     ]
   },
   {
-    id: 15,
+    id: 16,
     title: 'Seguro Asisa Mascotas',
     price: [9, 15],
     description: 'Con el seguro para mascotas de ASISA tu perro o gato tendrá siempre las mejores coberturas en asistencia veterinaria',
@@ -249,7 +306,7 @@ export const insuranceList = [
     ],
   },
   {
-    id: 16,
+    id: 17,
     title: 'Asisa Travel And You',
     description: 'Seguro flexible, coberturas necesarias para todo tipo de viaje de negocio, ocio y vacacional. Fácil contratación, adaptable a su duración y destino',
     price: [14, 73],
@@ -265,7 +322,7 @@ export const insuranceList = [
     ]
   },
   {
-    id: 17,
+    id: 18,
     title: 'Asisa Travel And You Cruise',
     description: 'Este seguro de viaje es ideal para quienes quieren no dejar nada al azar para su viaje en crucero',
     price: [22, 6],
@@ -281,7 +338,7 @@ export const insuranceList = [
     ]
   },
   {
-    id: 18,
+    id: 19,
     title: 'Asisa Travel All Year',
     description: 'Para aquellos viajeros que quieren viajar asegurados todo el año a cualquier destino con toda la tranquilidad en todos sus viajes',
     price: [362, 39],
@@ -297,7 +354,7 @@ export const insuranceList = [
     ]
   },
   {
-    id: 19,
+    id: 20,
     title: 'Asisa Travel Study',
     description: 'Seguro de viaje para estudiantes. Ideal para cursos, formaciones, Erasmus y estudios realizados en el extranjero en general',
     price: [56, 76],
