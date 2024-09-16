@@ -7,6 +7,7 @@ import "./insurance.css";
 import { insuranceList, insuranceListIndex } from "./insurance.db";
 import { Check, X } from "@phosphor-icons/react";
 import { constants } from "../../constants";
+import { Animate } from "../animate/animate";
 
 export default function Insurance() {
   const [form, setForm] = React.useReducer(
@@ -26,12 +27,16 @@ export default function Insurance() {
   return (
     <div className="insurance-wrapper">
       <InsuranceForm form={form} onChange={setForm} />
-      <ul>
-        {getInsuranceListItems().map((insuranceIndex) => {
-          const insurance = insuranceList.find((i) => i.id === insuranceIndex);
-          return <InsuranceItem item={insurance} key={insurance.title} />;
-        })}
-      </ul>
+      <Animate on={form}>
+        <ul>
+          {getInsuranceListItems().map((insuranceIndex) => {
+            const insurance = insuranceList.find(
+              (i) => i.id === insuranceIndex
+            );
+            return <InsuranceItem item={insurance} key={insurance.id} />;
+          })}
+        </ul>
+      </Animate>
     </div>
   );
 }
