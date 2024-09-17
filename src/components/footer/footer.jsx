@@ -9,9 +9,9 @@ export default function Footer() {
       <Group justify="space-between" align="center" wrap="wrap">
         <p>© Todos los derechos reservados.</p>
         <Group>
-          <a href="/legal">Legal</a>
-          <a href="/cookies">Cookies</a>
-          <a href="/tos">Condiciones</a>
+          <a href="/aviso-legal">Legal</a>
+          <a href="/politica-de-cookies">Cookies</a>
+          <a href="/politica-de-proteccion-de-datos">Protección de datos</a>
         </Group>
       </Group>
     </footer>
