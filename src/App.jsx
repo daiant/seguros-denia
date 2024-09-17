@@ -26,6 +26,7 @@ import Avatar from "./components/avatar/avatar";
 import EmblaCarousel from "./components/carousel/embla/embla-carousel";
 import Insurance from "./components/insurance/insurance";
 import { constants } from "./constants";
+import FloatingButton from "./components/floating-button/floating-button";
 
 function App() {
   const [headerHeight, setHeaderHeight] = React.useState(121);
@@ -107,6 +108,7 @@ function App() {
         "El asegurado tiene derecho a la libre elección de médicos de entre los que figuran en la lista de facultativos de la entidad, que cuenta con una amplia variedad de hospitales y de centros de salud propios y más de un millar de centros concertados. En caso de querer acudir a un profesional que no se encuentra en el cuadro médico, podrás contratar tu seguro de reembolso y elegir con total libertad.",
     },
   ];
+
   const benefits = [
     {
       icon: <SunHorizon size={72} stroke="0.7" color="var(--primary)" />,
@@ -476,6 +478,7 @@ function App() {
         </Grid>
       </section>
       <Footer />
+      <FloatingButton />
     </>
   );
 }

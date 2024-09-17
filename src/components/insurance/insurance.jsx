@@ -16,7 +16,7 @@ export default function Insurance() {
       target: action.target ?? state.target,
     }),
     {
-      insurance: "life",
+      insurance: "health",
       target: "myself",
     }
   );
@@ -37,6 +37,16 @@ export default function Insurance() {
           })}
         </ul>
       </Animate>
+      <Group style={{ marginBlockStart: 16 }}>
+        <p>
+          <small>
+            <i>
+              Precios orientativos para una persona de 19 años. Consulta las
+              condiciones del seguro.
+            </i>
+          </small>
+        </p>
+      </Group>
     </div>
   );
 }

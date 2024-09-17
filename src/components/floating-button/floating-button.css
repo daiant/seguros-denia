@@ -1,0 +1,15 @@
+.floating-button {
+  position: fixed;
+  right: calc(var(--spacing) * 0.5);
+  bottom: calc(var(--spacing) * 0.75);
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+  background-color: #56CB62;
+  z-index: 999;
+  display: grid;
+  place-content: center;
+  border: 3px solid var(--background-5);
+  box-shadow: var(--shadow);
+  outline: 1px solid var(--background-overlay);
+}
