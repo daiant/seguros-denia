@@ -108,10 +108,19 @@ export default function Header({ hideContact, style = {}, setHeight }) {
         }}
       >
         <div style={{ marginBlock: "var(--md)" }}>
-          <p style={{ fontSize: "var(--text-lg)", marginBlock: 0 }}>
+          <a
+            href="/"
+            style={{
+              display: "block",
+              fontSize: "var(--text-lg)",
+              marginBlock: 0,
+            }}
+          >
             Agencia <b>ASISA</b> Dénia
-          </p>
-          <p style={{ marginBlock: 0 }}>Agente exclusivo ASISA</p>
+          </a>
+          <a href="/" style={{ display: "block", marginBlock: 0 }}>
+            Agente exclusivo ASISA
+          </a>
         </div>
         <Group>
           <Group gap="xxs" className="item-desktop">
