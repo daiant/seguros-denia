@@ -142,7 +142,7 @@ export function InsuranceItem({ item }) {
             </Group>
           </Button>
           <a
-            href={`/insurance?i=${item.title}`}
+            href={`/insurance?i=${item.id}`}
             style={{
               fontSize: "var(--text-sm)",
               display: "block",
