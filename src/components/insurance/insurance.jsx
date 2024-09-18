@@ -129,7 +129,6 @@ export function InsuranceItem({ item }) {
             {item.coverages?.map((coverage) => (
               <li className="coverage_item" key={coverage.name}>
                 {getIcon(coverage.icon)}
-
                 <p>{coverage.name}</p>
               </li>
             ))}
@@ -142,6 +141,18 @@ export function InsuranceItem({ item }) {
               <PaperPlaneTilt />
             </Group>
           </Button>
+          <a
+            href={`/insurance?i=${item.title}`}
+            style={{
+              fontSize: "var(--text-sm)",
+              display: "block",
+              textAlign: "center",
+              marginBlock: "1em",
+              color: "var(--text)",
+            }}
+          >
+            Quiero más información
+          </a>
         </div>
       </div>
     </li>

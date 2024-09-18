@@ -7,11 +7,17 @@ import LegalPage from "./pages/legal/legal";
 import CookiesPage from "./pages/legal/cookies";
 import LOPDPage from "./pages/legal/lopd";
 import LayoutLegal from "./pages/legal/layout";
+import InsuranceInfoPage from "./pages/insurance-info/insurance-info";
+import { Toaster } from "sonner";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "insurance",
+    element: <InsuranceInfoPage />,
   },
   {
     path: "aviso-legal",
@@ -41,6 +47,7 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+    <Toaster richColors expand position="top-center" closeButton />
     <RouterProvider router={router}></RouterProvider>
   </StrictMode>
 );

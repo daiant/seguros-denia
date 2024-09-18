@@ -2,6 +2,7 @@
 import "./button.css";
 
 export default function Button({
+  type = "button",
   variant = "primary",
   onClick,
   href,
@@ -25,7 +26,12 @@ export default function Button({
         </a>
       )}
       {!href && (
-        <button onClick={onClick} className={getClassNames()} style={style}>
+        <button
+          onClick={onClick}
+          className={getClassNames()}
+          style={style}
+          type={type}
+        >
           {children}
         </button>
       )}

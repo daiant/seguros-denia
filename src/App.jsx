@@ -27,6 +27,7 @@ import EmblaCarousel from "./components/carousel/embla/embla-carousel";
 import Insurance from "./components/insurance/insurance";
 import { constants } from "./constants";
 import FloatingButton from "./components/floating-button/floating-button";
+import { handleSubmit } from "./lib/form/form.utils";
 
 function App() {
   const [headerHeight, setHeaderHeight] = React.useState(121);
@@ -455,7 +456,7 @@ function App() {
               </Group>
             </Button>
           </div>
-          <form className="form">
+          <form className="form" onSubmit={handleSubmit}>
             <div className="input-field">
               <label htmlFor="name">Nombre</label>
               <input type="text" id="name" name="name" />
@@ -473,7 +474,7 @@ function App() {
                 rows="5"
               ></textarea>
             </div>
-            <Button>Contacta con nosotros</Button>
+            <Button type="submit">Contacta con nosotros</Button>
           </form>
         </Grid>
       </section>

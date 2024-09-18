@@ -123,17 +123,19 @@ img.with-border {
   gap: var(--xxs);
 
 }
+
 .input-field input,
-.input-field textarea {
-    all: unset;
-    flex-grow: 1;
-    border: 1px solid var(--background-5);
-    background-color: var(--background);
-    padding: var(--sm);
-    font-size: 16px;
-    border-radius: 6px;
-    box-shadow: var(--shadow);
-  }
+.input-field textarea,
+.input-field select {
+  all: unset;
+  flex-grow: 1;
+  border: 1px solid var(--background-5);
+  background-color: var(--background);
+  padding: var(--sm);
+  font-size: 16px;
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+}
 
 @media (max-width: 768px) {
   :root {

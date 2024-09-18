@@ -19,6 +19,7 @@ export default function Header({ hideContact, style = {}, setHeight }) {
   React.useEffect(() => {
     const onScroll = () => setThreshold(window.scrollY > 0);
     window.addEventListener("load", () => {
+      if (!setHeight) return;
       const height = document
         .querySelector("#navbar")
         .getBoundingClientRect().height;
