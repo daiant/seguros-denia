@@ -459,11 +459,11 @@ function App() {
           <form className="form" onSubmit={handleSubmit}>
             <div className="input-field">
               <label htmlFor="name">Nombre</label>
-              <input type="text" id="name" name="name" />
+              <input type="text" id="name" name="name" required />
             </div>
             <div className="input-field">
               <label htmlFor="phone">Teléfono</label>
-              <input type="tel" id="phone" name="phone" />
+              <input type="tel" id="phone" name="phone" required />
             </div>
             <div className="input-field">
               <label htmlFor="subject">¿Cuál es tu pregunta?</label>
