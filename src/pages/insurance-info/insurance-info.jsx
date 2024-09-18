@@ -108,7 +108,7 @@ export default function InsuranceInfoPage() {
             </div>
             <div className="input-field">
               <label htmlFor="phone">Tu número de teléfono</label>
-              <input type="tel" name="phone" id="phone" />
+              <input type="tel" name="phone" id="phone" required />
             </div>
             <div className="input-field">
               <label htmlFor="email">Tu correo electrónico</label>
