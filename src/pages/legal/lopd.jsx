@@ -2,7 +2,7 @@ export default function LOPDPage() {
   return (
     <>
       <h1>POLÍTICA DE PRIVACIDAD DEL SITIO WEB</h1>
-      <h2>www.segurosdenia.es</h2>
+      <h2>www.asisadenia.es</h2>
       <h3>I. POLÍTICA DE PRIVACIDAD Y PROTECCIÓN DE DATOS</h3>
       <p>
         Respetando lo establecido en la legislación vigente, Agencia ASISA Denia

@@ -1,7 +1,7 @@
 export default function LegalPage() {
-  const owner = `"ASISA, ASISTENCIA SANITARIA INTERPROVINCIAL DE SEGUROS S.A.U.”, con domicilio social en Madrid, Calle Juan Ignacio Luca de Tena, nº 12, y CIF: A-08169294, inscrita en el Registro Mercantil de Madrid, en la hoja nº 38819-1,tomo 4892 general, Libro 4055 de Sociedades, sección 3ª`;
-  const domain = "www.asisa.es";
-  const name = "ASISA";
+  const owner = `"Maria Angeles Parreño García S.L.”, con domicilio social en Dénia, Calle Sandunga 51, y CIF: B56227978, inscrita en el registro de la Dirección Nacioal de seguros, con el número C0461B56227878`;
+  const domain = "www.asisadenia.es";
+  const name = "Agencia ASISA Dénia";
   return (
     <>
       <h1> AVISO LEGAL</h1>

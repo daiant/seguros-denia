@@ -2,7 +2,7 @@ export default function CookiesPage() {
   return (
     <>
       <h1>POLÍTICA DE COOKIES</h1>
-      <h2>www.segurosdenia.es</h2>
+      <h2>www.asisadenia.es</h2>
       <p>
         El acceso a este Sitio Web puede implicar la utilización de cookies. Las
         cookies son pequeñas cantidades de información que se almacenan en el
