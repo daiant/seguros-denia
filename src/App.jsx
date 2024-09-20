@@ -28,8 +28,10 @@ import Insurance from "./components/insurance/insurance";
 import { constants } from "./constants";
 import FloatingButton from "./components/floating-button/floating-button";
 import { handleSubmit } from "./lib/form/form.utils";
+import { Trans, useTranslation } from "react-i18next";
 
 function App() {
+  const { t } = useTranslation();
   const [headerHeight, setHeaderHeight] = React.useState(121);
   function range(length) {
     return new Array(length).fill(0);
@@ -39,29 +41,28 @@ function App() {
       src: "https://picsum.photos/900/600",
       alt: "MariaAngelesParreno",
       name: "Maria Angeles Parreno",
-      position: "CEO",
+      position: t("avatars.ceo"),
     },
     {
       src: "https://picsum.photos/900/600",
       alt: "Rosa",
       name: "Rosa",
-      position: "Atencion al cliente",
+      position: t("avatars.customer_service"),
     },
   ];
   const opinions = [
     {
-      value: `Cuando surgen los problemas es cuando se necesitan profesionales de verdad, y Ma Angeles y su equipo están a la altura de cualquiera que sean las circunstancias tanto profesionalmente como personalmente llevando la empatía y la profesionalidad de la mano en todos sus servicios. El valor añadido a cualquier trabajo es sin duda la calidad de las personas.`,
+      value: t("opinions.1"),
       name: "Mercè Xicola",
       stars: 5,
     },
     {
-      value: `Profesionales , Amables, y resolutivas...estoy contento con su atención. Y sin desplazarme....todo telemáticamente, cosa que también se agradece.`,
+      value: t("opinions.2"),
       name: "Pau",
       stars: 5,
     },
     {
-      value:
-        "Atención personalizada, profesionalidad, seriedad… resuelven cualquier duda y te aconsejan pensando en lo mejor para el cliente. Trato excepcional.",
+      value: t("opinions.3"),
       name: "Jasmina Llull Vicente",
       stars: 5,
     },
@@ -69,79 +70,67 @@ function App() {
 
   const faq = [
     {
-      question: "¿Qué ventajas tiene contratar ASISA para tu seguro de salud?",
-      answer:
-        "Los seguros ASISA tienen todas las coberturas sanitarias, podrás ir al especialista sin pasar por el médico de cabecera, sin esperas y todos los días del año. Tendrás servicios como telemedicina, apoyo psicoemocional y el club ASISA con grandes beneficios.",
+      question: t("faq.1.question"),
+      answer: t("faq.1.answer"),
     },
     {
-      question: "¿Cómo contratar un seguro de salud de ASISA?",
-      answer:
-        "Puedes contratar tu seguro llamando o enviándonos un whatsapp y nos pondremos en contacto contigo para darle más información.",
+      question: t("faq.2.question"),
+      answer: t("faq.2.answer"),
       cta: {
         link: "",
         value: (
           <Group gap="xs">
-            <span>Contacta con nosotros</span>
+            <span>{t("common.contact")}</span>
             <WhatsappLogo size={24} />
           </Group>
         ),
       },
     },
     {
-      question: "¿Qué son los seguros con copago y sin copago?",
-      answer:
-        "Los seguros con copago son aquellos con una prima baja, pero con los que debes abonar una cantidad por el uso de ciertos servicios. Con los seguros sin copago, pagarás la misma mensualidad, sin importar el uso que le des al seguro.",
+      question: t("faq.3.question"),
+      answer: t("faq.3.answer"),
     },
     {
-      question: "¿Cuáles son los periodos de carencia más habituales?",
-      answer:
-        "Generalmente, el periodo de carencia es de 6 meses, salvo para la hospitalización y el parto que tienen una carencia de 8 meses.",
+      question: t("faq.4.question"),
+      answer: t("faq.4.answer"),
     },
     {
-      question:
-        "¿Qué servicios no necesitan autorización de ASISA? ¿Y cuáles necesitan de la autorización?",
-      answer:
-        "Puedes acceder a ciertos servicios sin necesidad de una autorización de la compañía: análisis clínicos, audiometría, arteriografía, citología, colposcopia, consulta médica, coombs directo, densitometría ósea, Doppler o eco-doppler, ecocardiograma, ecografías, electrocardiograma, electroencefalograma, electromiograma, estudio de la pisada, ergometría, holter, limpieza de boca, mamografía, preparación al parto, preoperatorio, radiografías simples, urografía, etc.",
+      question: t("faq.5.question"),
+      answer: t("faq.5.answer"),
     },
     {
-      question: "¿Cómo es el cuadro médico de ASISA?",
-      answer:
-        "El asegurado tiene derecho a la libre elección de médicos de entre los que figuran en la lista de facultativos de la entidad, que cuenta con una amplia variedad de hospitales y de centros de salud propios y más de un millar de centros concertados. En caso de querer acudir a un profesional que no se encuentra en el cuadro médico, podrás contratar tu seguro de reembolso y elegir con total libertad.",
+      question: t("faq.6.question"),
+      answer: t("faq.6.answer"),
     },
   ];
 
   const benefits = [
     {
       icon: <SunHorizon size={72} stroke="0.7" color="var(--primary)" />,
-      title: "Con nosotros, no hay problemas",
-      value:
-        "Te ofrecemos la tranquilidad de un servicio que siempre responde y cumple.",
+      title: t("benefits.1.title"),
+      value: t("benefits.1.value"),
     },
     {
       icon: <FingerprintSimple size={72} stroke="0.7" color="var(--primary)" />,
-      title: "Total privacidad",
-      value:
-        "Protegemos tu información con total confidencialidad y seguridad.",
+      title: t("benefits.2.title"),
+      value: t("benefits.2.value"),
     },
     {
       icon: (
         <PersonSimpleCircle size={72} stroke="0.7" color="var(--primary)" />
       ),
-      title: "Siempre accesibles",
-      value:
-        "Siempre estamos disponibles para brindarte apoyo cuando lo necesites, tanto en persona como on-line.",
+      title: t("benefits.3.title"),
+      value: t("benefits.3.value"),
     },
     {
       icon: <Heart size={72} stroke="0.7" color="var(--primary)" />,
-      title: "La confianza de más de 30 años de experiencia",
-      value:
-        "Nuestra trayectoria nos permite entender y resolver cualquier desafío.",
+      title: t("benefits.4.title"),
+      value: t("benefits.4.value"),
     },
     {
       icon: <UserCircleGear size={72} stroke="0.7" color="var(--primary)" />,
-      title: "Soluciones a tu medida",
-      value:
-        "Ofrecemos soluciones personalizadas, adaptadas a tus necesidades.",
+      title: t("benefits.5.title"),
+      value: t("benefits.5.value"),
     },
   ];
   return (
@@ -176,7 +165,7 @@ function App() {
               style={{ paddingBlock: "32px 16px" }}
             >
               <p style={{ fontSize: "var(--text-lg)", marginBlock: 0 }}>
-                Asegurando a las familias de Dénia desde hace más de 20 años
+                {t("hero.subtitle")}
               </p>
               <p
                 style={{
@@ -184,7 +173,7 @@ function App() {
                   fontFamily: "var(--text-title)",
                 }}
               >
-                Tu aseguradora de confianza en Dénia desde hace más de 20 años.
+                {t("hero.heading")}
               </p>
               <Group>
                 <Button
@@ -192,7 +181,7 @@ function App() {
                   href={constants.sections.seguros.target}
                 >
                   <Group gap="sm">
-                    <span>Elige tu seguro</span>
+                    <span>{t("common.choose_insurance")}</span>
                     <PaperPlaneTilt />
                   </Group>
                 </Button>
@@ -201,7 +190,7 @@ function App() {
                   href={constants.sections.contacta.target}
                 >
                   <Group gap="sm">
-                    <span>Contacta con nosotros</span>
+                    <span>{t("common.contact")}</span>
                     <WhatsappLogo />
                   </Group>
                 </Button>
@@ -216,28 +205,23 @@ function App() {
         </EmblaCarousel>
       </section>
       <section className="section">
-        <p className="section_title">Siempre a tu lado, estés donde estés</p>
+        <p className="section_title">{t("about_us.title")}</p>
         <Grid style={{ gap: "var(--xxl)" }}>
           <img src="https://picsum.photos/900/600" className="with-border" />
           <Group flexDirection="column" align="flex-start">
+            <p>{t("about_us.p1")}</p>
             <p>
-              En nuestra aseguradora, con décadas de experiencia, ponemos a
-              nuestros clientes en el centro de todo lo que hacemos. Nos
-              enorgullece ofrecer un servicio cercano y personalizado, brindando
-              la confianza y tranquilidad que necesitas. Estamos aquí para ti,
-              siempre.
-            </p>
-            <p>
-              Visítanos en <b>Calle Sandunga 51, Dénia</b> o contáctanos
-              directamente a través de nuestro formulario web para recibir la
-              atención personalizada que mereces. ¡Estamos aquí para ayudarte!
+              <Trans
+                i18nKey="about_us.p2"
+                components={{ strong: <strong /> }}
+              />
             </p>
             <Group
               style={{ marginBlockStart: "auto", paddingBlockEnd: "var(--md)" }}
             >
               <Button href={constants.sections.contacta.target}>
                 <Group>
-                  <span>Contacta con nosotros</span>
+                  <span>{t("common.contact")}</span>
                   <PaperPlaneTilt size={24} />
                 </Group>
               </Button>
@@ -247,7 +231,7 @@ function App() {
                 target="_blank"
               >
                 <Group>
-                  <span>Envíanos un mensaje</span>
+                  <span>{t("common.whatsapp")}</span>
                   <WhatsappLogo size={24} />
                 </Group>
               </Button>
@@ -256,7 +240,7 @@ function App() {
         </Grid>
       </section>
       <section className="section section_secondary">
-        <p className="section_title">Por qué confiar en nosotros</p>
+        <p className="section_title">{t("benefits.title")}</p>
         <Group justify="center" gap="xxl">
           {benefits.map((b, i) => (
             <Card key={i}>
@@ -268,7 +252,7 @@ function App() {
         </Group>
       </section>
       <section className="section">
-        <p className="section_title">Lo que dicen nuestros clientes</p>
+        <p className="section_title">{t("opinions.title")}</p>
         <Group justify="space-between">
           <Group>
             <span
@@ -290,7 +274,7 @@ function App() {
           </Group>
           <Button variant="secondary" href={constants.maps} target="_blank">
             <Group>
-              <span>Escribir una reseña</span>
+              <span>{t("opinions.cta")}</span>
               <PaperPlaneTilt />
             </Group>
           </Button>
@@ -374,17 +358,12 @@ function App() {
         </div>
       </section>
       <section className="section" id={constants.sections.seguros.value}>
-        <p className="section_title">Elige tu seguro</p>
-        <p className="section_subtitle">
-          En Agencia ASISA Dénia te ofrecemos una gran variedad de seguros con
-          todas las coberturas que necesitas para ti y para tu familia
-        </p>
+        <p className="section_title">{t("common.choose_insurance")}</p>
+        <p className="section_subtitle">{t("insurance_form.subtitle")}</p>
         <Insurance />
       </section>
       <section className="section section_secondary">
-        <p className="section_title">
-          Preguntas frecuentes de los seguros ASISA Salud
-        </p>
+        <p className="section_title">{t("faq.title")}</p>
         <Accordion.Root
           type="single"
           className="Accordion"
@@ -412,11 +391,8 @@ function App() {
         </Accordion.Root>
       </section>
       <section className="section">
-        <p className="section_title">Conoce al equipo</p>
-        <p className="section_subtitle">
-          Con una experiencia combinada de más de 40 años, sabes que estás en
-          buenas manos.
-        </p>
+        <p className="section_title">{t("team.title")}</p>
+        <p className="section_subtitle">{t("team.subtitle")}</p>
         <Group justify="center" style={{ marginBlock: "var(--xl)" }}>
           {avatars.map((avatar) => (
             <Avatar key={avatar.name} {...avatar} />
@@ -427,11 +403,8 @@ function App() {
         className="section section_secondary"
         id={constants.sections.contacta.value}
       >
-        <p className="section_title">¿Quedamos?</p>
-        <p className="section_subtitle">
-          En ASISA Dénia siempre estamos disponibles para ti ofreciéndote
-          diferentes canales para contactar con nosotros.
-        </p>
+        <p className="section_title">{t("contact.title")}</p>
+        <p className="section_subtitle">{t("contact.subtitle")}</p>
         <Grid>
           <div style={{ height: "fit-content" }}>
             <img src="https://picsum.photos/900/600" className="with-border" />
@@ -458,23 +431,23 @@ function App() {
           </div>
           <form className="form" onSubmit={handleSubmit}>
             <div className="input-field">
-              <label htmlFor="name">Nombre</label>
+              <label htmlFor="name">{t("contact.name")}</label>
               <input type="text" id="name" name="name" required />
             </div>
             <div className="input-field">
-              <label htmlFor="phone">Teléfono</label>
+              <label htmlFor="phone">{t("contact.phone")}</label>
               <input type="tel" id="phone" name="phone" required />
             </div>
             <div className="input-field">
-              <label htmlFor="subject">¿Cuál es tu pregunta?</label>
+              <label htmlFor="subject">{t("contact.subject")}</label>
               <textarea
                 name="subject"
                 id="subject"
-                defaultValue="Me gustaría recibir información acerca de los seguros que puede ofrecerme ASISA."
+                defaultValue={t("contact.subject_default")}
                 rows="5"
               ></textarea>
             </div>
-            <Button type="submit">Contacta con nosotros</Button>
+            <Button type="submit">{t("common.contact")}</Button>
           </form>
         </Grid>
       </section>

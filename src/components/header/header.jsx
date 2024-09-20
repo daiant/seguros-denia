@@ -11,9 +11,11 @@ import {
 import Button from "../button/button";
 import React from "react";
 import { constants } from "../../constants";
+import { useTranslation } from "react-i18next";
 
 // eslint-disable-next-line react/prop-types
 export default function Header({ hideContact, style = {}, setHeight }) {
+  const { t } = useTranslation();
   const [threshold, setThreshold] = React.useState(false);
 
   React.useEffect(() => {
@@ -130,7 +132,7 @@ export default function Header({ hideContact, style = {}, setHeight }) {
               href={constants.sections.inicio.target}
               style={{ fontSize: "var(--text-md)" }}
             >
-              Inicio
+              {t("header.home")}
             </a>
           </Group>
           <Group gap="xxs" className="item-desktop">
@@ -139,11 +141,11 @@ export default function Header({ hideContact, style = {}, setHeight }) {
               href={constants.sections.seguros.target}
               style={{ fontSize: "var(--text-md)" }}
             >
-              Seguros
+              {t("header.insurances")}
             </a>
           </Group>
           <Button variant="accent" href={constants.sections.contacta.target}>
-            Contacta
+            {t("header.contact")}
           </Button>
         </Group>
       </NavigationMenu.List>
