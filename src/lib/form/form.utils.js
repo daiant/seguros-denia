@@ -3,7 +3,7 @@ import { toast } from "sonner";
 export function handleSubmit(event) {
   event.preventDefault();
   const data = new FormData(event.target);
-  fetch('http://httpbin.org/post', { method: 'post', body: data }).then(response => {
+  fetch('https://httpbin.org/post', { method: 'post', body: data }).then(response => {
     if (response.ok) {
       toast.success(
         "¡Información enviada con éxito! En breve nuestro equipo se pondrá en contacto contigo."
