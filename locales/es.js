@@ -133,6 +133,6 @@ export const translation = {
       legal: 'Aviso Legal',
       cookies: 'Cookies',
       lopd: "Protección de datos",
-    }
+    },
   }
 }
