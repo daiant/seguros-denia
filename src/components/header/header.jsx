@@ -15,7 +15,7 @@ import { useTranslation } from "react-i18next";
 
 // eslint-disable-next-line react/prop-types
 export default function Header({ hideContact, style = {}, setHeight }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [threshold, setThreshold] = React.useState(false);
 
   React.useEffect(() => {
@@ -77,14 +77,18 @@ export default function Header({ hideContact, style = {}, setHeight }) {
           </Group>
           <Group gap="sm" style={{ flexWrap: "no-wrap" }}>
             <img
+              style={{ cursor: "pointer" }}
               src="/esp.png"
               alt="Ver página en español"
               title="Ver página en español"
+              onClick={() => i18n.changeLanguage("es")}
             />
             <img
+              style={{ cursor: "pointer" }}
               src="/en.png"
               alt="See page in English"
               title="See page in English"
+              onClick={() => i18n.changeLanguage("en")}
             />
             <NavigationMenu.Link
               href={constants.instagram}

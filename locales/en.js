@@ -1,5 +1,87 @@
 export const translation = {
   translation: {
+    header: {
+      title: 'ASISA exclusive agent',
+      home: 'Home',
+      insurances: 'Insurance',
+      contact: 'Contact',
+    },
+    common: {
+      contact: 'Contact us',
+      whatsapp: 'Send us a message',
+      choose_insurance: 'Choose your insurance'
+    },
+    avatars: {
+      ceo: 'CEO',
+      customer_service: 'Customer service',
+    },
+    opinions: {
+      title: 'What our customers are saying',
+      cta: 'Write a review',
+      '1': `When problems arise is when real professionals are needed, and Ma Angeles and her team are up to whatever the circumstances are both professionally and personally taking empathy and professionalism hand in hand in all their services. The added value to any job is undoubtedly the quality of the people`,
+      '2': 'Professional, friendly, and resolute..I am happy with their attention.And without having to go move..all telematically, which is also appreciated',
+      '3': 'Personalized attention, professionalism, seriousness...they solve any doubt and advise you thinking about what is best for the client.Exceptional treatment.'
+    },
+    faq: {
+      title: 'Frequently asked questions about ASISA Health insurance',
+      '1': {
+        question: 'What are the advantages of taking out ASISA for your health insurance?',
+        answer: 'ASISA insurance policies have full health cover, you can see a specialist without having to go to the family doctor, without waiting and every day of the year. You will have services such as telemedicine, psycho-emotional support and the ASISA club with great benefits.'
+      },
+      '2': {
+        question: 'How to take out ASISA health insurance?',
+        answer: 'You can take out your insurance by calling or sending us a whatsapp and we will contact you with more information.'
+      },
+      '3': {
+        question: 'What are insurance with co-payment and without co-payment?',
+        answer: 'Co-pay insurances are those with a low premium, but with which you must pay an amount for the use of certain services. With no co-pay insurance, you pay the same monthly premium, regardless of how you use the insurance.'
+      },
+      '4': {
+        question: 'What are the most common waiting periods?',
+        answer: 'Generally, the waiting period is 6 months, except for hospitalization and childbirth, which have a waiting period of 8 months.'
+      },
+      '5': {
+        question: 'Which services do not need authorization from ASISA, and which ones need authorization?', answer: 'You can access certain services without needing an authorization from the company: clinical analysis, audiometry, arteriography, cytology, colposcopy, medical consultation, direct coombs, bone densitometry, Doppler or echo- doppler, echocardiogram, ultrasound scans, electrocardiogram, electroencephalogram, electromyogram, tread study, ergometry, holter, mouth cleaning, mammography, preparation for childbirth, preoperative, simple X- rays, urography, etc.'
+      },
+      '6': {
+        question: "What is ASISA's medical insurance?",
+        answer: 'The insured has the right to free choice of doctors from among those on the list of doctors of the company, which has a wide variety of hospitals and its own health centers and more than a thousand subsidized centers.If you wish to see a professional who is not on the medical list, you can take out your reimbursement insurance policy and choose freely.'
+      },
+    },
+    benefits: {
+      title: 'Why trust us',
+      '1': {
+        title: "With us, there's no hassle",
+        value: 'We offer you the peace of mind of a service that always responds and delivers.'
+      },
+      '2': {
+        title: 'Total privacy',
+        value: 'We protect your information with total confidentiality and security.'
+      },
+      '3': {
+        title: 'Always accessible',
+        value: 'We are always available to provide you with support whenever you need it, both in person and online.'
+      },
+      '4': {
+        title: 'The confidence of over 30 years of experience',
+        value:
+          'Our track record allows us to understand and solve any challenge.',
+      },
+      '5': {
+        title: 'Tailor-made solutions',
+        value:
+          'We offer customized solutions, tailored to your needs.',
+      },
+      hero: {
+        subtitle: 'Insuring the families of Dénia for more than 20 years',
+        heading: 'Your trusted insurer in Dénia for more than 20 years.'
+      },
+      about_us: {
+        title: 'Siempre a tu lado, estés donde estés',
+        p1: 'En nuestra aseguradora, con décadas de experiencia, ponemos a nuestros clientes en el centro de todo lo que hacemos.Nos enorgullece ofrecer un servicio cercano y personalizado, brindando la confianza y tranquilidad que necesitas.Estamos aquí para ti, siempre.',
+        p2: 'Visítanos en <strong>Calle Sandunga 51, Dénia</strong> o contáctanos directamente a través de nuestro formulario web para recibir la atención personalizada que mereces. ¡Estamos aquí para ayudarte!'
+      },
+    },
     'Asisa Completa ++': '',
     'Cobertura completa al mejor precio y con un copago un poco más alto. El producto estrella de ASISA.': '',
     'Copago alto': '',
