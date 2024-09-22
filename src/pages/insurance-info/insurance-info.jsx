@@ -3,12 +3,20 @@ import FloatingButton from "../../components/floating-button/floating-button";
 import Footer from "../../components/footer/footer";
 import Header from "../../components/header/header";
 import { useSearchParams } from "react-router-dom";
-import { insuranceList } from "../../components/insurance/insurance.db";
+import { loadInsuranceList } from "../../components/insurance/insurance.db";
 import Button from "../../components/button/button";
 import "./insurance-info.css";
 import { handleSubmit } from "../../lib/form/form.utils";
+import { useCustomTranslation } from "../../lib/useDefaultLanguage";
 
 export default function InsuranceInfoPage() {
+  const { t } = useCustomTranslation();
+  const [insuranceList, setInsuranceList] = React.useState([]);
+
+  React.useEffect(() => {
+    setInsuranceList(loadInsuranceList(t));
+  }, [t]);
+
   const [headerHeight, setHeaderHeight] = React.useState(121);
   const [searchParams] = useSearchParams();
   return (
@@ -36,7 +44,7 @@ export default function InsuranceInfoPage() {
               width: "100%",
             }}
           >
-            Conoce toda la información de tu seguro
+            {t("insurance_info.title")}
           </h1>
           <p
             style={{
@@ -46,11 +54,7 @@ export default function InsuranceInfoPage() {
               maxWidth: 700,
             }}
           >
-            La tranquilidad empieza cuando conoces tu futuro. Rellena este
-            formulario para que podamos contactar contigo y darte toda la
-            información que necesitas. Nuestros asesores podrán guiarte durante
-            todo el camino para que puedas contratar tu seguro sin
-            complicaciones.
+            {t("insurance_info.title")}
           </p>
         </div>
         <form
@@ -59,6 +63,7 @@ export default function InsuranceInfoPage() {
             display: "grid",
           }}
           onSubmit={handleSubmit}
+          className="info-form"
         >
           <fieldset
             style={{
@@ -72,7 +77,7 @@ export default function InsuranceInfoPage() {
           >
             <div className="input-field">
               <label htmlFor="insurance">
-                Seguro del que quieres conocer más
+                {t("insurance_info.input.insurance")}
               </label>
               <select
                 name="insurance"
@@ -87,43 +92,48 @@ export default function InsuranceInfoPage() {
               </select>
             </div>
             <div className="input-field">
-              <label htmlFor="target">¿Para quién es este seguro?</label>
+              <label htmlFor="target">
+                {t("insurance_info.input.insurance")}
+              </label>
               <select name="target" id="target">
-                <option value="myself">mí</option>
-                <option value="family">mi familia</option>
-                <option value="children">mi hija/o</option>
-                <option value="other">otra persona</option>
+                <option value="myself">
+                  {t("insurance_form.options.myself")}
+                </option>{" "}
+                <option value="family">
+                  {t("insurance_form.options.family")}
+                </option>
+                <option value="children">
+                  {t("insurance_form.options.children")}
+                </option>
+                <option value="other">
+                  {t("insurance_form.options.other")}
+                </option>
               </select>
             </div>
             <div className="input-field">
-              <label htmlFor="age">¿Cuántos años tienes?</label>
-              <input
-                type="number"
-                name="age"
-                id="age"
-                min={18}
-                max={110}
-                defaultValue={18}
-              />
+              <label htmlFor="birthdate">
+                {t("insurance_info.input.birthdate")}
+              </label>
+              <input type="date" name="birthdate" id="birthdate" />
             </div>
             <div className="input-field">
-              <label htmlFor="phone">Tu número de teléfono</label>
+              <label htmlFor="phone">{t("insurance_info.input.phone")}</label>
               <input type="tel" name="phone" id="phone" required />
             </div>
             <div className="input-field">
-              <label htmlFor="email">Tu correo electrónico</label>
+              <label htmlFor="email">{t("insurance_info.input.email")}</label>
               <input type="email" name="email" id="email" />
             </div>
             <div className="input-field">
-              <label htmlFor="city">¿Dónde vives actualmente?</label>
+              <label htmlFor="city">{t("insurance_info.input.city")}</label>
               <input type="text" name="city" id="city" />
             </div>
             <div className="input-field">
-              <label htmlFor="name">Tu nombre</label>
+              <label htmlFor="name">{t("insurance_info.input.name")}</label>
               <input type="text" name="name" id="name" />
             </div>
             <Button type="submit" style={{ marginBlockStart: "var(--sm)" }}>
-              Enviar
+              {t("insurance_info.input.submit")}
             </Button>
           </fieldset>
         </form>

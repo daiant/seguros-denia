@@ -28,11 +28,13 @@ import Insurance from "./components/insurance/insurance";
 import { constants } from "./constants";
 import FloatingButton from "./components/floating-button/floating-button";
 import { handleSubmit } from "./lib/form/form.utils";
-import { Trans, useTranslation } from "react-i18next";
+import { Trans } from "react-i18next";
+import { useCustomTranslation } from "./lib/useDefaultLanguage";
 
 function App() {
-  const { t } = useTranslation();
+  const { t } = useCustomTranslation();
   const [headerHeight, setHeaderHeight] = React.useState(121);
+
   function range(length) {
     return new Array(length).fill(0);
   }

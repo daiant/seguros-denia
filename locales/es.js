@@ -80,7 +80,7 @@ export const translation = {
       },
     },
     hero: {
-      subtitle: "Asegurando a las familias de Dénia desde hace más de 20 años",
+      subtitle: "La tranquilidad de estar en buenas manos",
       heading: 'Tu aseguradora de confianza en Dénia desde hace más de 20 años.'
     },
     about_us: {
@@ -134,5 +134,19 @@ export const translation = {
       cookies: 'Cookies',
       lopd: "Protección de datos",
     },
+    insurance_info: {
+      'title': 'Conoce toda la información de tu seguro',
+      'subtitle': 'La tranquilidad empieza cuando conoces tu futuro. Rellena este formulario para que podamos contactar contigo y darte toda la información que necesitas.Nuestros asesores podrán guiarte durante todo el camino para que puedas contratar tu seguro sin complicaciones.',
+      'input': {
+        insurance: 'Seguro del que quieres conocer más',
+        target: '¿Para quién es este seguro?',
+        birthdate: 'Tu fecha de nacimiento',
+        phone: 'Tu número de teléfono',
+        email: 'Tu correo electrónico',
+        city: '¿Dónde vives actualmente?',
+        name: 'Tu nombre',
+        submit: 'Enviar',
+      }
+    }
   }
 }

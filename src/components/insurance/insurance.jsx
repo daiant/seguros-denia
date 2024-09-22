@@ -4,7 +4,7 @@ import Button from "../button/button";
 import Group from "../group/group";
 import { PaperPlaneTilt } from "@phosphor-icons/react";
 import "./insurance.css";
-import { insuranceList, insuranceListIndex } from "./insurance.db";
+import { insuranceListIndex, loadInsuranceList } from "./insurance.db";
 import { Check, X } from "@phosphor-icons/react";
 import { constants } from "../../constants";
 import { Animate } from "../animate/animate";
@@ -12,6 +12,12 @@ import { useTranslation } from "react-i18next";
 
 export default function Insurance() {
   const { t } = useTranslation();
+  const [insuranceList, setInsuranceList] = React.useState([]);
+
+  React.useEffect(() => {
+    setInsuranceList(loadInsuranceList(t));
+  }, [t]);
+
   const [form, setForm] = React.useReducer(
     (state, action) => ({
       insurance: action.insurance ?? state.insurance,
@@ -24,6 +30,8 @@ export default function Insurance() {
   );
 
   function getInsuranceListItems() {
+    if (!insuranceList.length) return [];
+
     return insuranceListIndex[form.insurance][form.target];
   }
   return (
@@ -124,7 +132,7 @@ export function InsuranceItem({ item }) {
             <p className="price_cents">
               , {String(item.price[1]).padStart(2, "0")}
             </p>
-            <p>€/{item.subtitle_price ?? "mes"}</p>
+            <p>€/{item.subtitle_price ?? t("mes")}</p>
           </div>
           {item.variant && <p className="variant">{item.variant}</p>}
         </div>

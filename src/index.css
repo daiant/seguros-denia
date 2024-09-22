@@ -129,13 +129,24 @@ img.with-border {
 .input-field select {
   all: unset;
   flex-grow: 1;
-  border: 1px solid var(--background-5);
+  border: 1px solid #cee1ff;
   background-color: var(--background);
   padding: var(--sm);
   font-size: 16px;
   border-radius: 6px;
-  box-shadow: var(--shadow);
+  /* box-shadow: var(--shadow); */
+  outline: 2px solid transparent;
+  transition: border-color 100ms ease, outline-color 300ms ease;
 }
+
+.input-field input:focus,
+.input-field textarea:focus,
+.input-field select:focus {
+  border-color: var(--background-overlay);
+  outline: 2px solid #cad8ed;
+  /* box-shadow: none; */
+}
+
 
 @media (max-width: 768px) {
   :root {

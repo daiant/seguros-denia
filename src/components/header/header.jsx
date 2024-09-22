@@ -17,6 +17,9 @@ import { useTranslation } from "react-i18next";
 export default function Header({ hideContact, style = {}, setHeight }) {
   const { t, i18n } = useTranslation();
   const [threshold, setThreshold] = React.useState(false);
+  const [isAtHome] = React.useState(() => {
+    return globalThis.window.location.pathname === "/";
+  });
 
   React.useEffect(() => {
     const onScroll = () => setThreshold(window.scrollY > 0);
@@ -27,11 +30,18 @@ export default function Header({ hideContact, style = {}, setHeight }) {
         .getBoundingClientRect().height;
       setHeight(height);
     });
+
     // clean up code
     window.removeEventListener("scroll", onScroll);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, [setHeight]);
+
+  function changeLanguage(lang) {
+    globalThis.localStorage?.setItem("lang", lang);
+    i18n.changeLanguage(lang);
+  }
+
   return (
     <NavigationMenu.Root
       style={{
@@ -81,14 +91,18 @@ export default function Header({ hideContact, style = {}, setHeight }) {
               src="/esp.png"
               alt="Ver página en español"
               title="Ver página en español"
-              onClick={() => i18n.changeLanguage("es")}
+              onClick={() => {
+                changeLanguage("es");
+              }}
             />
             <img
               style={{ cursor: "pointer" }}
               src="/en.png"
               alt="See page in English"
               title="See page in English"
-              onClick={() => i18n.changeLanguage("en")}
+              onClick={() => {
+                changeLanguage("en");
+              }}
             />
             <NavigationMenu.Link
               href={constants.instagram}
@@ -126,14 +140,14 @@ export default function Header({ hideContact, style = {}, setHeight }) {
             Agencia <b>ASISA</b> Dénia
           </a>
           <a href="/" style={{ display: "block", marginBlock: 0 }}>
-            Agente exclusivo ASISA
+            {t("header.title")}
           </a>
         </div>
         <Group>
           <Group gap="xxs" className="item-desktop">
             <HouseSimple size={18} color="var(--accent)" />
             <a
-              href={constants.sections.inicio.target}
+              href={isAtHome ? constants.sections.inicio.target : "/"}
               style={{ fontSize: "var(--text-md)" }}
             >
               {t("header.home")}
@@ -142,13 +156,16 @@ export default function Header({ hideContact, style = {}, setHeight }) {
           <Group gap="xxs" className="item-desktop">
             <Heart size={18} color="var(--accent)" />
             <a
-              href={constants.sections.seguros.target}
+              href={isAtHome ? constants.sections.seguros.target : "/"}
               style={{ fontSize: "var(--text-md)" }}
             >
               {t("header.insurances")}
             </a>
           </Group>
-          <Button variant="accent" href={constants.sections.contacta.target}>
+          <Button
+            variant="accent"
+            href={isAtHome ? constants.sections.contacta.target : "/"}
+          >
             {t("header.contact")}
           </Button>
         </Group>
