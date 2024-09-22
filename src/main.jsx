@@ -10,6 +10,7 @@ import LOPDPage from "./pages/legal/lopd";
 import LayoutLegal from "./pages/legal/layout";
 import InsuranceInfoPage from "./pages/insurance-info/insurance-info";
 import { Toaster } from "sonner";
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 
 const router = createBrowserRouter([
   {
@@ -48,7 +49,9 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Toaster richColors expand position="top-center" closeButton />
-    <RouterProvider router={router}></RouterProvider>
+    <GoogleReCaptchaProvider reCaptchaKey="6LfA8EsqAAAAALopUdPk3VpBJYxNsRVNY7WFlUOf">
+      <Toaster richColors expand position="top-center" closeButton />
+      <RouterProvider router={router}></RouterProvider>
+    </GoogleReCaptchaProvider>
   </StrictMode>
 );

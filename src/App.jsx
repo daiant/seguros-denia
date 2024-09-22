@@ -30,9 +30,11 @@ import FloatingButton from "./components/floating-button/floating-button";
 import { handleSubmit } from "./lib/form/form.utils";
 import { Trans } from "react-i18next";
 import { useCustomTranslation } from "./lib/useDefaultLanguage";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 function App() {
   const { t } = useCustomTranslation();
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [headerHeight, setHeaderHeight] = React.useState(121);
 
   function range(length) {
@@ -431,7 +433,10 @@ function App() {
               </Group>
             </Button>
           </div>
-          <form className="form" onSubmit={handleSubmit}>
+          <form
+            className="form"
+            onSubmit={(e) => handleSubmit(e, executeRecaptcha)}
+          >
             <div className="input-field">
               <label htmlFor="name">{t("contact.name")}</label>
               <input type="text" id="name" name="name" required />

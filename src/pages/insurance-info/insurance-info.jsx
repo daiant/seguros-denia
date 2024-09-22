@@ -8,9 +8,12 @@ import Button from "../../components/button/button";
 import "./insurance-info.css";
 import { handleSubmit } from "../../lib/form/form.utils";
 import { useCustomTranslation } from "../../lib/useDefaultLanguage";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 export default function InsuranceInfoPage() {
   const { t } = useCustomTranslation();
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
   const [insuranceList, setInsuranceList] = React.useState([]);
 
   React.useEffect(() => {
@@ -62,7 +65,7 @@ export default function InsuranceInfoPage() {
             padding: "32px var(--spacing) 64px var(--spacing)",
             display: "grid",
           }}
-          onSubmit={handleSubmit}
+          onSubmit={(e) => handleSubmit(e, executeRecaptcha)}
           className="info-form"
         >
           <fieldset

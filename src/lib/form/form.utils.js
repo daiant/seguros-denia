@@ -1,8 +1,13 @@
 import { toast } from "sonner";
 
-export function handleSubmit(event) {
+export async function handleSubmit(event, executeRecaptcha) {
   event.preventDefault();
+
+  const token = await executeRecaptcha('form');
+
   const data = new FormData(event.target);
+  data.append('token', token);
+
   fetch('https://httpbin.org/post', { method: 'post', body: data }).then(response => {
     if (response.ok) {
       toast.success(
