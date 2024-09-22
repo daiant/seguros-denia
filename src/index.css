@@ -147,6 +147,9 @@ img.with-border {
   /* box-shadow: none; */
 }
 
+.grecaptcha-badge {
+  visibility: hidden !important;
+}
 
 @media (max-width: 768px) {
   :root {
