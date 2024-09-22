@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import "./button.css";
+import { CircleNotch } from "@phosphor-icons/react";
 
 export default function Button({
   type = "button",
@@ -8,6 +9,7 @@ export default function Button({
   href,
   target = "_self",
   children,
+  loading = false,
   style = {},
 }) {
   function getClassNames() {
@@ -27,12 +29,18 @@ export default function Button({
       )}
       {!href && (
         <button
-          onClick={onClick}
+          onClick={() => {
+            if (loading) return;
+            onClick();
+          }}
           className={getClassNames()}
           style={style}
           type={type}
         >
-          {children}
+          <div className="wrapper" aria-hidden={loading}>
+            {children}
+          </div>
+          <CircleNotch size={24} className="loading" aria-hidden={!loading} />
         </button>
       )}
     </>

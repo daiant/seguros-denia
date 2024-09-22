@@ -22,6 +22,8 @@ export default function InsuranceInfoPage() {
 
   const [headerHeight, setHeaderHeight] = React.useState(121);
   const [searchParams] = useSearchParams();
+
+  const [loading, setLoading] = React.useState(false);
   return (
     <>
       <Header
@@ -65,7 +67,10 @@ export default function InsuranceInfoPage() {
             padding: "32px var(--spacing) 64px var(--spacing)",
             display: "grid",
           }}
-          onSubmit={(e) => handleSubmit(e, executeRecaptcha)}
+          onSubmit={(e) => {
+            setLoading(true);
+            handleSubmit(e, executeRecaptcha, () => setLoading(false));
+          }}
           className="info-form"
         >
           <fieldset
@@ -95,9 +100,7 @@ export default function InsuranceInfoPage() {
               </select>
             </div>
             <div className="input-field">
-              <label htmlFor="target">
-                {t("insurance_info.input.insurance")}
-              </label>
+              <label htmlFor="target">{t("insurance_info.input.target")}</label>
               <select name="target" id="target">
                 <option value="myself">
                   {t("insurance_form.options.myself")}
@@ -135,7 +138,11 @@ export default function InsuranceInfoPage() {
               <label htmlFor="name">{t("insurance_info.input.name")}</label>
               <input type="text" name="name" id="name" />
             </div>
-            <Button type="submit" style={{ marginBlockStart: "var(--sm)" }}>
+            <Button
+              type="submit"
+              style={{ marginBlockStart: "var(--sm)" }}
+              loading={loading}
+            >
               {t("insurance_info.input.submit")}
             </Button>
           </fieldset>

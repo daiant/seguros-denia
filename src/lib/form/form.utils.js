@@ -1,6 +1,6 @@
 import { toast } from "sonner";
 
-export async function handleSubmit(event, executeRecaptcha) {
+export async function handleSubmit(event, executeRecaptcha, callback) {
   event.preventDefault();
 
   const token = await executeRecaptcha('form');
@@ -19,5 +19,11 @@ export async function handleSubmit(event, executeRecaptcha) {
         "Ha ocurrido un error inesperado. Por favor, inténtalo de nuevo más tarde."
       );
     }
+
+    if (callback) {
+      setTimeout(() => {
+        callback();
+      }, 150);
+    };
   })
 }

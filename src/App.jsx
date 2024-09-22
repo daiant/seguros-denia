@@ -36,6 +36,7 @@ function App() {
   const { t } = useCustomTranslation();
   const { executeRecaptcha } = useGoogleReCaptcha();
   const [headerHeight, setHeaderHeight] = React.useState(121);
+  const [loading, setLoading] = React.useState(false);
 
   function range(length) {
     return new Array(length).fill(0);
@@ -435,7 +436,9 @@ function App() {
           </div>
           <form
             className="form"
-            onSubmit={(e) => handleSubmit(e, executeRecaptcha)}
+            onSubmit={(e) =>
+              handleSubmit(e, executeRecaptcha, setLoading(false))
+            }
           >
             <div className="input-field">
               <label htmlFor="name">{t("contact.name")}</label>
@@ -454,7 +457,9 @@ function App() {
                 rows="5"
               ></textarea>
             </div>
-            <Button type="submit">{t("common.contact")}</Button>
+            <Button type="submit" loading={loading}>
+              {t("common.contact")}
+            </Button>
           </form>
         </Grid>
       </section>
