@@ -78,6 +78,10 @@ img.with-border {
   aspcect-ratio: 5 / 3;
 }
 
+.aspect-ratio {
+  background-color: var(--background-5);
+}
+
 .section {
   scroll-margin-top: 96px;
   padding: var(--spacing);

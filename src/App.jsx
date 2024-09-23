@@ -203,7 +203,9 @@ function App() {
             </Group>
             <img
               src="https://picsum.photos/900/600"
-              className="with-border"
+              className="with-border aspect-ratio"
+              width={900}
+              height={600}
               style={{ height: "unset" }}
             />
           </Grid>
