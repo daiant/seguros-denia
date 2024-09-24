@@ -3,7 +3,18 @@
 }
 
 @media (max-width: 768px) {
+  .logo {
+    height: 28px;
+  }
+
   .item-desktop {
     display: none !important;
   }
+}
+
+@media (max-width: 426px) {
+  .logo {
+    height: 22px;
+  }
+
 }

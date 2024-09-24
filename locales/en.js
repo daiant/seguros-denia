@@ -12,7 +12,7 @@ export const translation = {
       choose_insurance: 'Choose your insurance'
     },
     avatars: {
-      ceo: 'CEO',
+      ceo: 'Exclusive agent',
       customer_service: 'Customer service',
     },
     opinions: {

@@ -129,22 +129,52 @@ export default function Header({ hideContact, style = {}, setHeight }) {
         }}
       >
         <div style={{ marginBlock: "var(--md)" }}>
-          <a
-            href="/"
-            style={{
-              display: "block",
-              fontSize: "var(--text-lg)",
-              marginBlock: 0,
-            }}
-          >
-            Agencia <b>ASISA</b> Dénia
-          </a>
-          <a href="/" style={{ display: "block", marginBlock: 0 }}>
-            {t("header.title")}
-          </a>
+          <Group>
+            <div>
+              <a
+                href="/"
+                style={{
+                  display: "block",
+                  fontSize: "var(--text-lg)",
+                  marginBlock: 0,
+                }}
+              >
+                Agencia <b>ASISA</b> Dénia
+              </a>
+              <a href="/" style={{ display: "block", marginBlock: 0 }}>
+                {t("header.title")}
+              </a>
+            </div>
+            <div
+              style={{
+                height: 70,
+                width: 0.5,
+                transition: threshold
+                  ? "300ms cubic-bezier(0.87, 0, 0.13, 1)"
+                  : "0ms linear",
+                backgroundColor: threshold
+                  ? "var(--foreground)"
+                  : "var(--background)",
+              }}
+            ></div>
+            <img
+              src="/asisa.svg"
+              height={32}
+              width="auto"
+              className="logo"
+              style={{
+                transition: threshold
+                  ? "300ms cubic-bezier(0.87, 0, 0.13, 1)"
+                  : "0ms linear",
+                filter: threshold
+                  ? "brightness(0) saturate(100%) invert(20%) sepia(32%) saturate(3728%) hue-rotate(201deg) brightness(95%) contrast(87%)"
+                  : "none",
+              }}
+            />
+          </Group>
         </div>
-        <Group>
-          <Group gap="xxs" className="item-desktop">
+        <Group className="item-desktop">
+          <Group gap="xxs">
             <HouseSimple size={18} color="var(--accent)" />
             <a
               href={isAtHome ? constants.sections.inicio.target : "/"}
@@ -153,7 +183,7 @@ export default function Header({ hideContact, style = {}, setHeight }) {
               {t("header.home")}
             </a>
           </Group>
-          <Group gap="xxs" className="item-desktop">
+          <Group gap="xxs">
             <Heart size={18} color="var(--accent)" />
             <a
               href={isAtHome ? constants.sections.seguros.target : "/"}

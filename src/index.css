@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 html,
 body {
@@ -13,6 +13,7 @@ body {
 *::before {
   box-sizing: border-box;
   font-family: var(--text);
+  letter-spacing: -0.3px;
 }
 
 :root {
@@ -33,8 +34,8 @@ body {
       hsl(216deg 72% 55%) 90%,
       hsl(216deg 82% 58%) 95%,
       hsl(216deg 93% 61%) 100%);
-  --text-title: 'Merriweather', serif;
-  --text: 'Source Sans 3', sans-serif;
+  --text-title: 'Open Sans', serif;
+  --text: 'Open Sans', sans-serif;
 
   --text-xxl: clamp(2rem, 1.6rem + 2vw, 4rem);
   --text-xl: calc(var(--text-md) * 2);
@@ -103,7 +104,7 @@ img.with-border {
   margin-block: 1em 2em;
   font-size: var(--text-xl);
   font-family: var(--text-title);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .section_title:has(+.section_subtitle) {

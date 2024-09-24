@@ -41,6 +41,13 @@ function App() {
   function range(length) {
     return new Array(length).fill(0);
   }
+  const campaigns = [
+    {
+      src: "/asisa-dental-octubre.jpg",
+      alt: "Campaña Dental",
+      href: "juasjuas",
+    },
+  ];
   const avatars = [
     {
       src: "https://picsum.photos/900/600",
@@ -160,9 +167,14 @@ function App() {
         }}
       >
         <EmblaCarousel
-          style={{ display: "flex", alignItems: "center", flexGrow: 1 }}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexGrow: 1,
+            flexDirection: "column",
+          }}
         >
-          <Grid>
+          <Grid style={{ padding: 16 }}>
             <Group
               flexDirection="column"
               align="flex-start"
@@ -176,6 +188,7 @@ function App() {
                 style={{
                   fontSize: "var(--text-xxl)",
                   fontFamily: "var(--text-title)",
+                  fontWeight: "700",
                 }}
               >
                 {t("hero.heading")}
@@ -209,6 +222,22 @@ function App() {
               style={{ height: "unset" }}
             />
           </Grid>
+          {campaigns.map((campaign) => (
+            <div
+              key={campaign.alt}
+              style={{
+                display: "grid",
+                placeContent: "center",
+              }}
+            >
+              <a href={campaign.href}>
+                <img
+                  src={campaign.src}
+                  style={{ objectFit: "contain", width: "100%" }}
+                />
+              </a>
+            </div>
+          ))}
         </EmblaCarousel>
       </section>
       <section className="section">

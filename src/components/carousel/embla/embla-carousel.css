@@ -4,6 +4,7 @@
 
 .embla__container {
   display: flex;
+  gap: 32px;
 }
 
 /* slide */
