@@ -8,7 +8,7 @@ export async function handleSubmit(event, executeRecaptcha, callback) {
   const data = new FormData(event.target);
   data.append('token', token);
 
-  fetch('https://mail.asisadenia.es', { method: 'post', body: data }).then(response => {
+  fetch('https://mail.segurosdenia.es', { method: 'post', body: data }).then(response => {
     if (response.ok) {
       toast.success(
         "¡Información enviada con éxito! En breve nuestro equipo se pondrá en contacto contigo."
