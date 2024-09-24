@@ -20,7 +20,7 @@ export default function InsuranceInfoPage() {
     setInsuranceList(loadInsuranceList(t));
   }, [t]);
 
-  const [headerHeight, setHeaderHeight] = React.useState(121);
+  const [headerHeight, setHeaderHeight] = React.useState(134);
   const [searchParams] = useSearchParams();
 
   const [loading, setLoading] = React.useState(false);

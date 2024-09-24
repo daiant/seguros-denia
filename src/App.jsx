@@ -27,16 +27,13 @@ import EmblaCarousel from "./components/carousel/embla/embla-carousel";
 import Insurance from "./components/insurance/insurance";
 import { constants } from "./constants";
 import FloatingButton from "./components/floating-button/floating-button";
-import { handleSubmit } from "./lib/form/form.utils";
 import { Trans } from "react-i18next";
 import { useCustomTranslation } from "./lib/useDefaultLanguage";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import ContactForm from "./components/contact-form/contact-form";
 
 function App() {
   const { t } = useCustomTranslation();
-  const { executeRecaptcha } = useGoogleReCaptcha();
-  const [headerHeight, setHeaderHeight] = React.useState(121);
-  const [loading, setLoading] = React.useState(false);
+  const [headerHeight, setHeaderHeight] = React.useState(134);
 
   function range(length) {
     return new Array(length).fill(0);
@@ -45,7 +42,7 @@ function App() {
     {
       src: "/asisa-dental-octubre.jpg",
       alt: "Campaña Dental",
-      href: "juasjuas",
+      href: "/campaigns/asisa-dental",
     },
   ];
   const avatars = [
@@ -227,7 +224,7 @@ function App() {
               key={campaign.alt}
               style={{
                 display: "grid",
-                placeContent: "center",
+                alignItems: "center",
               }}
             >
               <a href={campaign.href}>
@@ -465,33 +462,7 @@ function App() {
               </Group>
             </Button>
           </div>
-          <form
-            className="form"
-            onSubmit={(e) =>
-              handleSubmit(e, executeRecaptcha, setLoading(false))
-            }
-          >
-            <div className="input-field">
-              <label htmlFor="name">{t("contact.name")}</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-            <div className="input-field">
-              <label htmlFor="phone">{t("contact.phone")}</label>
-              <input type="tel" id="phone" name="phone" required />
-            </div>
-            <div className="input-field">
-              <label htmlFor="subject">{t("contact.subject")}</label>
-              <textarea
-                name="subject"
-                id="subject"
-                defaultValue={t("contact.subject_default")}
-                rows="5"
-              ></textarea>
-            </div>
-            <Button type="submit" loading={loading}>
-              {t("common.contact")}
-            </Button>
-          </form>
+          <ContactForm />
         </Grid>
       </section>
       <Footer />

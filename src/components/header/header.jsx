@@ -153,7 +153,7 @@ export default function Header({ hideContact, style = {}, setHeight }) {
                   ? "300ms cubic-bezier(0.87, 0, 0.13, 1)"
                   : "0ms linear",
                 backgroundColor: threshold
-                  ? "var(--foreground)"
+                  ? "var(--primary)"
                   : "var(--background)",
               }}
             ></div>

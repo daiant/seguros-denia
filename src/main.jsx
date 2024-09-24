@@ -11,6 +11,8 @@ import LayoutLegal from "./pages/legal/layout";
 import InsuranceInfoPage from "./pages/insurance-info/insurance-info";
 import { Toaster } from "sonner";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
+import LayoutCampaigns from "./pages/campaigns/layout";
+import AsisaDentalPage from "./pages/campaigns/asisa-dental";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +45,14 @@ const router = createBrowserRouter([
       <LayoutLegal>
         <LOPDPage />
       </LayoutLegal>
+    ),
+  },
+  {
+    path: "campaigns/asisa-dental",
+    element: (
+      <LayoutCampaigns>
+        <AsisaDentalPage />
+      </LayoutCampaigns>
     ),
   },
 ]);
