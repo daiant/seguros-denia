@@ -1,0 +1,22 @@
+.mobile-carousel {
+  display: none;
+}
+
+.banner {
+  padding: 16px;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    padding: 0;
+  }
+
+  .mobile-carousel {
+    display: block;
+  }
+
+  .desktop-carousel {
+    display: none;
+  }
+
+}

@@ -1,7 +1,8 @@
 // eslint-disable-next-line react/prop-types
-export default function Grid({ children, style }) {
+export default function Grid({ children, style, className }) {
   return (
     <div
+      className={className}
       style={{
         flexGrow: 1,
         display: "grid",

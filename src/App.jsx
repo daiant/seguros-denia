@@ -142,6 +142,74 @@ function App() {
       value: t("benefits.5.value"),
     },
   ];
+
+  const HeroBanner = () => (
+    <Grid className="banner">
+      <Group
+        flexDirection="column"
+        align="flex-start"
+        justify="center"
+        style={{ paddingBlock: "32px 16px" }}
+      >
+        <p style={{ fontSize: "var(--text-lg)", marginBlock: 0 }}>
+          {t("hero.subtitle")}
+        </p>
+        <p
+          style={{
+            fontSize: "var(--text-xxl)",
+            fontFamily: "var(--text-title)",
+            fontWeight: "700",
+          }}
+        >
+          {t("hero.heading")}
+        </p>
+        <Group>
+          <Button variant="secondary" href={constants.sections.seguros.target}>
+            <Group gap="sm">
+              <span>{t("common.choose_insurance")}</span>
+              <PaperPlaneTilt />
+            </Group>
+          </Button>
+          <Button variant="accent" href={constants.sections.contacta.target}>
+            <Group gap="sm">
+              <span>{t("common.contact")}</span>
+              <WhatsappLogo />
+            </Group>
+          </Button>
+        </Group>
+      </Group>
+      <img
+        src="https://picsum.photos/900/600"
+        className="with-border aspect-ratio"
+        width={900}
+        height={600}
+        style={{ height: "unset" }}
+      />
+    </Grid>
+  );
+
+  const CampaignsCarousel = () => {
+    return (
+      <>
+        {campaigns.map((campaign) => (
+          <div
+            key={campaign.alt}
+            style={{
+              display: "grid",
+              alignItems: "center",
+            }}
+          >
+            <a href={campaign.href}>
+              <img
+                src={campaign.src}
+                style={{ objectFit: "contain", width: "100%" }}
+              />
+            </a>
+          </div>
+        ))}
+      </>
+    );
+  };
   return (
     <>
       <Header
@@ -163,79 +231,33 @@ function App() {
           marginBlockStart: "-" + headerHeight + "px",
         }}
       >
-        <EmblaCarousel
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            flexGrow: 1,
-            flexDirection: "column",
-          }}
-        >
-          <Grid style={{ padding: 16 }}>
-            <Group
-              flexDirection="column"
-              align="flex-start"
-              justify="center"
-              style={{ paddingBlock: "32px 16px" }}
-            >
-              <p style={{ fontSize: "var(--text-lg)", marginBlock: 0 }}>
-                {t("hero.subtitle")}
-              </p>
-              <p
-                style={{
-                  fontSize: "var(--text-xxl)",
-                  fontFamily: "var(--text-title)",
-                  fontWeight: "700",
-                }}
-              >
-                {t("hero.heading")}
-              </p>
-              <Group>
-                <Button
-                  variant="secondary"
-                  href={constants.sections.seguros.target}
-                >
-                  <Group gap="sm">
-                    <span>{t("common.choose_insurance")}</span>
-                    <PaperPlaneTilt />
-                  </Group>
-                </Button>
-                <Button
-                  variant="accent"
-                  href={constants.sections.contacta.target}
-                >
-                  <Group gap="sm">
-                    <span>{t("common.contact")}</span>
-                    <WhatsappLogo />
-                  </Group>
-                </Button>
-              </Group>
-            </Group>
-            <img
-              src="https://picsum.photos/900/600"
-              className="with-border aspect-ratio"
-              width={900}
-              height={600}
-              style={{ height: "unset" }}
-            />
-          </Grid>
-          {campaigns.map((campaign) => (
-            <div
-              key={campaign.alt}
-              style={{
-                display: "grid",
-                alignItems: "center",
-              }}
-            >
-              <a href={campaign.href}>
-                <img
-                  src={campaign.src}
-                  style={{ objectFit: "contain", width: "100%" }}
-                />
-              </a>
-            </div>
-          ))}
-        </EmblaCarousel>
+        <div className="mobile-carousel">
+          <HeroBanner />
+          <EmblaCarousel
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              flexGrow: 1,
+              flexDirection: "column",
+              paddingBlock: "2rem",
+            }}
+          >
+            <CampaignsCarousel />
+          </EmblaCarousel>
+        </div>
+        <div className="desktop-carousel">
+          <EmblaCarousel
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              flexGrow: 1,
+              flexDirection: "column",
+            }}
+          >
+            <HeroBanner />
+            <CampaignsCarousel />
+          </EmblaCarousel>
+        </div>
       </section>
       <section className="section">
         <p className="section_title">{t("about_us.title")}</p>

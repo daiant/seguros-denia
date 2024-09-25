@@ -10,7 +10,7 @@
   background: transparent;
   border: none;
   text-align: left;
-  font-size: var(--text-lg);
+  font-size: 18px;
   padding: 0;
   display: flex;
   width: 100%;
@@ -43,7 +43,7 @@
 
 .AccordionContent>* {
   margin-block-start: var(--md);
-  font-size: var(--text-l);
+  font-size: var(--text-md);
 }
 
 .AccordionContent[data-state='open'] {
