@@ -8,7 +8,7 @@ import { CaretLeft, CaretRight } from "@phosphor-icons/react";
 import * as Progress from "@radix-ui/react-progress";
 import Autoplay from "embla-carousel-autoplay";
 
-function EmblaCarousel({ style, children, className, delay = 7000 }) {
+function EmblaCarousel({ style, children, className, delay = 6000, theme }) {
   const [current, setCurrent] = React.useState(0);
   const [total, setTotal] = React.useState(0);
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
@@ -36,6 +36,7 @@ function EmblaCarousel({ style, children, className, delay = 7000 }) {
           <CarouselPagination
             current={current}
             total={total}
+            theme={theme ?? "light"}
             onPrevious={() => {
               emblaApi.scrollPrev();
             }}
@@ -49,10 +50,11 @@ function EmblaCarousel({ style, children, className, delay = 7000 }) {
   );
 }
 
-function CarouselPagination({ current, total, onPrevious, onNext }) {
+function CarouselPagination({ current, total, onPrevious, onNext, theme }) {
   return (
-    <Group className="carousel_pagination" gap="sm">
+    <Group className={"carousel_pagination " + theme} gap="sm">
       <Button
+        className="button"
         variant="transparent"
         onClick={onPrevious}
         style={{ paddingInline: 0 }}
@@ -68,6 +70,7 @@ function CarouselPagination({ current, total, onPrevious, onNext }) {
         />
       </Progress.Root>
       <Button
+        className="button"
         onClick={onNext}
         variant="transparent"
         style={{ paddingInline: 0 }}

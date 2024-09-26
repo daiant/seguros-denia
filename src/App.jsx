@@ -40,9 +40,46 @@ function App() {
   }
   const campaigns = [
     {
-      src: "/asisa-dental-octubre.jpg",
+      src: "/campaigns/asisa-dental-octubre.jpg",
+      src_mobile: "/campaigns/asisa-dental-octubre-mobile.jpg",
       alt: "Campaña Dental",
       href: "/campaigns/asisa-dental",
+      active: true,
+    },
+    {
+      src: "/campaigns/asisa-decesos.jpg",
+      src_mobile: "/campaigns/asisa-decesos-mobile.jpg",
+      alt: "Campaña Decesos",
+      href: "/campaigns/asisa-decesos",
+      active: true,
+    },
+    {
+      src: "/campaigns/asisa-nuevas-familias.png",
+      src_mobile: "/campaigns/asisa-nuevas-familias-mobile.png",
+      alt: "Campaña Nuevas Familias",
+      href: "/campaigns/asisa-nuevas-familias",
+      active: true,
+    },
+    {
+      src: "/campaigns/asisa-vida.png",
+      src_mobile: "/campaigns/asisa-vida-mobile.png",
+      alt: "Campaña Vida",
+      href: "/campaigns/asisa-vida",
+      active: true,
+    },
+    {
+      src: "/campaigns/asisa-general-optica.png",
+      src_mobile: "/campaigns/asisa-general-optica-mobile.png",
+      alt: "Campaña General Optica",
+      href: "/campaigns/asisa-general-optica",
+      active: true,
+    },
+    {
+      src: "/campaigns/asisa-international.png",
+      src_mobile: "/campaigns/asisa-international-mobile.png",
+      alt: "Campaña International",
+      href: "/campaigns/asisa-international",
+      active: true,
     },
   ];
   const avatars = [
@@ -191,22 +228,24 @@ function App() {
   const CampaignsCarousel = () => {
     return (
       <>
-        {campaigns.map((campaign) => (
-          <div
-            key={campaign.alt}
-            style={{
-              display: "grid",
-              alignItems: "center",
-            }}
-          >
-            <a href={campaign.href}>
-              <img
-                src={campaign.src}
-                style={{ objectFit: "contain", width: "100%" }}
-              />
-            </a>
-          </div>
-        ))}
+        {campaigns
+          .filter((c) => c.active)
+          .map((campaign) => (
+            <div
+              key={campaign.alt}
+              style={{
+                display: "grid",
+                alignItems: "center",
+              }}
+            >
+              <a href={campaign.href}>
+                <picture>
+                  <source media="(min-width: 768px)" srcSet={campaign.src} />
+                  <img src={campaign.src_mobile} style={{ width: "100%" }} />
+                </picture>
+              </a>
+            </div>
+          ))}
       </>
     );
   };
@@ -231,21 +270,8 @@ function App() {
           marginBlockStart: "-" + headerHeight + "px",
         }}
       >
-        <div className="mobile-carousel">
-          <HeroBanner />
-          <EmblaCarousel
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              flexGrow: 1,
-              flexDirection: "column",
-              paddingBlock: "2rem",
-            }}
-          >
-            <CampaignsCarousel />
-          </EmblaCarousel>
-        </div>
-        <div className="desktop-carousel">
+        <HeroBanner />
+        {/* <div className="desktop-carousel">
           <EmblaCarousel
             style={{
               display: "flex",
@@ -257,8 +283,22 @@ function App() {
             <HeroBanner />
             <CampaignsCarousel />
           </EmblaCarousel>
-        </div>
+        </div> */}
       </section>
+      <div style={{ padding: 16 }}>
+        <EmblaCarousel
+          theme="dark"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexGrow: 1,
+            flexDirection: "column",
+            paddingBlock: "2rem",
+          }}
+        >
+          <CampaignsCarousel />
+        </EmblaCarousel>
+      </div>
       <section className="section">
         <p className="section_title">{t("about_us.title")}</p>
         <Grid style={{ gap: "var(--xxl)" }}>

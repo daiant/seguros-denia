@@ -1,7 +1,16 @@
 export default function AsisaDentalPage() {
   return (
     <div>
-      <img src="/asisa-dental-octubre.jpg" />
+      <picture>
+        <source
+          media="(min-width: 768px)"
+          srcSet="/campaigns/asisa-dental-octubre.jpg"
+        />
+        <img
+          src="/campaigns/asisa-dental-octubre-mobile.jpg"
+          style={{ width: "100%" }}
+        />
+      </picture>
       <h1>Que el final de las vacaciones no te quite la sonrisa</h1>
       <p>
         Con nuestros seguros ASISA Dental disfrutas de una amplia asistencia en

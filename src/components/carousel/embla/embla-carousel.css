@@ -13,8 +13,36 @@
   min-width: 0;
 }
 
-.carousel_pagination {
-  margin-block-start: 1em;
+.carousel_pagination.dark {
+  display: flex;
+  justify-content: center !important;
+}
+
+.carousel_pagination.dark .progress {
+  background: var(--background-overlay);
+}
+
+.carousel_pagination.dark .progress_indicator {
+  background-color: var(--foreground);
+}
+
+.carousel_pagination.dark button {
+  border-radius: 100%;
+  display: grid;
+  place-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+}
+
+.carousel_pagination.dark button .wrapper {
+  height: 24px;
+  display: grid;
+  place-content: center;
+}
+
+.carousel_pagination.dark button .wrapper svg {
+  color: red;
 }
 
 .carousel_pagination .progress {
