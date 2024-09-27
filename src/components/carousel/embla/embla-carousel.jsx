@@ -20,7 +20,7 @@ function EmblaCarousel({ style, children, className, delay = 6000, theme }) {
       setCurrent(emblaApi.selectedScrollSnap());
       setTotal(emblaApi.scrollSnapList().length);
 
-      emblaApi.on("settle", () => {
+      emblaApi.on("scroll", () => {
         setCurrent(emblaApi.selectedScrollSnap());
       });
     }

@@ -50,21 +50,21 @@ function App() {
       src: "/campaigns/asisa-decesos.jpg",
       src_mobile: "/campaigns/asisa-decesos-mobile.jpg",
       alt: "Campaña Decesos",
-      href: "/campaigns/asisa-decesos",
+      href: "/campaigns/asisa-ocaso",
       active: true,
     },
     {
       src: "/campaigns/asisa-nuevas-familias.png",
       src_mobile: "/campaigns/asisa-nuevas-familias-mobile.png",
       alt: "Campaña Nuevas Familias",
-      href: "/campaigns/asisa-nuevas-familias",
+      href: "/campaigns/asisa-asistencia-veterinaria",
       active: true,
     },
     {
       src: "/campaigns/asisa-vida.png",
       src_mobile: "/campaigns/asisa-vida-mobile.png",
       alt: "Campaña Vida",
-      href: "/campaigns/asisa-vida",
+      href: "/campaigns/asisa-vuelta-al-cole",
       active: true,
     },
     {
@@ -72,14 +72,14 @@ function App() {
       src_mobile: "/campaigns/asisa-general-optica-mobile.png",
       alt: "Campaña General Optica",
       href: "/campaigns/asisa-general-optica",
-      active: true,
+      active: false,
     },
     {
       src: "/campaigns/asisa-international.png",
       src_mobile: "/campaigns/asisa-international-mobile.png",
       alt: "Campaña International",
       href: "/campaigns/asisa-international",
-      active: true,
+      active: false,
     },
   ];
   const avatars = [

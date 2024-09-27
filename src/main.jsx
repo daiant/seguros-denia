@@ -13,6 +13,9 @@ import { Toaster } from "sonner";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import LayoutCampaigns from "./pages/campaigns/layout";
 import AsisaDentalPage from "./pages/campaigns/asisa-dental";
+import VetPage from "./pages/campaigns/asisa-asisencia-veterinaria";
+import AsisaVueltaColePage from "./pages/campaigns/asisa-vuelta-cole";
+import AsisaOcaso from "./pages/campaigns/asisa-ocaso";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +48,30 @@ const router = createBrowserRouter([
       <LayoutLegal>
         <LOPDPage />
       </LayoutLegal>
+    ),
+  },
+  {
+    path: "campaigns/asisa-ocaso",
+    element: (
+      <LayoutCampaigns>
+        <AsisaOcaso />
+      </LayoutCampaigns>
+    ),
+  },
+  {
+    path: "campaigns/asisa-vuelta-al-cole",
+    element: (
+      <LayoutCampaigns>
+        <AsisaVueltaColePage />
+      </LayoutCampaigns>
+    ),
+  },
+  {
+    path: "campaigns/asisa-asistencia-veterinaria",
+    element: (
+      <LayoutCampaigns>
+        <VetPage />
+      </LayoutCampaigns>
     ),
   },
   {
