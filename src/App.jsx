@@ -7,17 +7,12 @@ import Button from "./components/button/button";
 import Footer from "./components/footer/footer";
 import {
   CaretDown,
-  Heart,
-  PaperPlaneTilt,
   Quotes,
   Star,
   WhatsappLogo,
   Question,
   Envelope,
-  SunHorizon,
-  FingerprintSimple,
-  PersonSimpleCircle,
-  UserCircleGear,
+  PaperPlaneTilt,
 } from "@phosphor-icons/react";
 import Grid from "./components/grid/grid";
 import Card from "./components/card/card";
@@ -30,6 +25,7 @@ import FloatingButton from "./components/floating-button/floating-button";
 import { Trans } from "react-i18next";
 import { useCustomTranslation } from "./lib/useDefaultLanguage";
 import ContactForm from "./components/contact-form/contact-form";
+import { avatars, benefits, campaigns, faq, opinions } from "./lib/db";
 
 function App() {
   const { t } = useCustomTranslation();
@@ -38,147 +34,6 @@ function App() {
   function range(length) {
     return new Array(length).fill(0);
   }
-  const campaigns = [
-    {
-      src: "/campaigns/asisa-dental-octubre.jpg",
-      src_mobile: "/campaigns/asisa-dental-octubre-mobile.jpg",
-      alt: "Campaña Dental",
-      href: "/campaigns/asisa-dental",
-      active: true,
-    },
-    {
-      src: "/campaigns/asisa-decesos.jpg",
-      src_mobile: "/campaigns/asisa-decesos-mobile.jpg",
-      alt: "Campaña Decesos",
-      href: "/campaigns/asisa-ocaso",
-      active: true,
-    },
-    {
-      src: "/campaigns/asisa-nuevas-familias.png",
-      src_mobile: "/campaigns/asisa-nuevas-familias-mobile.png",
-      alt: "Campaña Nuevas Familias",
-      href: "/campaigns/asisa-asistencia-veterinaria",
-      active: true,
-    },
-    {
-      src: "/campaigns/asisa-vida.png",
-      src_mobile: "/campaigns/asisa-vida-mobile.png",
-      alt: "Campaña Vida",
-      href: "/campaigns/asisa-vuelta-al-cole",
-      active: true,
-    },
-    {
-      src: "/campaigns/asisa-general-optica.png",
-      src_mobile: "/campaigns/asisa-general-optica-mobile.png",
-      alt: "Campaña General Optica",
-      href: "/campaigns/asisa-general-optica",
-      active: false,
-    },
-    {
-      src: "/campaigns/asisa-international.png",
-      src_mobile: "/campaigns/asisa-international-mobile.png",
-      alt: "Campaña International",
-      href: "/campaigns/asisa-international",
-      active: false,
-    },
-  ];
-  const avatars = [
-    {
-      src: "parreno.webp",
-      alt: "MariaAngelesParreno",
-      name: "María Ángeles Parreno",
-      position: t("avatars.ceo"),
-    },
-    {
-      src: "rosa.webp",
-      alt: "Rosa Mª Argudo",
-      name: "Rosa Argudo",
-      position: t("avatars.customer_service"),
-    },
-  ];
-  const opinions = [
-    {
-      value: t("opinions.1"),
-      name: "Mercè Xicola",
-      stars: 5,
-    },
-    {
-      value: t("opinions.2"),
-      name: "Pau",
-      stars: 5,
-    },
-    {
-      value: t("opinions.3"),
-      name: "Jasmina Llull Vicente",
-      stars: 5,
-    },
-  ];
-
-  const faq = [
-    {
-      question: t("faq.1.question"),
-      answer: t("faq.1.answer"),
-    },
-    {
-      question: t("faq.2.question"),
-      answer: t("faq.2.answer"),
-      cta: {
-        link: "",
-        value: (
-          <Group gap="xs">
-            <span>{t("common.contact")}</span>
-            <WhatsappLogo size={24} />
-          </Group>
-        ),
-      },
-    },
-    {
-      question: t("faq.3.question"),
-      answer: t("faq.3.answer"),
-    },
-    {
-      question: t("faq.4.question"),
-      answer: t("faq.4.answer"),
-    },
-    {
-      question: t("faq.5.question"),
-      answer: t("faq.5.answer"),
-    },
-    {
-      question: t("faq.6.question"),
-      answer: t("faq.6.answer"),
-    },
-  ];
-
-  const benefits = [
-    {
-      icon: <SunHorizon size={72} stroke="0.7" color="var(--primary)" />,
-      title: t("benefits.1.title"),
-      value: t("benefits.1.value"),
-    },
-    {
-      icon: <FingerprintSimple size={72} stroke="0.7" color="var(--primary)" />,
-      title: t("benefits.2.title"),
-      value: t("benefits.2.value"),
-    },
-    {
-      icon: (
-        <PersonSimpleCircle size={72} stroke="0.7" color="var(--primary)" />
-      ),
-      title: t("benefits.3.title"),
-      value: t("benefits.3.value"),
-    },
-    {
-      icon: <Heart size={72} stroke="0.7" color="var(--primary)" />,
-      title: t("benefits.4.title"),
-      value: t("benefits.4.value"),
-    },
-    {
-      icon: <UserCircleGear size={72} stroke="0.7" color="var(--primary)" />,
-      title: t("benefits.5.title"),
-      value: t("benefits.5.value"),
-    },
-  ];
 
   const HeroBanner = () => (
     <Grid className="banner" width={360}>
@@ -230,7 +85,7 @@ function App() {
   const CampaignsCarousel = () => {
     return (
       <>
-        {campaigns
+        {campaigns(t)
           .filter((c) => c.active)
           .map((campaign) => (
             <div
@@ -334,7 +189,7 @@ function App() {
       <section className="section section_secondary">
         <h2 className="section_title">{t("benefits.title")}</h2>
         <Group justify="center" gap="xxl">
-          {benefits.map((b, i) => (
+          {benefits(t).map((b, i) => (
             <Card key={i}>
               {b.icon}
               <Card.Title value={b.title} />
@@ -391,7 +246,7 @@ function App() {
           />
           <Grid>
             <EmblaCarousel>
-              {opinions.map((opinion) => (
+              {opinions(t).map((opinion) => (
                 <div
                   style={{
                     display: "flex",
@@ -460,7 +315,7 @@ function App() {
         <Accordion.Root
           type="single"
           className="Accordion"
-          defaultValue={faq[0].question}
+          defaultValue={faq(t)[0].question}
         >
           {faq.map((faq) => (
             <Accordion.Item
@@ -487,7 +342,7 @@ function App() {
         <h2 className="section_title">{t("team.title")}</h2>
         <p className="section_subtitle">{t("team.subtitle")}</p>
         <Group justify="center" style={{ marginBlock: "var(--xl)" }}>
-          {avatars.map((avatar) => (
+          {avatars(t).map((avatar) => (
             <Avatar key={avatar.name} {...avatar} />
           ))}
         </Group>
