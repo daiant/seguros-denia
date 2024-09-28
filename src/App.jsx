@@ -84,15 +84,15 @@ function App() {
   ];
   const avatars = [
     {
-      src: "https://picsum.photos/900/600",
+      src: "parreno.webp",
       alt: "MariaAngelesParreno",
       name: "Maria Angeles Parreno",
       position: t("avatars.ceo"),
     },
     {
-      src: "https://picsum.photos/900/600",
-      alt: "Rosa",
-      name: "Rosa",
+      src: "rosa.webp",
+      alt: "Rosa Argudo",
+      name: "Rosa Argudo",
       position: t("avatars.customer_service"),
     },
   ];
@@ -217,7 +217,7 @@ function App() {
       </Group>
       <img
         alt="Imagen de las trabajadoras de Seguros Denia"
-        src="https://picsum.photos/900/600"
+        src="/home.webp"
         className="with-border aspect-ratio"
         width={900}
         height={600}
@@ -308,7 +308,7 @@ function App() {
         <p className="section_title">{t("about_us.title")}</p>
         <Grid style={{ gap: "var(--xxl)" }}>
           <img
-            src="https://picsum.photos/900/600"
+            src="store.webp"
             className="with-border"
             alt="Imagen del local de Seguros Dénia"
           />
