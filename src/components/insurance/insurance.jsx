@@ -64,6 +64,7 @@ export function InsuranceForm({ form, onChange }) {
     <form onSubmit={(e) => e.preventDefault()} className="insurance-form">
       <p>{t("insurance_form.search")}</p>
       <select
+        aria-label="Seleccionar tipo de seguro"
         name="insurance"
         id="insurance"
         value={form.insurance}
@@ -84,6 +85,7 @@ export function InsuranceForm({ form, onChange }) {
       </select>
       <p>{t("insurance_form.for")}</p>
       <select
+        aria-label="Seleccionar para quién es el seguro"
         name="target"
         id="target"
         value={form.target}

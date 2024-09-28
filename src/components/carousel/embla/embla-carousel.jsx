@@ -54,6 +54,7 @@ function CarouselPagination({ current, total, onPrevious, onNext, theme }) {
   return (
     <Group className={"carousel_pagination " + theme} gap="sm">
       <Button
+        label="Previous"
         className="button"
         variant="transparent"
         onClick={onPrevious}
@@ -61,7 +62,7 @@ function CarouselPagination({ current, total, onPrevious, onNext, theme }) {
       >
         <CaretLeft color="var(--background-overlay)" />
       </Button>
-      <Progress.Root value={length} className="progress">
+      <Progress.Root value={length} className="progress" aria-label="Progreso">
         <Progress.Indicator
           style={{
             transform: `translateX(${((current + 1) / total) * 100}%)`,
@@ -70,6 +71,7 @@ function CarouselPagination({ current, total, onPrevious, onNext, theme }) {
         />
       </Progress.Root>
       <Button
+        label="Next"
         className="button"
         onClick={onNext}
         variant="transparent"

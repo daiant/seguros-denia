@@ -216,6 +216,7 @@ function App() {
         </Group>
       </Group>
       <img
+        alt="Imagen de las trabajadoras de Seguros Denia"
         src="https://picsum.photos/900/600"
         className="with-border aspect-ratio"
         width={900}
@@ -238,10 +239,14 @@ function App() {
                 alignItems: "center",
               }}
             >
-              <a href={campaign.href}>
+              <a href={campaign.href} aria-label={campaigns.alt}>
                 <picture>
                   <source media="(min-width: 768px)" srcSet={campaign.src} />
-                  <img src={campaign.src_mobile} style={{ width: "100%" }} />
+                  <img
+                    src={campaign.src_mobile}
+                    style={{ width: "100%" }}
+                    alt={campaign.alt}
+                  />
                 </picture>
               </a>
             </div>
@@ -302,7 +307,11 @@ function App() {
       <section className="section">
         <p className="section_title">{t("about_us.title")}</p>
         <Grid style={{ gap: "var(--xxl)" }}>
-          <img src="https://picsum.photos/900/600" className="with-border" />
+          <img
+            src="https://picsum.photos/900/600"
+            className="with-border"
+            alt="Imagen del local de Seguros Dénia"
+          />
           <Group flexDirection="column" align="flex-start">
             <p>{t("about_us.p1")}</p>
             <p>
@@ -442,6 +451,7 @@ function App() {
               ))}
             </EmblaCarousel>
             <img
+              alt="Persona sonriendo en una cafeterías"
               src="/people-opinions.webp"
               className="with-border"
               style={{
@@ -504,8 +514,9 @@ function App() {
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div className="with-border" style={{ flexGrow: 1 }}>
               <iframe
+                title="Ubicación Seguros Dénia"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6215.4285685014!2d0.09731059539901543!3d38.83900379377831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x129e1b480252a6c9%3A0xce13009f62355e46!2sAtenci%C3%B3n%20Comercial%20y%20al%20Cliente%20ASISA%20Seguros%20Denia!5e0!3m2!1ses!2ses!4v1727512330747!5m2!1ses!2ses"
-                allowfullscreen=""
+                allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 style={{

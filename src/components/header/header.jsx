@@ -66,8 +66,8 @@ export default function Header({ hideContact, style = {}, setHeight }) {
             paddingBlockStart: "var(--sm)",
           }}
         >
-          <Group justify="flex-start">
-            <NavigationMenu.Item>
+          <NavigationMenu.Item>
+            <Group justify="flex-start">
               <NavigationMenu.Link
                 href={constants.maps}
                 target="_blank"
@@ -75,50 +75,52 @@ export default function Header({ hideContact, style = {}, setHeight }) {
               >
                 Calle Sandunga 51, Dénia
               </NavigationMenu.Link>
-            </NavigationMenu.Item>
-            <NavigationMenu.Item className="item-desktop">
               <NavigationMenu.Link
                 href={constants.whatsapp}
-                className="underline"
+                className="underline item-desktop"
               >
                 +34637049244
               </NavigationMenu.Link>
-            </NavigationMenu.Item>
-          </Group>
-          <Group gap="sm" style={{ flexWrap: "no-wrap" }}>
-            <img
-              style={{ cursor: "pointer" }}
-              src="/esp.png"
-              alt="Ver página en español"
-              title="Ver página en español"
-              onClick={() => {
-                changeLanguage("es");
-              }}
-            />
-            <img
-              style={{ cursor: "pointer" }}
-              src="/en.png"
-              alt="See page in English"
-              title="See page in English"
-              onClick={() => {
-                changeLanguage("en");
-              }}
-            />
-            <NavigationMenu.Link
-              href={constants.instagram}
-              target="_blank"
-              style={{ display: "grid" }}
-            >
-              <InstagramLogo size={24} />
-            </NavigationMenu.Link>
-            <NavigationMenu.Link
-              href={constants.linkedin}
-              target="_blank"
-              style={{ display: "grid" }}
-            >
-              <LinkedinLogo size={24} />
-            </NavigationMenu.Link>
-          </Group>
+            </Group>
+          </NavigationMenu.Item>
+          <NavigationMenu.Item>
+            <Group gap="sm" style={{ flexWrap: "no-wrap" }}>
+              <img
+                style={{ cursor: "pointer" }}
+                src="/esp.png"
+                alt="Ver página en español"
+                title="Ver página en español"
+                onClick={() => {
+                  changeLanguage("es");
+                }}
+              />
+              <img
+                style={{ cursor: "pointer" }}
+                src="/en.png"
+                alt="See page in English"
+                title="See page in English"
+                onClick={() => {
+                  changeLanguage("en");
+                }}
+              />
+              <NavigationMenu.Link
+                aria-label="Ir a Instagram"
+                href={constants.instagram}
+                target="_blank"
+                style={{ display: "grid" }}
+              >
+                <InstagramLogo size={24} />
+              </NavigationMenu.Link>
+              <NavigationMenu.Link
+                aria-label="Ir a LinkedIn"
+                href={constants.linkedin}
+                target="_blank"
+                style={{ display: "grid" }}
+              >
+                <LinkedinLogo size={24} />
+              </NavigationMenu.Link>
+            </Group>
+          </NavigationMenu.Item>
         </NavigationMenu.List>
       )}
       <NavigationMenu.List
@@ -128,7 +130,7 @@ export default function Header({ hideContact, style = {}, setHeight }) {
           alignItems: "center",
         }}
       >
-        <div style={{ marginBlock: "var(--md)" }}>
+        <NavigationMenu.Item style={{ marginBlock: "var(--md)" }}>
           <Group>
             <div>
               <a
@@ -141,9 +143,9 @@ export default function Header({ hideContact, style = {}, setHeight }) {
               >
                 Agencia <b>ASISA</b> Dénia
               </a>
-              <a href="/" style={{ display: "block", marginBlock: 0 }}>
+              <p style={{ display: "block", marginBlock: 0 }}>
                 {t("header.title")}
-              </a>
+              </p>
             </div>
             <div
               style={{
@@ -162,6 +164,7 @@ export default function Header({ hideContact, style = {}, setHeight }) {
               height={32}
               width="auto"
               className="logo"
+              alt="Asisa Logo"
               style={{
                 transition: threshold
                   ? "300ms cubic-bezier(0.87, 0, 0.13, 1)"
@@ -172,33 +175,35 @@ export default function Header({ hideContact, style = {}, setHeight }) {
               }}
             />
           </Group>
-        </div>
-        <Group className="item-desktop">
-          <Group gap="xxs">
-            <HouseSimple size={18} color="var(--accent)" />
-            <a
-              href={isAtHome ? constants.sections.inicio.target : "/"}
-              style={{ fontSize: "var(--text-md)" }}
+        </NavigationMenu.Item>
+        <NavigationMenu.Item>
+          <Group className="item-desktop">
+            <Group gap="xxs">
+              <HouseSimple size={18} color="var(--accent)" />
+              <a
+                href={isAtHome ? constants.sections.inicio.target : "/"}
+                style={{ fontSize: "var(--text-md)" }}
+              >
+                {t("header.home")}
+              </a>
+            </Group>
+            <Group gap="xxs">
+              <Heart size={18} color="var(--accent)" />
+              <a
+                href={isAtHome ? constants.sections.seguros.target : "/"}
+                style={{ fontSize: "var(--text-md)" }}
+              >
+                {t("header.insurances")}
+              </a>
+            </Group>
+            <Button
+              variant="accent"
+              href={isAtHome ? constants.sections.contacta.target : "/"}
             >
-              {t("header.home")}
-            </a>
+              {t("header.contact")}
+            </Button>
           </Group>
-          <Group gap="xxs">
-            <Heart size={18} color="var(--accent)" />
-            <a
-              href={isAtHome ? constants.sections.seguros.target : "/"}
-              style={{ fontSize: "var(--text-md)" }}
-            >
-              {t("header.insurances")}
-            </a>
-          </Group>
-          <Button
-            variant="accent"
-            href={isAtHome ? constants.sections.contacta.target : "/"}
-          >
-            {t("header.contact")}
-          </Button>
-        </Group>
+        </NavigationMenu.Item>
       </NavigationMenu.List>
     </NavigationMenu.Root>
   );

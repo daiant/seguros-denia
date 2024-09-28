@@ -3,6 +3,7 @@ import "./button.css";
 import { CircleNotch } from "@phosphor-icons/react";
 
 export default function Button({
+  label,
   type = "button",
   variant = "primary",
   onClick,
@@ -29,6 +30,7 @@ export default function Button({
       )}
       {!href && (
         <button
+          aria-label={label ?? ""}
           onClick={() => {
             if (loading) return;
             onClick();
