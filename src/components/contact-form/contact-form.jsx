@@ -13,7 +13,10 @@ export default function ContactForm({ style }) {
   return (
     <form
       className="form"
-      onSubmit={(e) => handleSubmit(e, executeRecaptcha, setLoading(false))}
+      onSubmit={(e) => {
+        setLoading(true);
+        handleSubmit(e, executeRecaptcha, () => setLoading(false));
+      }}
       style={style}
     >
       <div className="input-field">
