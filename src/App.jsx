@@ -191,15 +191,16 @@ function App() {
         <p style={{ fontSize: "var(--text-lg)", marginBlock: 0 }}>
           {t("hero.subtitle")}
         </p>
-        <p
+        <h1
           style={{
             fontSize: "var(--text-xxl)",
             fontFamily: "var(--text-title)",
             fontWeight: "700",
+            marginBlock: 0,
           }}
         >
           {t("hero.heading")}
-        </p>
+        </h1>
         <Group>
           <Button variant="secondary" href={constants.sections.seguros.target}>
             <Group gap="sm">
@@ -276,19 +277,6 @@ function App() {
         }}
       >
         <HeroBanner />
-        {/* <div className="desktop-carousel">
-          <EmblaCarousel
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              flexGrow: 1,
-              flexDirection: "column",
-            }}
-          >
-            <HeroBanner />
-            <CampaignsCarousel />
-          </EmblaCarousel>
-        </div> */}
       </section>
       <div style={{ padding: 16 }}>
         <EmblaCarousel
@@ -305,7 +293,7 @@ function App() {
         </EmblaCarousel>
       </div>
       <section className="section">
-        <p className="section_title">{t("about_us.title")}</p>
+        <h2 className="section_title">{t("about_us.title")}</h2>
         <Grid style={{ gap: "var(--xxl)" }}>
           <img
             src="store.webp"
@@ -344,7 +332,7 @@ function App() {
         </Grid>
       </section>
       <section className="section section_secondary">
-        <p className="section_title">{t("benefits.title")}</p>
+        <h2 className="section_title">{t("benefits.title")}</h2>
         <Group justify="center" gap="xxl">
           {benefits.map((b, i) => (
             <Card key={i}>
@@ -356,7 +344,7 @@ function App() {
         </Group>
       </section>
       <section className="section">
-        <p className="section_title">{t("opinions.title")}</p>
+        <h2 className="section_title">{t("opinions.title")}</h2>
         <Group justify="space-between">
           <Group>
             <span
@@ -463,12 +451,12 @@ function App() {
         </div>
       </section>
       <section className="section" id={constants.sections.seguros.value}>
-        <p className="section_title">{t("common.choose_insurance")}</p>
+        <h2 className="section_title">{t("common.choose_insurance")}</h2>
         <p className="section_subtitle">{t("insurance_form.subtitle")}</p>
         <Insurance />
       </section>
       <section className="section section_secondary">
-        <p className="section_title">{t("faq.title")}</p>
+        <h2 className="section_title">{t("faq.title")}</h2>
         <Accordion.Root
           type="single"
           className="Accordion"
@@ -496,7 +484,7 @@ function App() {
         </Accordion.Root>
       </section>
       <section className="section">
-        <p className="section_title">{t("team.title")}</p>
+        <h2 className="section_title">{t("team.title")}</h2>
         <p className="section_subtitle">{t("team.subtitle")}</p>
         <Group justify="center" style={{ marginBlock: "var(--xl)" }}>
           {avatars.map((avatar) => (
@@ -508,7 +496,7 @@ function App() {
         className="section section_secondary"
         id={constants.sections.contacta.value}
       >
-        <p className="section_title">{t("contact.title")}</p>
+        <h2 className="section_title">{t("contact.title")}</h2>
         <p className="section_subtitle">{t("contact.subtitle")}</p>
         <Grid width={350}>
           <div style={{ display: "flex", flexDirection: "column" }}>
