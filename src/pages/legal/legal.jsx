@@ -1,6 +1,6 @@
 export default function LegalPage() {
-  const owner = `"Maria Angeles Parreño García S.L.”, con domicilio social en Dénia, Calle Sandunga 51, y CIF: B56227978, inscrita en el registro de la Dirección Nacioal de seguros, con el número C0461B56227878`;
-  const domain = "www.asisadenia.es";
+  const owner = `"Maria Angeles Parreño García S.L.”, con domicilio social en Dénia, Calle Sandunga 51, y CIF: B56227978, inscrita en el registro de la Dirección Nacional de seguros, con el número C0461B56227878`;
+  const domain = "www.segurosdenia.es";
   const name = "Agencia ASISA Dénia";
   return (
     <>

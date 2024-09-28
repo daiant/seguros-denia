@@ -86,12 +86,12 @@ function App() {
     {
       src: "parreno.webp",
       alt: "MariaAngelesParreno",
-      name: "Maria Angeles Parreno",
+      name: "María Ángeles Parreno",
       position: t("avatars.ceo"),
     },
     {
       src: "rosa.webp",
-      alt: "Rosa Argudo",
+      alt: "Rosa Mª Argudo",
       name: "Rosa Argudo",
       position: t("avatars.customer_service"),
     },
