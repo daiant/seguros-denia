@@ -69,7 +69,7 @@ a {
   text-decoration: none;
 }
 
-img.with-border {
+.with-border {
   border: 6px solid var(--background-5);
   border-radius: var(--md);
   box-shadow: var(--shadow);

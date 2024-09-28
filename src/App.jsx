@@ -181,7 +181,7 @@ function App() {
   ];
 
   const HeroBanner = () => (
-    <Grid className="banner">
+    <Grid className="banner" width={360}>
       <Group
         flexDirection="column"
         align="flex-start"
@@ -442,7 +442,7 @@ function App() {
               ))}
             </EmblaCarousel>
             <img
-              src="https://picsum.photos/900/600"
+              src="/people-opinions.webp"
               className="with-border"
               style={{
                 maxWidth: 500,
@@ -500,13 +500,30 @@ function App() {
       >
         <p className="section_title">{t("contact.title")}</p>
         <p className="section_subtitle">{t("contact.subtitle")}</p>
-        <Grid>
-          <div style={{ height: "fit-content" }}>
-            <img src="https://picsum.photos/900/600" className="with-border" />
+        <Grid width={350}>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <div className="with-border" style={{ flexGrow: 1 }}>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6215.4285685014!2d0.09731059539901543!3d38.83900379377831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x129e1b480252a6c9%3A0xce13009f62355e46!2sAtenci%C3%B3n%20Comercial%20y%20al%20Cliente%20ASISA%20Seguros%20Denia!5e0!3m2!1ses!2ses!4v1727512330747!5m2!1ses!2ses"
+                allowfullscreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                style={{
+                  border: 0,
+                  width: "100%",
+                  height: "100%",
+                  minHeight: 400,
+                }}
+              ></iframe>
+            </div>
             <Button
               variant="transparent"
               href={constants.whatsapp}
-              style={{ display: "block", width: "fit-content" }}
+              style={{
+                display: "block",
+                width: "fit-content",
+                marginBlockStart: "0.5rem",
+              }}
             >
               <Group>
                 <WhatsappLogo size={24} color="var(--accent)" />
