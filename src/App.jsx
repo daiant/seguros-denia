@@ -317,7 +317,7 @@ function App() {
           className="Accordion"
           defaultValue={faq(t)[0].question}
         >
-          {faq.map((faq) => (
+          {faq(t).map((faq) => (
             <Accordion.Item
               key={faq.question}
               value={faq.question}
