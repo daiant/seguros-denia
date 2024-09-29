@@ -144,7 +144,7 @@
 }
 
 .insurance .coverage_item .icon {
-  color: yellow;
+  color: hsl(35.43deg 100% 50%);
 }
 
 .insurance .coverage_item .covered {
