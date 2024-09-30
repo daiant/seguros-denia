@@ -1,0 +1,9 @@
+.info-form .input-field label {
+  font-size: var(--text-sm);
+  opacity: 0.8;
+}
+
+.info-form .input-field select,
+.info-form .input-field input {
+  font-size: var(--text-md);
+}

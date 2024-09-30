@@ -1,0 +1,9 @@
+.campaigns p {
+  margin-block: 1em;
+}
+
+.campaigns ul {
+  margin-top: .5em;
+  padding-left: 1em;
+  list-style: initial;
+}

@@ -1,17 +1,19 @@
+import { useTranslation } from "react-i18next";
 import Group from "../group/group";
 import Header from "../header/header";
 import "./footer.css";
 
 export default function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="footer">
       <Header style={{ backgroundColor: "inherit", color: "inherit" }} />
       <Group justify="space-between" align="center" wrap="wrap">
-        <p>© Todos los derechos reservados.</p>
+        <p>{t("footer.copyright")}</p>
         <Group>
-          <a href="/legal">Legal</a>
-          <a href="/cookies">Cookies</a>
-          <a href="/tos">Condiciones</a>
+          <a href="/aviso-legal">{t("footer.legal")}</a>
+          <a href="/politica-de-cookies">{t("footer.cookies")}</a>
+          <a href="/politica-de-proteccion-de-datos">{t("footer.lopd")}</a>
         </Group>
       </Group>
     </footer>

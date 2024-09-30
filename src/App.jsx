@@ -7,17 +7,12 @@ import Button from "./components/button/button";
 import Footer from "./components/footer/footer";
 import {
   CaretDown,
-  Heart,
-  PaperPlaneTilt,
   Quotes,
   Star,
   WhatsappLogo,
   Question,
   Envelope,
-  SunHorizon,
-  FingerprintSimple,
-  PersonSimpleCircle,
-  UserCircleGear,
+  PaperPlaneTilt,
 } from "@phosphor-icons/react";
 import Grid from "./components/grid/grid";
 import Card from "./components/card/card";
@@ -26,121 +21,95 @@ import Avatar from "./components/avatar/avatar";
 import EmblaCarousel from "./components/carousel/embla/embla-carousel";
 import Insurance from "./components/insurance/insurance";
 import { constants } from "./constants";
+import FloatingButton from "./components/floating-button/floating-button";
+import { Trans } from "react-i18next";
+import { useCustomTranslation } from "./lib/useDefaultLanguage";
+import ContactForm from "./components/contact-form/contact-form";
+import { avatars, benefits, campaigns, faq, opinions } from "./lib/db";
 
 function App() {
-  const [headerHeight, setHeaderHeight] = React.useState(121);
+  const { t } = useCustomTranslation();
+  const [headerHeight, setHeaderHeight] = React.useState(134);
+
   function range(length) {
     return new Array(length).fill(0);
   }
-  const avatars = [
-    {
-      src: "https://picsum.photos/900/600",
-      alt: "MariaAngelesParreno",
-      name: "Maria Angeles Parreno",
-      position: "CEO",
-    },
-    {
-      src: "https://picsum.photos/900/600",
-      alt: "Rosa",
-      name: "Rosa",
-      position: "Atencion al cliente",
-    },
-  ];
-  const opinions = [
-    {
-      value: `Cuando surgen los problemas es cuando se necesitan profesionales de verdad, y Ma Angeles y su equipo están a la altura de cualquiera que sean las circunstancias tanto profesionalmente como personalmente llevando la empatía y la profesionalidad de la mano en todos sus servicios. El valor añadido a cualquier trabajo es sin duda la calidad de las personas.`,
-      name: "Mercè Xicola",
-      stars: 5,
-    },
-    {
-      value: `Profesionales , Amables, y resolutivas...estoy contento con su atención. Y sin desplazarme....todo telemáticamente, cosa que también se agradece.`,
-      name: "Pau",
-      stars: 5,
-    },
-    {
-      value:
-        "Atención personalizada, profesionalidad, seriedad… resuelven cualquier duda y te aconsejan pensando en lo mejor para el cliente. Trato excepcional.",
-      name: "Jasmina Llull Vicente",
-      stars: 5,
-    },
-  ];
 
-  const faq = [
-    {
-      question: "¿Qué ventajas tiene contratar ASISA para tu seguro de salud?",
-      answer:
-        "Los seguros ASISA tienen todas las coberturas sanitarias, podrás ir al especialista sin pasar por el médico de cabecera, sin esperas y todos los días del año. Tendrás servicios como telemedicina, apoyo psicoemocional y el club ASISA con grandes beneficios.",
-    },
-    {
-      question: "¿Cómo contratar un seguro de salud de ASISA?",
-      answer:
-        "Puedes contratar tu seguro llamando o enviándonos un whatsapp y nos pondremos en contacto contigo para darle más información.",
-      cta: {
-        link: "",
-        value: (
-          <Group gap="xs">
-            <span>Contacta con nosotros</span>
-            <WhatsappLogo size={24} />
-          </Group>
-        ),
-      },
-    },
-    {
-      question: "¿Qué son los seguros con copago y sin copago?",
-      answer:
-        "Los seguros con copago son aquellos con una prima baja, pero con los que debes abonar una cantidad por el uso de ciertos servicios. Con los seguros sin copago, pagarás la misma mensualidad, sin importar el uso que le des al seguro.",
-    },
-    {
-      question: "¿Cuáles son los periodos de carencia más habituales?",
-      answer:
-        "Generalmente, el periodo de carencia es de 6 meses, salvo para la hospitalización y el parto que tienen una carencia de 8 meses.",
-    },
-    {
-      question:
-        "¿Qué servicios no necesitan autorización de ASISA? ¿Y cuáles necesitan de la autorización?",
-      answer:
-        "Puedes acceder a ciertos servicios sin necesidad de una autorización de la compañía: análisis clínicos, audiometría, arteriografía, citología, colposcopia, consulta médica, coombs directo, densitometría ósea, Doppler o eco-doppler, ecocardiograma, ecografías, electrocardiograma, electroencefalograma, electromiograma, estudio de la pisada, ergometría, holter, limpieza de boca, mamografía, preparación al parto, preoperatorio, radiografías simples, urografía, etc.",
-    },
-    {
-      question: "¿Cómo es el cuadro médico de ASISA?",
-      answer:
-        "El asegurado tiene derecho a la libre elección de médicos de entre los que figuran en la lista de facultativos de la entidad, que cuenta con una amplia variedad de hospitales y de centros de salud propios y más de un millar de centros concertados. En caso de querer acudir a un profesional que no se encuentra en el cuadro médico, podrás contratar tu seguro de reembolso y elegir con total libertad.",
-    },
-  ];
-  const benefits = [
-    {
-      icon: <SunHorizon size={72} stroke="0.7" color="var(--primary)" />,
-      title: "Con nosotros, no hay problemas",
-      value:
-        "Te ofrecemos la tranquilidad de un servicio que siempre responde y cumple.",
-    },
-    {
-      icon: <FingerprintSimple size={72} stroke="0.7" color="var(--primary)" />,
-      title: "Total privacidad",
-      value:
-        "Protegemos tu información con total confidencialidad y seguridad.",
-    },
-    {
-      icon: (
-        <PersonSimpleCircle size={72} stroke="0.7" color="var(--primary)" />
-      ),
-      title: "Siempre accesibles",
-      value:
-        "Siempre estamos disponibles para brindarte apoyo cuando lo necesites, tanto en persona como on-line.",
-    },
-    {
-      icon: <Heart size={72} stroke="0.7" color="var(--primary)" />,
-      title: "La confianza de más de 30 años de experiencia",
-      value:
-        "Nuestra trayectoria nos permite entender y resolver cualquier desafío.",
-    },
-    {
-      icon: <UserCircleGear size={72} stroke="0.7" color="var(--primary)" />,
-      title: "Soluciones a tu medida",
-      value:
-        "Ofrecemos soluciones personalizadas, adaptadas a tus necesidades.",
-    },
-  ];
+  const HeroBanner = () => (
+    <Grid className="banner" width={360}>
+      <Group
+        flexDirection="column"
+        align="flex-start"
+        justify="center"
+        style={{ paddingBlock: "32px 16px" }}
+      >
+        <p style={{ fontSize: "var(--text-lg)", marginBlock: 0 }}>
+          {t("hero.subtitle")}
+        </p>
+        <h1
+          style={{
+            fontSize: "var(--text-xxl)",
+            fontFamily: "var(--text-title)",
+            fontWeight: "700",
+            marginBlock: 0,
+          }}
+        >
+          {t("hero.heading")}
+        </h1>
+        <Group>
+          <Button variant="secondary" href={constants.sections.seguros.target}>
+            <Group gap="sm">
+              <span>{t("common.choose_insurance")}</span>
+              <PaperPlaneTilt />
+            </Group>
+          </Button>
+          <Button variant="accent" href={constants.sections.contacta.target}>
+            <Group gap="sm">
+              <span>{t("common.contact")}</span>
+              <WhatsappLogo />
+            </Group>
+          </Button>
+        </Group>
+      </Group>
+      <img
+        alt="Imagen de las trabajadoras de Seguros Denia"
+        src="/home.webp"
+        className="with-border aspect-ratio"
+        width={900}
+        height={600}
+        style={{ height: "unset" }}
+      />
+    </Grid>
+  );
+
+  const CampaignsCarousel = () => {
+    return (
+      <>
+        {campaigns(t)
+          .filter((c) => c.active)
+          .map((campaign) => (
+            <div
+              key={campaign.alt}
+              style={{
+                display: "grid",
+                alignItems: "center",
+              }}
+            >
+              <a href={campaign.href} aria-label={campaigns.alt}>
+                <picture>
+                  <source media="(min-width: 768px)" srcSet={campaign.src} />
+                  <img
+                    src={campaign.src_mobile}
+                    style={{ width: "100%" }}
+                    alt={campaign.alt}
+                  />
+                </picture>
+              </a>
+            </div>
+          ))}
+      </>
+    );
+  };
   return (
     <>
       <Header
@@ -162,79 +131,44 @@ function App() {
           marginBlockStart: "-" + headerHeight + "px",
         }}
       >
-        <EmblaCarousel
-          style={{ display: "flex", alignItems: "center", flexGrow: 1 }}
-        >
-          <Grid>
-            <Group
-              flexDirection="column"
-              align="flex-start"
-              justify="center"
-              style={{ paddingBlock: "32px 16px" }}
-            >
-              <p style={{ fontSize: "var(--text-lg)", marginBlock: 0 }}>
-                Asegurando a las familias de Dénia desde hace más de 20 años
-              </p>
-              <p
-                style={{
-                  fontSize: "var(--text-xxl)",
-                  fontFamily: "var(--text-title)",
-                }}
-              >
-                Tu aseguradora de confianza en Dénia desde hace más de 20 años.
-              </p>
-              <Group>
-                <Button
-                  variant="secondary"
-                  href={constants.sections.seguros.target}
-                >
-                  <Group gap="sm">
-                    <span>Elige tu seguro</span>
-                    <PaperPlaneTilt />
-                  </Group>
-                </Button>
-                <Button
-                  variant="accent"
-                  href={constants.sections.contacta.target}
-                >
-                  <Group gap="sm">
-                    <span>Contacta con nosotros</span>
-                    <WhatsappLogo />
-                  </Group>
-                </Button>
-              </Group>
-            </Group>
-            <img
-              src="https://picsum.photos/900/600"
-              className="with-border"
-              style={{ height: "unset" }}
-            />
-          </Grid>
-        </EmblaCarousel>
+        <HeroBanner />
       </section>
+      <div style={{ padding: 16 }}>
+        <EmblaCarousel
+          theme="dark"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexGrow: 1,
+            flexDirection: "column",
+            paddingBlock: "2rem",
+          }}
+        >
+          <CampaignsCarousel />
+        </EmblaCarousel>
+      </div>
       <section className="section">
-        <p className="section_title">Siempre a tu lado, estés donde estés</p>
+        <h2 className="section_title">{t("about_us.title")}</h2>
         <Grid style={{ gap: "var(--xxl)" }}>
-          <img src="https://picsum.photos/900/600" className="with-border" />
+          <img
+            src="store.webp"
+            className="with-border"
+            alt="Imagen del local de Seguros Dénia"
+          />
           <Group flexDirection="column" align="flex-start">
+            <p>{t("about_us.p1")}</p>
             <p>
-              En nuestra aseguradora, con décadas de experiencia, ponemos a
-              nuestros clientes en el centro de todo lo que hacemos. Nos
-              enorgullece ofrecer un servicio cercano y personalizado, brindando
-              la confianza y tranquilidad que necesitas. Estamos aquí para ti,
-              siempre.
-            </p>
-            <p>
-              Visítanos en <b>Calle Sandunga 51, Dénia</b> o contáctanos
-              directamente a través de nuestro formulario web para recibir la
-              atención personalizada que mereces. ¡Estamos aquí para ayudarte!
+              <Trans
+                i18nKey="about_us.p2"
+                components={{ strong: <strong /> }}
+              />
             </p>
             <Group
               style={{ marginBlockStart: "auto", paddingBlockEnd: "var(--md)" }}
             >
               <Button href={constants.sections.contacta.target}>
                 <Group>
-                  <span>Contacta con nosotros</span>
+                  <span>{t("common.contact")}</span>
                   <PaperPlaneTilt size={24} />
                 </Group>
               </Button>
@@ -244,7 +178,7 @@ function App() {
                 target="_blank"
               >
                 <Group>
-                  <span>Envíanos un mensaje</span>
+                  <span>{t("common.whatsapp")}</span>
                   <WhatsappLogo size={24} />
                 </Group>
               </Button>
@@ -253,9 +187,9 @@ function App() {
         </Grid>
       </section>
       <section className="section section_secondary">
-        <p className="section_title">Por qué confiar en nosotros</p>
+        <h2 className="section_title">{t("benefits.title")}</h2>
         <Group justify="center" gap="xxl">
-          {benefits.map((b, i) => (
+          {benefits(t).map((b, i) => (
             <Card key={i}>
               {b.icon}
               <Card.Title value={b.title} />
@@ -265,7 +199,7 @@ function App() {
         </Group>
       </section>
       <section className="section">
-        <p className="section_title">Lo que dicen nuestros clientes</p>
+        <h2 className="section_title">{t("opinions.title")}</h2>
         <Group justify="space-between">
           <Group>
             <span
@@ -287,7 +221,7 @@ function App() {
           </Group>
           <Button variant="secondary" href={constants.maps} target="_blank">
             <Group>
-              <span>Escribir una reseña</span>
+              <span>{t("opinions.cta")}</span>
               <PaperPlaneTilt />
             </Group>
           </Button>
@@ -312,7 +246,7 @@ function App() {
           />
           <Grid>
             <EmblaCarousel>
-              {opinions.map((opinion) => (
+              {opinions(t).map((opinion) => (
                 <div
                   style={{
                     display: "flex",
@@ -360,7 +294,8 @@ function App() {
               ))}
             </EmblaCarousel>
             <img
-              src="https://picsum.photos/900/600"
+              alt="Persona sonriendo en una cafeterías"
+              src="/people-opinions.webp"
               className="with-border"
               style={{
                 maxWidth: 500,
@@ -371,23 +306,18 @@ function App() {
         </div>
       </section>
       <section className="section" id={constants.sections.seguros.value}>
-        <p className="section_title">Elige tu seguro</p>
-        <p className="section_subtitle">
-          En Agencia ASISA Dénia te ofrecemos una gran variedad de seguros con
-          todas las coberturas que necesitas para ti y para tu familia
-        </p>
+        <h2 className="section_title">{t("common.choose_insurance")}</h2>
+        <p className="section_subtitle">{t("insurance_form.subtitle")}</p>
         <Insurance />
       </section>
       <section className="section section_secondary">
-        <p className="section_title">
-          Preguntas frecuentes de los seguros ASISA Salud
-        </p>
+        <h2 className="section_title">{t("faq.title")}</h2>
         <Accordion.Root
           type="single"
           className="Accordion"
-          defaultValue={faq[0].question}
+          defaultValue={faq(t)[0].question}
         >
-          {faq.map((faq) => (
+          {faq(t).map((faq) => (
             <Accordion.Item
               key={faq.question}
               value={faq.question}
@@ -409,13 +339,10 @@ function App() {
         </Accordion.Root>
       </section>
       <section className="section">
-        <p className="section_title">Conoce al equipo</p>
-        <p className="section_subtitle">
-          Con una experiencia combinada de más de 40 años, sabes que estás en
-          buenas manos.
-        </p>
+        <h2 className="section_title">{t("team.title")}</h2>
+        <p className="section_subtitle">{t("team.subtitle")}</p>
         <Group justify="center" style={{ marginBlock: "var(--xl)" }}>
-          {avatars.map((avatar) => (
+          {avatars(t).map((avatar) => (
             <Avatar key={avatar.name} {...avatar} />
           ))}
         </Group>
@@ -424,18 +351,33 @@ function App() {
         className="section section_secondary"
         id={constants.sections.contacta.value}
       >
-        <p className="section_title">¿Quedamos?</p>
-        <p className="section_subtitle">
-          En ASISA Dénia siempre estamos disponibles para ti ofreciéndote
-          diferentes canales para contactar con nosotros.
-        </p>
-        <Grid>
-          <div style={{ height: "fit-content" }}>
-            <img src="https://picsum.photos/900/600" className="with-border" />
+        <h2 className="section_title">{t("contact.title")}</h2>
+        <p className="section_subtitle">{t("contact.subtitle")}</p>
+        <Grid width={350}>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <div className="with-border" style={{ flexGrow: 1 }}>
+              <iframe
+                title="Ubicación Seguros Dénia"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6215.4285685014!2d0.09731059539901543!3d38.83900379377831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x129e1b480252a6c9%3A0xce13009f62355e46!2sAtenci%C3%B3n%20Comercial%20y%20al%20Cliente%20ASISA%20Seguros%20Denia!5e0!3m2!1ses!2ses!4v1727512330747!5m2!1ses!2ses"
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                style={{
+                  border: 0,
+                  width: "100%",
+                  height: "100%",
+                  minHeight: 400,
+                }}
+              ></iframe>
+            </div>
             <Button
               variant="transparent"
               href={constants.whatsapp}
-              style={{ display: "block", width: "fit-content" }}
+              style={{
+                display: "block",
+                width: "fit-content",
+                marginBlockStart: "0.5rem",
+              }}
             >
               <Group>
                 <WhatsappLogo size={24} color="var(--accent)" />
@@ -453,29 +395,11 @@ function App() {
               </Group>
             </Button>
           </div>
-          <form className="form">
-            <div className="input-field">
-              <label htmlFor="name">Nombre</label>
-              <input type="text" id="name" name="name" />
-            </div>
-            <div className="input-field">
-              <label htmlFor="phone">Teléfono</label>
-              <input type="tel" id="phone" name="phone" />
-            </div>
-            <div className="input-field">
-              <label htmlFor="subject">¿Cuál es tu pregunta?</label>
-              <textarea
-                name="subject"
-                id="subject"
-                defaultValue="Me gustaría recibir información acerca de los seguros que puede ofrecerme ASISA."
-                rows="5"
-              ></textarea>
-            </div>
-            <Button>Contacta con nosotros</Button>
-          </form>
+          <ContactForm />
         </Grid>
       </section>
       <Footer />
+      <FloatingButton />
     </>
   );
 }

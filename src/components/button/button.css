@@ -8,6 +8,11 @@
   border-radius: 6px;
   font-size: var(--text-md);
   padding: var(--sm) var(--md);
+  position: relative;
+}
+
+.button>* {
+  grid-area: 1/1;
 }
 
 .button:hover {
@@ -36,4 +41,44 @@
 .transparent {
   background-color: transparent;
   color: var(--foreground);
+}
+
+.loading {
+  display: block;
+  margin-inline: auto;
+  -webkit-animation: rotate-center 2s infinite both;
+  animation: rotate-center 2s infinite both;
+}
+
+.wrapper,
+.loading {
+  transition: opacity 150ms linear;
+}
+
+.button [aria-hidden=true] {
+  opacity: 0;
+}
+
+@-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
