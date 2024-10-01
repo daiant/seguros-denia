@@ -13,7 +13,7 @@ export const translation = {
     },
     avatars: {
       ceo: "Agente exclusivo",
-      customer_service: 'Atención al asegurado'
+      customer_service: 'Asesor comercial'
     },
     opinions: {
       title: "Lo que dicen nuestros clientes",
@@ -30,7 +30,7 @@ export const translation = {
       },
       '2': {
         question: "¿Cómo contratar un seguro de salud de ASISA?",
-        answer: 'Puedes contratar tu seguro llamando o enviándonos un whatsapp y nos pondremos en contacto contigo para darle más información.'
+        answer: 'Puedes contratar tu seguro llamando o enviándonos un whatsapp y nos pondremos en contacto contigo para darte más información.'
       },
       '3': {
         question: "¿Qué son los seguros con copago y sin copago?",
@@ -85,7 +85,7 @@ export const translation = {
     },
     about_us: {
       title: "Siempre a tu lado, estés donde estés",
-      p1: 'En nuestra aseguradora, con décadas de experiencia, ponemos a nuestros clientes en el centro de todo lo que hacemos.Nos enorgullece ofrecer un servicio cercano y personalizado, brindando la confianza y tranquilidad que necesitas.Estamos aquí para ti, siempre.',
+      p1: 'En nuestra aseguradora, con décadas de experiencia, ponemos a nuestros clientes en el centro de todo lo que hacemos. Nos enorgullece ofrecer un servicio cercano y personalizado, brindando la confianza y tranquilidad que necesitas. Estamos aquí para ti, siempre.',
       p2: 'Visítanos en <strong>Calle Sandunga 51, Dénia</strong> o contáctanos directamente a través de nuestro formulario web para recibir la atención personalizada que mereces. ¡Estamos aquí para ayudarte!'
     },
     insurance_form: {
@@ -118,7 +118,7 @@ export const translation = {
     },
     team: {
       title: "Conoce al equipo",
-      subtitle: 'Con una experiencia combinada de más de 40 años, sabes que estás en buenas manos.',
+      subtitle: 'Capacidad de gestión y total confidencialidad. La confianza de saber que estamos para asesorarte en la elección de tus seguros personales.',
     },
     contact: {
       title: '¿Quedamos?',
