@@ -13,7 +13,7 @@ export const translation = {
     },
     avatars: {
       ceo: 'Exclusive agent',
-      customer_service: 'Customer service',
+      customer_service: 'Comercial advisor',
     },
     opinions: {
       title: 'What our customers are saying',
@@ -112,7 +112,7 @@ export const translation = {
     },
     team: {
       title: "Meet the team",
-      subtitle: 'With a combined experience of more than 40 years, you know you are in good hands.',
+      subtitle: 'Management capacity and total confidentiality. The confidence of knowing that we are here to advise you in choosing your personal insurance.',
     },
     contact: {
       title: "Let's meet?",
@@ -144,7 +144,7 @@ export const translation = {
     'Asisa Ya': 'Asisa Ya',
     'Cobertura ambulatoria al mejor precio y con un copago un poco más alto. El producto ambulatorio estrella de ASISA.': 'Outpatient coverage at the best price and with a slightly higher copayment. ASISA\'s star outpatient product.',
     'Asisa Completa +': 'Asisa Completa +',
-    'Cobertura completa con un precio muy competitivo y un copago bajo.El seguro más vendido de ASISA.': 'Full coverage with a very competitive price and a low copayment. ASISA\'s best- selling insurance.',
+    'Cobertura completa con un precio muy competitivo y un copago bajo. El seguro más vendido de ASISA.': 'Full coverage with a very competitive price and a low copayment. ASISA\'s best- selling insurance.',
     'Copago bajo': 'Low copayment',
     'Asisa Completa': 'Asisa Completa',
     'Cobertura completa con un precio muy competitivo y sin copago. El seguro más vendido de ASISA.': 'Full coverage with a very competitive price and no copayment. ASISA\'s best-selling insurance.',

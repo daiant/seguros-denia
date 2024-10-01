@@ -89,7 +89,7 @@ export const loadInsuranceList = (t) => ([
   {
     id: 3,
     title: t('Asisa Completa +'),
-    description: t('Cobertura completa con un precio muy competitivo y un copago bajo.El seguro más vendido de ASISA.'),
+    description: t('Cobertura completa con un precio muy competitivo y un copago bajo. El seguro más vendido de ASISA.'),
     price: [26, 80],
     variant: t('Copago bajo'),
     coverages: [

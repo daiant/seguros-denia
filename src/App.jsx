@@ -391,7 +391,7 @@ function App() {
             >
               <Group>
                 <Envelope size={24} color="var(--accent)" />
-                <span>maparreno@asisa.es</span>
+                <span>maparreno@tuasesorasisa.es</span>
               </Group>
             </Button>
           </div>
