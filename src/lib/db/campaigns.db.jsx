@@ -4,7 +4,7 @@ export const campaigns = () => [
     src_mobile: "/campaigns/asisa-dental-octubre-mobile.jpg",
     alt: "Campaña Dental",
     href: "/campaigns/asisa-dental",
-    active: true,
+    active: false,
   },
   {
     src: "/campaigns/asisa-decesos.jpg",
