@@ -25,7 +25,7 @@ export const campaigns = () => [
     src_mobile: "/campaigns/asisa-vida-mobile.png",
     alt: "Campaña Vida",
     href: "/campaigns/asisa-vuelta-al-cole",
-    active: true,
+    active: false,
   },
   {
     src: "/campaigns/asisa-general-optica.png",
@@ -40,5 +40,12 @@ export const campaigns = () => [
     alt: "Campaña International",
     href: "/campaigns/asisa-international",
     active: false,
+  },
+  {
+    src: "/campaigns/ofertas-promociones.png",
+    src_mobile: "/campaigns/ofertas-promociones-mobile.png",
+    alt: "Ofertas Promociones",
+    href: "/campaigns/ofertas-promociones",
+    active: true,
   },
 ];
