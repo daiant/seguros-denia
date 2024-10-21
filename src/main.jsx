@@ -12,10 +12,9 @@ import InsuranceInfoPage from "./pages/insurance-info/insurance-info";
 import { Toaster } from "sonner";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import LayoutCampaigns from "./pages/campaigns/layout";
-import AsisaDentalPage from "./pages/campaigns/asisa-dental";
 import VetPage from "./pages/campaigns/asisa-asisencia-veterinaria";
-import AsisaVueltaColePage from "./pages/campaigns/asisa-vuelta-cole";
 import AsisaOcaso from "./pages/campaigns/asisa-ocaso";
+import OfertasPromocionesPage from "./pages/campaigns/ofertas-promociones";
 
 const router = createBrowserRouter([
   {
@@ -59,14 +58,6 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "campaigns/asisa-vuelta-al-cole",
-    element: (
-      <LayoutCampaigns>
-        <AsisaVueltaColePage />
-      </LayoutCampaigns>
-    ),
-  },
-  {
     path: "campaigns/asisa-asistencia-veterinaria",
     element: (
       <LayoutCampaigns>
@@ -75,10 +66,10 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "campaigns/asisa-dental",
+    path: "campaigns/ofertas-promociones",
     element: (
       <LayoutCampaigns>
-        <AsisaDentalPage />
+        <OfertasPromocionesPage />
       </LayoutCampaigns>
     ),
   },
