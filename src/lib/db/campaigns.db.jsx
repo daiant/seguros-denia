@@ -11,14 +11,14 @@ export const campaigns = () => [
     src_mobile: "/campaigns/asisa-decesos-mobile.jpg",
     alt: "Campaña Decesos",
     href: "/campaigns/asisa-ocaso",
-    active: true,
+    active: false,
   },
   {
     src: "/campaigns/asisa-nuevas-familias.png",
     src_mobile: "/campaigns/asisa-nuevas-familias-mobile.png",
     alt: "Campaña Nuevas Familias",
     href: "/campaigns/asisa-asistencia-veterinaria",
-    active: true,
+    active: false,
   },
   {
     src: "/campaigns/asisa-vida.png",
@@ -39,7 +39,7 @@ export const campaigns = () => [
     src_mobile: "/campaigns/asisa-international-mobile.png",
     alt: "Campaña International",
     href: "/campaigns/asisa-international",
-    active: false,
+    active: true,
   },
   {
     src: "/campaigns/ofertas-promociones.png",
