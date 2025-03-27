@@ -7,3 +7,11 @@
   padding-left: 1em;
   list-style: initial;
 }
+
+@media (max-width: 768px) {
+   .wrap > div{ flex-direction: column !important;
+  }
+  .wrap img {
+   width: 100% !important;
+  }
+}

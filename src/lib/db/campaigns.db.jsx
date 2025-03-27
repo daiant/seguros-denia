@@ -21,11 +21,11 @@ export const campaigns = () => [
     active: false,
   },
   {
-    src: "/campaigns/asisa-vida.png",
-    src_mobile: "/campaigns/asisa-vida-mobile.png",
+    src: "/campaigns/cabecera-home-promo-vida-compromiso-asegurados-v2.webp",
+    src_mobile: "/campaigns/cabecera-home-promo-vida-compromiso-asegurados-v2.webp",
     alt: "Campaña Vida",
-    href: "/campaigns/asisa-vuelta-al-cole",
-    active: false,
+    href: "/campaigns/asisa-vida",
+    active: true,
   },
   {
     src: "/campaigns/asisa-general-optica.png",
@@ -42,10 +42,17 @@ export const campaigns = () => [
     active: true,
   },
   {
+    src: "/campaigns/asisa-travel.jpg",
+    src_mobile: "/campaigns/asisa-travel.jpg",
+    alt: "Asisa Travel",
+    href: "/campaigns/asisa-travel",
+    active: true,
+  },
+  {
     src: "/campaigns/ofertas-promociones.png",
     src_mobile: "/campaigns/ofertas-promociones-mobile.png",
     alt: "Ofertas Promociones",
     href: "/campaigns/ofertas-promociones",
-    active: true,
+    active: false,
   },
 ];

@@ -15,6 +15,10 @@ import LayoutCampaigns from "./pages/campaigns/layout";
 import VetPage from "./pages/campaigns/asisa-asisencia-veterinaria";
 import AsisaOcaso from "./pages/campaigns/asisa-ocaso";
 import OfertasPromocionesPage from "./pages/campaigns/ofertas-promociones";
+import AsisaInternational from "./pages/campaigns/asisa-international.jsx";
+import AsisaVida from "./pages/campaigns/asisa-vida.jsx";
+import AsisaTravel from "./pages/campaigns/asisa-travel.jsx";
+import AsisaMascotas from "./pages/campaigns/asisa-mascotas.jsx";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +53,10 @@ const router = createBrowserRouter([
       </LayoutLegal>
     ),
   },
+  {path: 'campaigns/asisa-international', element: (<LayoutCampaigns><AsisaInternational /></LayoutCampaigns>)},
+  {path: 'campaigns/asisa-vida', element: (<LayoutCampaigns><AsisaVida /></LayoutCampaigns>)},
+  {path: 'campaigns/asisa-travel', element: (<LayoutCampaigns><AsisaTravel /></LayoutCampaigns>)},
+  {path: 'campaigns/asisa-mascotas', element: (<LayoutCampaigns><AsisaMascotas /></LayoutCampaigns>)},
   {
     path: "campaigns/asisa-ocaso",
     element: (
