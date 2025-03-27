@@ -1,14 +1,18 @@
 import React from "react";
-import FloatingButton from "../../components/floating-button/floating-button";
-import Footer from "../../components/footer/footer";
-import Header from "../../components/header/header";
+import FloatingButton from "../components/floating-button/floating-button.jsx";
+import Footer from "../components/footer/footer.jsx";
+import Header from "../components/header/header.jsx";
 import { useSearchParams } from "react-router-dom";
-import { loadInsuranceList } from "../../components/insurance/insurance.db";
-import Button from "../../components/button/button";
+import { loadInsuranceList } from "../components/insurance/insurance.db.js";
+import Button from "../components/button/button.jsx";
 import "./insurance-info.css";
-import { handleSubmit } from "../../lib/form/form.utils";
-import { useCustomTranslation } from "../../lib/useDefaultLanguage";
+import { handleSubmit } from "../lib/form/form.utils.js";
+import { useCustomTranslation } from "../lib/useDefaultLanguage.js";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import * as ReactDom from "react-dom";
+import {createRoot} from "react-dom/client";
+
+
 
 export default function InsuranceInfoPage() {
   const { t } = useCustomTranslation();
@@ -153,3 +157,4 @@ export default function InsuranceInfoPage() {
     </>
   );
 }
+createRoot( document.getElementById('root')).render(<InsuranceInfoPage />);

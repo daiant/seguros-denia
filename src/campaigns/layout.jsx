@@ -1,7 +1,7 @@
 import React from "react";
-import Footer from "../../components/footer/footer";
-import Header from "../../components/header/header";
-import ContactForm from "../../components/contact-form/contact-form";
+import Footer from "../components/footer/footer.jsx";
+import Header from "../components/header/header.jsx";
+import ContactForm from "../components/contact-form/contact-form.jsx";
 import "./campaigns.css";
 
 // eslint-disable-next-line react/prop-types
