@@ -45,6 +45,10 @@ const router = createBrowserRouter([
       </LayoutLegal>
     ),
   },
+  {path: '/campaigns/asisa-international', element: (<LayoutCampaigns><AsisaInternational /></LayoutCampaigns>)},
+  {path: '/campaigns/asisa-vida', element: (<LayoutCampaigns><AsisaVida /></LayoutCampaigns>)},
+  {path: '/campaigns/asisa-travel', element: (<LayoutCampaigns><AsisaTravel /></LayoutCampaigns>)},
+  {path: '/campaigns/asisa-mascotas', element: (<LayoutCampaigns><AsisaMascotas /></LayoutCampaigns>)},
   {
     path: "politica-de-proteccion-de-datos",
     element: (
@@ -53,12 +57,12 @@ const router = createBrowserRouter([
       </LayoutLegal>
     ),
   },
-  {path: 'campaigns/asisa-international', element: (<LayoutCampaigns><AsisaInternational /></LayoutCampaigns>)},
-  {path: 'campaigns/asisa-vida', element: (<LayoutCampaigns><AsisaVida /></LayoutCampaigns>)},
-  {path: 'campaigns/asisa-travel', element: (<LayoutCampaigns><AsisaTravel /></LayoutCampaigns>)},
-  {path: 'campaigns/asisa-mascotas', element: (<LayoutCampaigns><AsisaMascotas /></LayoutCampaigns>)},
+  {path: '/campaigns/asisa-international', element: (<LayoutCampaigns><AsisaInternational /></LayoutCampaigns>)},
+  {path: '/campaigns/asisa-vida', element: (<LayoutCampaigns><AsisaVida /></LayoutCampaigns>)},
+  {path: '/campaigns/asisa-travel', element: (<LayoutCampaigns><AsisaTravel /></LayoutCampaigns>)},
+  {path: '/campaigns/asisa-mascotas', element: (<LayoutCampaigns><AsisaMascotas /></LayoutCampaigns>)},
   {
-    path: "campaigns/asisa-ocaso",
+    path: "/campaigns/asisa-ocaso",
     element: (
       <LayoutCampaigns>
         <AsisaOcaso />
