@@ -96,11 +96,11 @@ function App() {
               }}
             >
               <a href={campaign.href} aria-label={campaigns.alt}>
-                <picture>
+                <picture style={{maxHeight: 400}}>
                   <source media="(min-width: 768px)" srcSet={campaign.src} />
                   <img
                     src={campaign.src_mobile}
-                    style={{ width: "100%" }}
+                    style={{ width: "100%",maxHeight: 500, objectFit: 'cover' }}
                     alt={campaign.alt}
                   />
                 </picture>

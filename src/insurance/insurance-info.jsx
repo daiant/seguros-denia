@@ -157,4 +157,3 @@ export default function InsuranceInfoPage() {
     </>
   );
 }
-createRoot( document.getElementById('root')).render(<InsuranceInfoPage />);
