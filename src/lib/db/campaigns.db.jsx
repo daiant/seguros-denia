@@ -21,7 +21,7 @@ export const campaigns = () => [
     active: false,
   },
   {
-    src: "/campaigns/cabecera-home-promo-vida-compromiso-asegurados-v2.webp",
+    src: "/campaigns/cabecera-home-promo-vida-compromiso-asegurados.webp",
     src_mobile: "/campaigns/cabecera-home-promo-vida-compromiso-asegurados-v2.webp",
     alt: "Campaña Vida",
     href: "/campaigns/asisa-vida",
@@ -42,7 +42,7 @@ export const campaigns = () => [
     active: true,
   },
   {
-    src: "/campaigns/asisa-travel.jpg",
+    src: "/campaigns/asisa-travel.webp",
     src_mobile: "/campaigns/asisa-travel.jpg",
     alt: "Asisa Travel",
     href: "/campaigns/asisa-travel",
@@ -56,7 +56,7 @@ export const campaigns = () => [
     active: false,
   },
   { href: '/campaigns/asisa-mascotas',
-    src: '/campaigns/mascotas.jpg',
+    src: '/campaigns/mascotas.webp',
     src_mobile: '/campaigns/mascotas.jpg',
     alt: "Asisa Mascotas",
     active: true

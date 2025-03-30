@@ -2,18 +2,15 @@ import './campaigns.css'
 export default function AsisaTravel() {
     return (
         <div className='wrap'>
-            <div style={{display: 'flex', width: '100%', background: 'var(--primary-gradient)', gap: 48 }}>
-                <p style={{ flex: '1 1 50%', justifyContent: "space-between", color: 'white', marginInlineStart: 32, fontSize: 24, alignSelf: 'center'}}>
-                    Protege tu viaje con ASISA Viajes
-                </p>
-                <picture style={{marginInlineStart: "auto", flex: '1 1 50%', display: 'contents'}}>
+            <div >
+                <picture >
                     <source
                         media="(min-width: 768px)"
-                        srcSet="/campaigns/asisa-travel.jpg"
+                        srcSet="/campaigns/asisa-travel.webp"
                     />
                     <img
                         src="/campaigns/asisa-travel.jpg"
-                        style={{display: 'block',marginInlineStart: 'auto',maxHeight: 600, objectFit: "cover", width: '50%'}}
+                        style={{display: 'block',marginInlineStart: 'auto',maxHeight: 600, objectFit: "cover", width: '100%'}}
                     />
                 </picture>
             </div>

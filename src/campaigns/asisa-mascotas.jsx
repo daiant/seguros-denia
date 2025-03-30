@@ -2,17 +2,15 @@ import './campaigns.css'
 export default function AsisaMascotas() {
     return (
         <div className='wrap'>
-            <div style={{display: 'flex', width: '100%', background: 'var(--primary-gradient)', gap: 48 }}>
-                <p style={{ flex: '1 1 50%', justifyContent: "space-between", color: 'white', marginInlineStart: 32, fontSize: 24, alignSelf: 'center'}}>
-                    El seguro que se preocupa por ellos tanto como tú </p>
-                <picture style={{marginInlineStart: "auto", flex: '1 1 50%', display: 'contents'}}>
+            <div>
+                <picture >
                     <source
                         media="(min-width: 768px)"
-                        srcSet="/campaigns/mascotas.jpg"
+                        srcSet="/campaigns/mascotas.webp"
                     />
                     <img
                         src="/campaigns/mascotas.jpg"
-                        style={{display: 'block',marginInlineStart: 'auto',maxHeight: 600, objectFit: "cover", width: '50%'}}
+                        style={{display: 'block',marginInlineStart: 'auto',maxHeight: 600, objectFit: "cover", width: '100%'}}
                     />
                 </picture>
             </div>
@@ -35,12 +33,25 @@ export default function AsisaMascotas() {
             <p>
                 <strong>Y para un mayor cuidado...</strong>
             </p>
-            <p>Tu seguro ASISA Mascotas incluye videoconsulta veterinaria sin límite de
-                 sesiones. Y, además, chat veterinario para consultas y bienestar de tu mascota.
-            </p>
+            <p>
+                Asistencia veterinaria. Accede a todos los servicios veterinarios en cualquier clínica de nuestro cuadro: tratamientos preventivos, pruebas diagnósticas, cirugías, servicios terapéuticos, etc.
+                </p>
+            <p>
+                Y todo con descuentos medios de más del 40% frente a las tarifas de particulares.
+                </p>
+            <p>
+                Además, con el seguro de mascotas de ASISA tendrás incluidas de forma totalmente gratuita:
+                </p>
+            <ul>
+
+                <li>    Consultas, revisiones y consultas por urgencia vital </li>
+                <li>    Vacunaciones caninas: Rabia, Tetravalente (moquillo, hepatitis, leptospirosis y parvovirosis) Trivalente (moquillo, hepatitis y leptospirosis) </li>
+                <li>    Vacunaciones felinas: Trivalente (rinotraqueitis, panleucopenia y calicivirosis) Leucemia Rabia   </li>
+                <li>    Tetravalente (rinotraqueitis, panleucopenia, calicivirosis y clamidiasis)</li>
+            </ul>
             <p>Porque en ASISA, queremos que te sientas cuidado en todo momento.</p>
 
-            <p>Para más información sobre las coberturas contacta con tu mediador.</p>
+            <p>Para más información sobre las coberturas, contacta con tu mediador.</p>
             <i>
                 <small>Consulta condiciones</small>
             </i>
