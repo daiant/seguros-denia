@@ -55,4 +55,10 @@ export const campaigns = () => [
     href: "/campaigns/ofertas-promociones",
     active: false,
   },
+  { href: '/campaigns/asisa-mascotas',
+    src: '/campaigns/mascotas.jpg',
+    src_mobile: '/campaigns/mascotas.jpg',
+    alt: "Asisa Mascotas",
+    active: true
+  }
 ];

@@ -8,10 +8,10 @@ export default function AsisaMascotas() {
                 <picture style={{marginInlineStart: "auto", flex: '1 1 50%', display: 'contents'}}>
                     <source
                         media="(min-width: 768px)"
-                        srcSet="/campaigns/cabecerca-banner-web-mascotas.webp"
+                        srcSet="/campaigns/mascotas.jpg"
                     />
                     <img
-                        src="/campaigns/cabecerca-banner-web-mascotas.webp"
+                        src="/campaigns/mascotas.jpg"
                         style={{display: 'block',marginInlineStart: 'auto',maxHeight: 600, objectFit: "cover", width: '50%'}}
                     />
                 </picture>
