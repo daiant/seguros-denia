@@ -93,18 +93,52 @@ function App() {
               style={{
                 display: "grid",
                 alignItems: "center",
+                height: "100%",
               }}
             >
-              <a href={campaign.href} aria-label={campaigns.alt}>
-                <picture>
-                  <source media="(min-width: 768px)" srcSet={campaign.src} />
-                  <img
-                    src={campaign.src_mobile}
-                    style={{ width: "100%" }}
-                    alt={campaign.alt}
-                  />
-                </picture>
-              </a>
+              <div
+                style={{
+                  display: "flex",
+                  width: "100%",
+                  background: "var(--primary-gradient)",
+                  gap: 48,
+                }}
+              >
+                {campaign.summary && (
+                  <p
+                    style={{
+                      flex: "1 1 50%",
+                      justifyContent: "space-between",
+                      color: "white",
+                      marginInlineStart: 32,
+                      fontSize: 24,
+                      alignSelf: "center",
+                    }}
+                  >
+                    {campaign.summary}
+                  </p>
+                )}
+                <a
+                  href={campaign.href}
+                  aria-label={campaigns.alt}
+                  style={{
+                    flex: "1 1 50%",
+                    justifyContent: "space-between",
+                    color: "white",
+                    fontSize: 24,
+                    alignSelf: "center",
+                  }}
+                >
+                  <picture>
+                    <source media="(min-width: 768px)" srcSet={campaign.src} />
+                    <img
+                      src={campaign.src_mobile}
+                      style={{ width: "100%", display: "block" }}
+                      alt={campaign.alt}
+                    />
+                  </picture>
+                </a>
+              </div>
             </div>
           ))}
       </>
