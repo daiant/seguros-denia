@@ -1,41 +1,68 @@
 export default function AsisaOcaso() {
   return (
-    <div>
-      <picture>
-        <source
-          media="(min-width: 768px)"
-          srcSet="/campaigns/asisa-decesos.jpg"
-        />
-        <img
-          src="/campaigns/asisa-decesos-mobile.jpg"
-          style={{ width: "100%" }}
-        />
-      </picture>
+    <div className="wrap">
+      <div
+        style={{
+          display: "flex",
+          width: "100%",
+          background: "var(--primary-gradient)",
+          gap: 48,
+        }}
+      >
+        <p
+          style={{
+            flex: "1 1 50%",
+            justifyContent: "space-between",
+            color: "white",
+            marginInlineStart: 32,
+            fontSize: 24,
+            alignSelf: "center",
+          }}
+        >
+          Vivir con la tranquilidad de tenerlo todo previsto es más fácil con
+          nuestro Seguro de Decesos.
+        </p>
+        <picture
+          style={{
+            marginInlineStart: "auto",
+            flex: "1 1 50%",
+            display: "contents",
+          }}
+        >
+          <source media="(min-width: 768px)" srcSet="/campaigns/decesos.webp" />
+          <img
+            src="/campaigns/decesos_mobile.webp"
+            style={{
+              display: "block",
+              marginInlineStart: "auto",
+              maxHeight: 600,
+              objectFit: "cover",
+              width: "50%",
+            }}
+          />
+        </picture>
+      </div>
       <h1>
         Con tu seguro Decesos OCASO, podrás cuidar de ti y de los tuyos con un
         servicio sobresaliente, que cubre los gastos en caso de fallecimiento.
       </h1>
       <p>
-        Ahora te damos 6 meses de Decesos OCASO GRATIS* contratando tu seguro
-        salud o teniendo una poliza de salud*. Esta promoción finaliza el 31 de
-        diciembre! + información* en tu agencia Asisa Denia, tel.{" "}
-        <a href="tel:+34637049244">637 04 92 44</a>
+        En ASISA, entendemos la importancia de estar preparados para los
+        momentos más difíciles de la vida. Por eso, ofrecemos seguros de decesos
+        diseñados para proporcionar tranquilidad y apoyo a tus seres queridos
+        cuando más lo necesitan.
       </p>
-      <p>Con este producto tendrás cubiertas las siguientes garantías:</p>
-      <ul>
-        <li>
-          Asistencia en decesos. Cubre los costes de los servicios funerarios
-          pactados y la libre elección del cementerio y tanatorio, además de la
-          tramitación de certificados y pensiones.
-        </li>
-        <li>Asistencia en traslado nacional e internacional.</li>
-        <li>Asistencia en viaje en España y en el extranjero.</li>
-        <li>Asesoramiento legal y abogado de familia.</li>
-        <li>Asistencia jurídica especializada en menores.</li>
-        <li>Testamento Online.</li>
-        <li>Accidentes.</li>
-      </ul>
-      <p></p>
+      <p>
+        Nuestro objetivo es ayudarte a planificar y cubrir todos los gastos
+        relacionados con el fallecimiento, aliviando a tu familia de
+        preocupaciones económicas y logísticas. En ASISA encontrarás información
+        útil y consejos sobre cómo elegir el mejor seguro de decesos para ti y
+        tu familia.
+      </p>
+      <p>
+        Acompáñanos y descubre cómo podemos ayudarte a asegurar la paz y la
+        serenidad en los momentos más delicados.
+      </p>
       <i>
         <small>Consulta condiciones</small>
       </i>

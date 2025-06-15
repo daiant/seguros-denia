@@ -45,18 +45,70 @@ const router = createBrowserRouter([
       </LayoutLegal>
     ),
   },
-  {path: '/campaigns/asisa-international', element: (<LayoutCampaigns><AsisaInternational /></LayoutCampaigns>)},
-  {path: '/campaigns/asisa-vida', element: (<LayoutCampaigns><AsisaVida /></LayoutCampaigns>)},
-  {path: '/campaigns/asisa-travel', element: (<LayoutCampaigns><AsisaTravel /></LayoutCampaigns>)},
-  {path: '/campaigns/asisa-mascotas', element: (<LayoutCampaigns><AsisaMascotas /></LayoutCampaigns>)},
-  { path: "politica-de-proteccion-de-datos", element: ( <LayoutLegal> <LOPDPage /> </LayoutLegal> ), },
-  {path: '/campaigns/asisa-international', element: (<LayoutCampaigns><AsisaInternational /></LayoutCampaigns>)},
-  {path: '/campaigns/asisa-vida', element: (<LayoutCampaigns><AsisaVida /></LayoutCampaigns>)},
-  {path: '/campaigns/asisa-travel', element: (<LayoutCampaigns><AsisaTravel /></LayoutCampaigns>)},
-  {path: '/campaigns/asisa-mascotas', element: (<LayoutCampaigns><AsisaMascotas /></LayoutCampaigns>)},
-  { path: "/campaigns/asisa-ocaso", element: ( <LayoutCampaigns> <AsisaOcaso /> </LayoutCampaigns> ), },
-  { path: "campaigns/asisa-asistencia-veterinaria", element: ( <LayoutCampaigns> <VetPage /> </LayoutCampaigns> ), },
-  { path: "campaigns/ofertas-promociones", element: ( <LayoutCampaigns> <OfertasPromocionesPage /> </LayoutCampaigns> ), },
+  {
+    path: "politica-de-proteccion-de-datos",
+    element: (
+      <LayoutLegal>
+        <LOPDPage />
+      </LayoutLegal>
+    ),
+  },
+  {
+    path: "campaigns/asisa-international",
+    element: (
+      <LayoutCampaigns>
+        <AsisaInternational />
+      </LayoutCampaigns>
+    ),
+  },
+  {
+    path: "campaigns/asisa-vida",
+    element: (
+      <LayoutCampaigns>
+        <AsisaVida />
+      </LayoutCampaigns>
+    ),
+  },
+  {
+    path: "campaigns/asisa-travel",
+    element: (
+      <LayoutCampaigns>
+        <AsisaTravel />
+      </LayoutCampaigns>
+    ),
+  },
+  {
+    path: "campaigns/asisa-mascotas",
+    element: (
+      <LayoutCampaigns>
+        <AsisaMascotas />
+      </LayoutCampaigns>
+    ),
+  },
+  {
+    path: "campaigns/asisa-ocaso",
+    element: (
+      <LayoutCampaigns>
+        <AsisaOcaso />
+      </LayoutCampaigns>
+    ),
+  },
+  {
+    path: "campaigns/asisa-asistencia-veterinaria",
+    element: (
+      <LayoutCampaigns>
+        <VetPage />
+      </LayoutCampaigns>
+    ),
+  },
+  {
+    path: "campaigns/ofertas-promociones",
+    element: (
+      <LayoutCampaigns>
+        <OfertasPromocionesPage />
+      </LayoutCampaigns>
+    ),
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(

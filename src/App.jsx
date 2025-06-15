@@ -93,18 +93,58 @@ function App() {
               style={{
                 display: "grid",
                 alignItems: "center",
+                height: "100%",
               }}
             >
-              <a href={campaign.href} aria-label={campaigns.alt}>
-                <picture style={{maxHeight: 400}}>
-                  <source media="(min-width: 768px)" srcSet={campaign.src} />
-                  <img
-                    src={campaign.src_mobile}
-                    style={{ width: "100%",maxHeight: 500, objectFit: 'cover' }}
-                    alt={campaign.alt}
-                  />
-                </picture>
-              </a>
+              <div
+                style={{
+                  display: "flex",
+                  width: "100%",
+                  background: "var(--primary-gradient)",
+                  gap: 48,
+                }}
+                className="grid-container"
+              >
+                {campaign.summary && (
+                  <p
+                    style={{
+                      flex: "1 1 50%",
+                      justifyContent: "space-between",
+                      color: "white",
+                      marginInlineStart: 32,
+                      fontSize: 24,
+                      alignSelf: "center",
+                    }}
+                  >
+                    {campaign.summary}
+                  </p>
+                )}
+                <a
+                  href={campaign.href}
+                  aria-label={campaigns.alt}
+                  style={{
+                    flex: "1 1 50%",
+                    justifyContent: "space-between",
+                    color: "white",
+                    fontSize: 24,
+                    alignSelf: "center",
+                  }}
+                >
+                  <picture>
+                    <source media="(min-width: 768px)" srcSet={campaign.src} />
+                    <img
+                      src={campaign.src_mobile}
+                      style={{
+                        width: "100%",
+                        display: "block",
+                        objectFit: "contain",
+                        maxHeight: 500,
+                      }}
+                      alt={campaign.alt}
+                    />
+                  </picture>
+                </a>
+              </div>
             </div>
           ))}
       </>

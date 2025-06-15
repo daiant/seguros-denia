@@ -7,11 +7,13 @@ export const campaigns = () => [
     active: false,
   },
   {
-    src: "/campaigns/asisa-decesos.jpg",
-    src_mobile: "/campaigns/asisa-decesos-mobile.jpg",
+    src: "/campaigns/decesos.webp",
+    src_mobile: "/campaigns/decesos_mobile.webp",
     alt: "Campaña Decesos",
     href: "/campaigns/asisa-ocaso",
-    active: false,
+    active: true,
+    summary:
+      "Vivir con la tranquilidad de tenerlo todo previsto es más fácil con nuestro Seguro de Decesos. Calcula el precio del Seguro de Decesos OCASO.",
   },
   {
     src: "/campaigns/asisa-nuevas-familias.png",
@@ -21,11 +23,14 @@ export const campaigns = () => [
     active: false,
   },
   {
-    src: "/campaigns/cabecera-home-promo-vida-compromiso-asegurados.webp",
-    src_mobile: "/campaigns/cabecera-home-promo-vida-compromiso-asegurados-v2.webp",
+    src: "/campaigns/cabecera-home-promo-vida-compromiso-asegurados-v2.webp",
+    src_mobile:
+      "/campaigns/cabecera-home-promo-vida-compromiso-asegurados-v2.webp",
     alt: "Campaña Vida",
     href: "/campaigns/asisa-vida",
     active: true,
+    summary:
+      "Un “para siempre” es mucho tiempo, y justo eso dura este descuento",
   },
   {
     src: "/campaigns/asisa-general-optica.png",
@@ -42,11 +47,12 @@ export const campaigns = () => [
     active: true,
   },
   {
-    src: "/campaigns/asisa-travel.webp",
+    src: "/campaigns/asisa-travel.jpg",
     src_mobile: "/campaigns/asisa-travel.jpg",
     alt: "Asisa Travel",
     href: "/campaigns/asisa-travel",
     active: true,
+    summary: "Protege tu viaje con ASISA Viajes",
   },
   {
     src: "/campaigns/ofertas-promociones.png",
@@ -55,10 +61,11 @@ export const campaigns = () => [
     href: "/campaigns/ofertas-promociones",
     active: false,
   },
-  { href: '/campaigns/asisa-mascotas',
-    src: '/campaigns/mascotas.webp',
-    src_mobile: '/campaigns/mascotas.jpg',
+  {
+    href: "/campaigns/asisa-mascotas",
+    src: "/campaigns/mascotas.webp",
+    src_mobile: "/campaigns/mascotas.jpg",
     alt: "Asisa Mascotas",
-    active: true
-  }
+    active: true,
+  },
 ];
