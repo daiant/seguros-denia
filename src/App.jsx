@@ -103,6 +103,7 @@ function App() {
                   background: "var(--primary-gradient)",
                   gap: 48,
                 }}
+                className="grid-container"
               >
                 {campaign.summary && (
                   <p
@@ -133,7 +134,12 @@ function App() {
                     <source media="(min-width: 768px)" srcSet={campaign.src} />
                     <img
                       src={campaign.src_mobile}
-                      style={{ width: "100%", display: "block" }}
+                      style={{
+                        width: "100%",
+                        display: "block",
+                        objectFit: "contain",
+                        maxHeight: 500,
+                      }}
                       alt={campaign.alt}
                     />
                   </picture>

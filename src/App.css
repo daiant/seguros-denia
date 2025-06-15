@@ -19,4 +19,7 @@
     display: none;
   }
 
+  .grid-container>p {
+    display: none;
+  }
 }

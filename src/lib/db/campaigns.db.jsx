@@ -7,11 +7,13 @@ export const campaigns = () => [
     active: false,
   },
   {
-    src: "/campaigns/asisa-decesos.jpg",
-    src_mobile: "/campaigns/asisa-decesos-mobile.jpg",
+    src: "/campaigns/decesos.webp",
+    src_mobile: "/campaigns/decesos_mobile.webp",
     alt: "Campaña Decesos",
     href: "/campaigns/asisa-ocaso",
-    active: false,
+    active: true,
+    summary:
+      "Vivir con la tranquilidad de tenerlo todo previsto es más fácil con nuestro Seguro de Decesos. Calcula el precio del Seguro de Decesos OCASO.",
   },
   {
     src: "/campaigns/asisa-nuevas-familias.png",
