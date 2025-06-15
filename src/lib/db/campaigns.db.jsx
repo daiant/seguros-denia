@@ -47,7 +47,7 @@ export const campaigns = () => [
     active: true,
   },
   {
-    src: "/campaigns/asisa-travel.webp",
+    src: "/campaigns/asisa-travel.jpg",
     src_mobile: "/campaigns/asisa-travel.jpg",
     alt: "Asisa Travel",
     href: "/campaigns/asisa-travel",
