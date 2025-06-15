@@ -22,10 +22,13 @@ export const campaigns = () => [
   },
   {
     src: "/campaigns/cabecera-home-promo-vida-compromiso-asegurados-v2.webp",
-    src_mobile: "/campaigns/cabecera-home-promo-vida-compromiso-asegurados-v2.webp",
+    src_mobile:
+      "/campaigns/cabecera-home-promo-vida-compromiso-asegurados-v2.webp",
     alt: "Campaña Vida",
     href: "/campaigns/asisa-vida",
     active: true,
+    summary:
+      "Un “para siempre” es mucho tiempo, y justo eso dura este descuento",
   },
   {
     src: "/campaigns/asisa-general-optica.png",
@@ -47,6 +50,7 @@ export const campaigns = () => [
     alt: "Asisa Travel",
     href: "/campaigns/asisa-travel",
     active: true,
+    summary: "Protege tu viaje con ASISA Viajes",
   },
   {
     src: "/campaigns/ofertas-promociones.png",
