@@ -1,6 +1,6 @@
 import React from "react";
-import Footer from "../../components/footer/footer";
-import Header from "../../components/header/header";
+import Footer from "../components/footer/footer.jsx";
+import Header from "../components/header/header.jsx";
 import "./legal.css";
 
 // eslint-disable-next-line react/prop-types

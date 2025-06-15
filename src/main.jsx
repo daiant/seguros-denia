@@ -4,21 +4,21 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import LegalPage from "./pages/legal/legal";
-import CookiesPage from "./pages/legal/cookies";
-import LOPDPage from "./pages/legal/lopd";
-import LayoutLegal from "./pages/legal/layout";
-import InsuranceInfoPage from "./pages/insurance-info/insurance-info";
+import LegalPage from "./legal/legal";
+import CookiesPage from "./legal/cookies";
+import LOPDPage from "./legal/lopd";
+import LayoutLegal from "./legal/layout";
+import InsuranceInfoPage from "./insurance/insurance-info.jsx";
 import { Toaster } from "sonner";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
-import LayoutCampaigns from "./pages/campaigns/layout";
-import VetPage from "./pages/campaigns/asisa-asisencia-veterinaria";
-import AsisaOcaso from "./pages/campaigns/asisa-ocaso";
-import OfertasPromocionesPage from "./pages/campaigns/ofertas-promociones";
-import AsisaInternational from "./pages/campaigns/asisa-international.jsx";
-import AsisaVida from "./pages/campaigns/asisa-vida.jsx";
-import AsisaTravel from "./pages/campaigns/asisa-travel.jsx";
-import AsisaMascotas from "./pages/campaigns/asisa-mascotas.jsx";
+import LayoutCampaigns from "./campaigns/layout";
+import VetPage from "./campaigns/asisa-asisencia-veterinaria";
+import AsisaOcaso from "./campaigns/asisa-ocaso";
+import OfertasPromocionesPage from "./campaigns/ofertas-promociones";
+import AsisaInternational from "./campaigns/asisa-international.jsx";
+import AsisaVida from "./campaigns/asisa-vida.jsx";
+import AsisaTravel from "./campaigns/asisa-travel.jsx";
+import AsisaMascotas from "./campaigns/asisa-mascotas.jsx";
 
 const router = createBrowserRouter([
   {
